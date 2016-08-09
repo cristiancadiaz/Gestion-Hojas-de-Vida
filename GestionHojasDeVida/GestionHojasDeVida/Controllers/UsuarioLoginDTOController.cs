@@ -13,5 +13,23 @@ namespace GestionHojasDeVida.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult create()
+        {
+            return View();
+        }
+        public ActionResult Delete(int Id)
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Update(int Id)
+        {
+            return View();
+        }
+        public ActionResult Read(int Id)
+        {
+            return View();
+        }
     }
 }

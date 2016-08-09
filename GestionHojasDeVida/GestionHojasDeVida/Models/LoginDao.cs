@@ -11,5 +11,10 @@ namespace GestionHojasDeVida.Models
         {
           
         }
+
+        public void Crear()
+        {
+           
+        }
     }
 }

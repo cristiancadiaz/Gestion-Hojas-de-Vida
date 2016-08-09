@@ -106,7 +106,8 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
-    <Content Include="Views\UsuarioDTO\Index.cshtml" />
+    <Content Include="Views\UsuarioLoginDTO\Index.cshtml" />
+    <Content Include="DiagramaLogin.cd" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

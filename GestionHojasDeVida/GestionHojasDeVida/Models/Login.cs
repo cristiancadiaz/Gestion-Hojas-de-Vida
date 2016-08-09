@@ -10,6 +10,7 @@ namespace GestionHojasDeVida.Models
     {
 
         void Autenticar();
+        void Crear();
 
     }
 }
