@@ -22,12 +22,15 @@
         <div>Gestión<span> Hojas De Vida</span></div>
     </div>
     <br>
-    <div class="prueba">
-        <div class="login">
-            <input type="text" placeholder="username" name="user"><br>
-            <input type="password" placeholder="password" name="password"><br>
-            <input type="button" value="Login" onclick="location.href='/UsuarioLoginDTO/Registro'">
+    <form method="post"  action=@Url.Action("Registro", "UsuarioLoginDTO")>
+        <div class="prueba">
+            <div class="login">
+                <input type="text" placeholder="username" name="TextUser"><br>
+                <input type="password" placeholder="password" name="TextPassword"><br>
+                <input type="button" value="Login" onclick="location.href='/UsuarioLoginDTO/Registro'">
+            </div>
         </div>
-    </div>
+    </form>
+    
 </body>
 </html>

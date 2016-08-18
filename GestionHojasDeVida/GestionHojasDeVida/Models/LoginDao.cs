@@ -7,8 +7,9 @@ namespace GestionHojasDeVida.Models
 {
     public class LoginDao : Login
     {
-        public void Autenticar()
+        public void Autenticar(string username, string password)
         {
+
           
         }
 

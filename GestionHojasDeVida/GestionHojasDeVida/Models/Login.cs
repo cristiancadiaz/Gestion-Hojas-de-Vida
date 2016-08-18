@@ -9,7 +9,7 @@ namespace GestionHojasDeVida.Models
      interface Login
     {
 
-        void Autenticar();
+        void Autenticar(string username, string password);
         void Crear();
 
     }

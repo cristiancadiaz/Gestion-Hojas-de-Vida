@@ -93,6 +93,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Css\Estilo_Login.css" />
+    <Content Include="Css\General_Registro.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Imagenes\fondo1.jpg" />

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GestionHojasDeVida.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,8 +14,14 @@ namespace GestionHojasDeVida.Controllers
         {
             return View();
         }
-        public ActionResult Registro()
+        [HttpPost]
+        public ActionResult Registro(FormCollection form)
         {
+            var username = form["TextUser"];
+            var password = form["TextPassword"];
+            var logindto = new UsuarioLoginDTO(username,password);
+            var logindao = new LoginDao();
+            logindao.Autenticar(logindto.uld_user,logindto.uld_pass);
             return View();
         }
         [HttpPost]
