@@ -10,7 +10,7 @@ namespace GestionHojasDeVida.Models
         public void Autenticar(string username, string password)
         {
 
-          //Ese COMMIT ERA MIO :'(
+          
         }
 
         public void Crear()
