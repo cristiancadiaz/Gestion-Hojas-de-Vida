@@ -14,6 +14,18 @@ namespace GestionHojasDeVida.Controllers
         {
             return View();
         }
+        public ActionResult Registro()
+        {
+            return View();
+        }
+        public ActionResult Main()
+        {
+            return View();
+        }
+        public ActionResult Registro_Completo()
+        {
+            return View();
+        }
         [HttpPost]
         public ActionResult Registro(FormCollection form)
         {

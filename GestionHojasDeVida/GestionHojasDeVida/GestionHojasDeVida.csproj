@@ -96,6 +96,7 @@
     <Content Include="Css\General_Registro.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Imagenes\cumpleanios.JPG" />
     <Content Include="Imagenes\fondo1.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -133,6 +134,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\View.cshtml" />
     <Content Include="Views\UsuarioLoginDTO\Registro.cshtml" />
+    <Content Include="Views\UsuarioLoginDTO\Main.cshtml" />
+    <Content Include="Views\UsuarioLoginDTO\Registro_Completo.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

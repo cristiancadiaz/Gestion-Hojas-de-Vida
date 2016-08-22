@@ -136,7 +136,7 @@
             <section>
                 <div class="container">
                     <div class="row text-center">
-                        <h2>Registro Nuevo Empleado</h2>
+                        <h2>Actualizacion Hoja de Vida</h2>
                         <p>Recuerda diligenciar todos los campos</p>
                     </div>
                 </div>
@@ -168,7 +168,7 @@
                                 <fieldset class="fieldset-resume_category">
                                     <label for="resume_category">Tipo de Documento</label>
                                     <div class="field">
-                                        <select name='txtTipoDocumento' class='job-manager-category-dropdown ' data-placeholder='Choose a category&hellip;' data-no_results_text='No results match' data-multiple_text='Select Some Options'>
+                                        <select name='txtTipoDocumento' class='job-manager-category-dropdown ' data-placeholder='Choose a category&hellip;' data-no_results_text='No results match' data-multiple_text='Select Some Options' readonly="readonly">
                                             <option class="level-0" value="01">Cedula de Ciudadania</option>
                                             <option class="level-0" value="02">Cedula Extranjeria</option>
                                             <option class="level-0" value="03">Pasaporte</option>
@@ -181,7 +181,7 @@
                                 <fieldset class="fieldset-candidate_name">
                                     <label for="candidate_name">No Documento</label>
                                     <div class="field">
-                                        <input type="number" class="input-text" name="txtDocumento" placeholder="Numero de Documento" value="" maxlength="" required />
+                                        <input type="number" class="input-text" name="txtDocumento" placeholder="Numero de Documento" value="" maxlength="" readonly="readonly" required />
                                     </div>
                                 </fieldset>
 
@@ -189,50 +189,287 @@
                                 <fieldset class="fieldset-candidate_name">
                                     <label for="candidate_name">Nombres</label>
                                     <div class="field">
-                                        <input type="text" class="input-text" name="txtnombres" placeholder="Nombre Completo" value="" maxlength="" required />
+                                        <input type="text" class="input-text" name="txtnombres" placeholder="Nombre Completo" value="" maxlength="" readonly="readonly" required />
                                     </div>
                                 </fieldset>
 
                                 <fieldset class="fieldset-candidate_name">
                                     <label for="candidate_name">Apellidos</label>
                                     <div class="field">
-                                        <input type="text" class="input-text" name="txtapellidos" placeholder="Apellido Completo" value="" maxlength="" required />
+                                        <input type="text" class="input-text" name="txtapellidos" placeholder="Apellido Completo" value="" maxlength="" readonly="readonly" required />
                                     </div>
                                 </fieldset>
 
                                 <fieldset class="fieldset-candidate_email">
                                     <label for="candidate_email">Correo Electronico</label>
                                     <div class="field">
-                                        <input type="email" class="input-text" name="txtCorreo" placeholder="usuario@dominio.com" value="" maxlength="" required />
+                                        <input type="email" class="input-text" name="txtCorreo" placeholder="usuario@dominio.com" value="" maxlength="" readonly="readonly" required />
                                     </div>
                                 </fieldset>
 
                                 <fieldset class="fieldset-candidate_title">
                                     <label for="candidate_title">Contraseña</label>
                                     <div class="field">
-                                        <input type="password" class="input-text" name="txtClave" placeholder="********" value="" maxlength="" required />
+                                        <input type="password" class="input-text" name="txtClave" placeholder="********" value="" maxlength="" readonly="readonly" required />
                                     </div>
                                 </fieldset>
 
                                 <fieldset class="fieldset-candidate_title">
                                     <label for="candidate_title">Confirmar Contraseña</label>
                                     <div class="field">
-                                        <input type="password" class="input-text" name="txtClave2" placeholder="********" value="" maxlength="" required />
+                                        <input type="password" class="input-text" name="txtClave2" placeholder="********" value="" maxlength=""readonly="readonly" required />
                                     </div>
                                 </fieldset>
                                 <fieldset class="fieldset-candidate_location">
                                     <label for="candidate_location">Cargo</label>
                                     <div class="field">
-                                        <input type="text" class="input-text" name="txtCargo" placeholder="Cargo" value="" maxlength="" required />
+                                        <input type="text" class="input-text" name="txtCargo" placeholder="Cargo" value="" maxlength="" readonly="readonly" required />
                                     </div>
                                 </fieldset>
 
                                 <fieldset class="fieldset-candidate_location">
                                     <label for="candidate_location">Salario</label>
                                     <div class="field">
-                                        <input type="number" class="input-text" name="txtSalario" placeholder="Salario" value="" maxlength="" required />
+                                        <input type="number" class="input-text" name="txtSalario" placeholder="Salario" value="" maxlength="" readonly="readonly" required />
                                     </div>
                                 </fieldset>
+
+                                <fieldset class="fieldset-candidate_location">
+                                    <label for="candidate_location">Direccion</label>
+                                    <div class="field">
+                                        <input type="text" class="input-text" name="candidate_location" id="txtDireccion" placeholder="Ej Calle.." value="" maxlength="" required />
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="fieldset-candidate_location">
+                                    <label for="candidate_location">Telefono</label>
+                                    <div class="field">
+                                        <input type="text" class="input-text" name="candidate_location" id="txtTelefono" placeholder="Ej Calle.." value="" maxlength="" required />
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="fieldset-candidate_location">
+                                    <label for="candidate_location">Celular</label>
+                                    <div class="field">
+                                        <input type="text" class="input-text" name="candidate_location" id="txtCelular" placeholder="Ej Calle.." value="" maxlength="" required />
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="fieldset-resume_tagline">
+                                    <label for="resume_tagline">Perfil Personal<small>(opcional)</small></label>
+                                    <div class="field">
+                                        <textarea cols="20" rows="3" class="input-text" name="resume_tagline" id="resume_tagline" placeholder="" maxlength=""></textarea>
+                                        <small class="field-description">Una breve descripcion de personalidad</small>
+                                    </div>
+                                </fieldset>
+                                <fieldset class="fieldset-resume_salary">
+                                    <label for="resume_salary">Aspiracion Salarial <small>(opcional)</small></label>
+                                    <div class="field">
+                                        <input type="text" class="input-text" name="resume_salary" id="resume_salary" placeholder="" value="" maxlength="" />
+                                    </div>
+                                </fieldset>
+                                <fieldset class="fieldset-resume_category">
+                                    <label for="resume_category">Equivalente al cargo</label>
+                                    <div class="field">
+                                        <select name='resume_category[]' id='resume_category' class='job-manager-category-dropdown ' multiple='multiple' data-placeholder='Choose a category&hellip;' data-no_results_text='No results match' data-multiple_text='Select Some Options'>
+                                            <option class="level-0" value="84">Asistente Administrativo</option>
+                                            <option class="level-0" value="23">Agricultura</option>
+                                            <option class="level-0" value="58">Recursos Humanos</option>
+                                            <option class="level-0" value="80">Tecnologias de la Informacion</option>
+                                            <option class="level-0" value="64">Analista de Mercado</option>
+                                            <option class="level-0" value="54">Fotografia</option>
+
+                                        </select>
+                                    </div>
+                                </fieldset>
+                                <fieldset class="fieldset-resume_content">
+                                    <label for="resume_content">Perfil Profesional</label>
+                                    <div class="field">
+                                        <div id="wp-resume_content-wrap" class="wp-core-ui wp-editor-wrap tmce-active">
+                                            <link rel='stylesheet' id='dashicons-css' href='http://alexgurghis.com/themes/jobsdojo/wp-includes/css/dashicons.min.css?ver=4.5.3' type='text/css' media='all' />
+                                            <link rel='stylesheet' id='editor-buttons-css' href='http://alexgurghis.com/themes/jobsdojo/wp-includes/css/editor.min.css?ver=4.5.3' type='text/css' media='all' />
+                                            <div id="wp-resume_content-editor-container" class="wp-editor-container"><textarea class="wp-editor-area" rows="8" autocomplete="off" cols="40" name="resume_content" id="resume_content"></textarea></div>
+                                        </div>
+
+                                    </div>
+                                </fieldset>
+                                <fieldset class="fieldset-candidate_education">
+                                    <label for="candidate_education">Educacion <small>(opcional)</small></label>
+                                    <div class="field">
+
+                                        <a href="#" class="resume-manager-add-row" data-row=" &lt;div class=&quot;resume-manager-data-row&quot;&gt;
+                                           &lt;a href=&quot;#&quot; class=&quot;resume-manager-remove-row&quot;&gt;Remove&lt;/a&gt;
+                                           &lt;fieldset class=&quot;fieldset-location&quot;&gt;
+                                           &lt;label for=&quot;location&quot;&gt;Colegio&lt;/label&gt;
+                                           &lt;div class=&quot;field&quot;&gt;
+                                           &lt;input type=&quot;text&quot; class=&quot;input-text&quot; name=&quot;candidate_education_location[]&quot; id=&quot;location&quot; placeholder=&quot;&quot; value=&quot;&quot; maxlength=&quot;&quot; required /&gt;
+                                        &lt;/div&gt;
+                                        &lt;/fieldset&gt;
+                                        &lt;fieldset class=&quot;fieldset-qualification&quot;&gt;
+                                        &lt;label for=&quot;qualification&quot;&gt;Qualification(s)&lt;/label&gt;
+                                        &lt;div class=&quot;field&quot;&gt;
+                                        &lt;input type=&quot;text&quot; class=&quot;input-text&quot; name=&quot;candidate_education_qualification[]&quot; id=&quot;qualification&quot; placeholder=&quot;&quot; value=&quot;&quot; maxlength=&quot;&quot; required /&gt;
+                                        &lt;/div&gt;
+                                        &lt;/fieldset&gt;
+                                        &lt;fieldset class=&quot;fieldset-date&quot;&gt;
+                                        &lt;label for=&quot;date&quot;&gt;Start/end date&lt;/label&gt;
+                                        &lt;div class=&quot;field&quot;&gt;
+                                        &lt;input type=&quot;text&quot; class=&quot;input-text&quot; name=&quot;candidate_education_date[]&quot; id=&quot;date&quot; placeholder=&quot;&quot; value=&quot;&quot; maxlength=&quot;&quot; required /&gt;
+                                        &lt;/div&gt;
+                                        &lt;/fieldset&gt;
+                                        &lt;fieldset class=&quot;fieldset-notes&quot;&gt;
+                                        &lt;label for=&quot;notes&quot;&gt;Notes &lt;small&gt;(optional)&lt;/small&gt;&lt;/label&gt;
+                                        &lt;div class=&quot;field&quot;&gt;
+                                        &lt;textarea cols=&quot;20&quot; rows=&quot;3&quot; class=&quot;input-text&quot; name=&quot;candidate_education_notes[]&quot; id=&quot;notes&quot; placeholder=&quot;&quot; maxlength=&quot;&quot; &gt;&lt;/textarea&gt;
+                                        &lt;/div&gt;
+                                        &lt;/fieldset&gt;
+                                        &lt;/div&gt;
+                                        ">+ Adicionar Educacion</a>
+                                    </div>
+                                </fieldset>
+                                <fieldset class="fieldset-candidate_experience">
+                                    <label for="candidate_experience">Experiencia <small>(opcional)</small></label>
+                                    <div class="field">
+
+                                        <a href="#" class="resume-manager-add-row" data-row=" &lt;div class=&quot;resume-manager-data-row&quot;&gt;
+                                           &lt;a href=&quot;#&quot; class=&quot;resume-manager-remove-row&quot;&gt;Remove&lt;/a&gt;
+                                           &lt;fieldset class=&quot;fieldset-employer&quot;&gt;
+                                           &lt;label for=&quot;employer&quot;&gt;Employer&lt;/label&gt;
+                                           &lt;div class=&quot;field&quot;&gt;
+                                           &lt;input type=&quot;text&quot; class=&quot;input-text&quot; name=&quot;candidate_experience_employer[]&quot; id=&quot;employer&quot; placeholder=&quot;&quot; value=&quot;&quot; maxlength=&quot;&quot; required /&gt;
+                                        &lt;/div&gt;
+                                        &lt;/fieldset&gt;
+                                        &lt;fieldset class=&quot;fieldset-job_title&quot;&gt;
+                                        &lt;label for=&quot;job_title&quot;&gt;Job Title&lt;/label&gt;
+                                        &lt;div class=&quot;field&quot;&gt;
+                                        &lt;input type=&quot;text&quot; class=&quot;input-text&quot; name=&quot;candidate_experience_job_title[]&quot; id=&quot;job_title&quot; placeholder=&quot;&quot; value=&quot;&quot; maxlength=&quot;&quot; required /&gt;
+                                        &lt;/div&gt;
+                                        &lt;/fieldset&gt;
+                                        &lt;fieldset class=&quot;fieldset-date&quot;&gt;
+                                        &lt;label for=&quot;date&quot;&gt;Start/end date&lt;/label&gt;
+                                        &lt;div class=&quot;field&quot;&gt;
+                                        &lt;input type=&quot;text&quot; class=&quot;input-text&quot; name=&quot;candidate_experience_date[]&quot; id=&quot;date&quot; placeholder=&quot;&quot; value=&quot;&quot; maxlength=&quot;&quot; required /&gt;
+                                        &lt;/div&gt;
+                                        &lt;/fieldset&gt;
+                                        &lt;fieldset class=&quot;fieldset-notes&quot;&gt;
+                                        &lt;label for=&quot;notes&quot;&gt;Notes &lt;small&gt;(optional)&lt;/small&gt;&lt;/label&gt;
+                                        &lt;div class=&quot;field&quot;&gt;
+                                        &lt;textarea cols=&quot;20&quot; rows=&quot;3&quot; class=&quot;input-text&quot; name=&quot;candidate_experience_notes[]&quot; id=&quot;notes&quot; placeholder=&quot;&quot; maxlength=&quot;&quot; &gt;&lt;/textarea&gt;
+                                        &lt;/div&gt;
+                                        &lt;/fieldset&gt;
+                                        &lt;/div&gt;
+                                        ">+ Adicionar Experiencia</a>
+                                    </div>
+                                </fieldset>
+                                <fieldset class="fieldset-resume_skill_1_title">
+                                    <label for="resume_skill_1_title">Habilidad #1 Descripcion <small>(optional)</small></label>
+                                    <div class="field">
+                                        <input type="text" class="input-text" name="resume_skill_1_title" id="resume_skill_1_title" placeholder="" value="" maxlength="" />
+                                    </div>
+                                </fieldset>
+                                <fieldset class="fieldset-resume_skill_1_value">
+                                    <label for="resume_skill_1_value">Habilidad #1 Valor <small>(optional)</small></label>
+                                    <div class="field">
+                                        <input type="text" class="input-text" name="resume_skill_1_value" id="resume_skill_1_value" placeholder="70%" value="" maxlength="" />
+                                    </div>
+                                </fieldset>
+                                <fieldset class="fieldset-resume_skill_2_title">
+                                    <label for="resume_skill_2_title">Habilidad #2 Descripcion <small>(optional)</small></label>
+                                    <div class="field">
+                                        <input type="text" class="input-text" name="resume_skill_2_title" id="resume_skill_2_title" placeholder="" value="" maxlength="" />
+                                    </div>
+                                </fieldset>
+                                <fieldset class="fieldset-resume_skill_2_value">
+                                    <label for="resume_skill_2_value">Habilidad #2 Valor <small>(optional)</small></label>
+                                    <div class="field">
+                                        <input type="text" class="input-text" name="resume_skill_2_value" id="resume_skill_2_value" placeholder="70%" value="" maxlength="" />
+                                    </div>
+                                </fieldset>
+                                <fieldset class="fieldset-resume_skill_3_title">
+                                    <label for="resume_skill_3_title">Habilidad #3 Descripcion <small>(optional)</small></label>
+                                    <div class="field">
+                                        <input type="text" class="input-text" name="resume_skill_3_title" id="resume_skill_3_title" placeholder="" value="" maxlength="" />
+                                    </div>
+                                </fieldset>
+                                <fieldset class="fieldset-resume_skill_3_value">
+                                    <label for="resume_skill_3_value">Habilidad #3 Valor <small>(optional)</small></label>
+                                    <div class="field">
+                                        <input type="text" class="input-text" name="resume_skill_3_value" id="resume_skill_3_value" placeholder="70%" value="" maxlength="" />
+                                    </div>
+                                </fieldset>
+                                <fieldset class="fieldset-resume_skill_4_title">
+                                    <label for="resume_skill_4_title">Habilidad #4 Descripcion <small>(optional)</small></label>
+                                    <div class="field">
+                                        <input type="text" class="input-text" name="resume_skill_4_title" id="resume_skill_4_title" placeholder="" value="" maxlength="" />
+                                    </div>
+                                </fieldset>
+                                <fieldset class="fieldset-resume_skill_4_value">
+                                    <label for="resume_skill_4_value">Habilidad #4 Valor <small>(optional)</small></label>
+                                    <div class="field">
+                                        <input type="text" class="input-text" name="resume_skill_4_value" id="resume_skill_4_value" placeholder="70%" value="" maxlength="" />
+                                    </div>
+                                </fieldset>
+                                <fieldset class="fieldset-resume_skill_5_title">
+                                    <label for="resume_skill_5_title">Habilidad #5 Descripcion<small>(optional)</small></label>
+                                    <div class="field">
+                                        <input type="text" class="input-text" name="resume_skill_5_title" id="resume_skill_5_title" placeholder="" value="" maxlength="" />
+                                    </div>
+                                </fieldset>
+                                <fieldset class="fieldset-resume_skill_5_value">
+                                    <label for="resume_skill_5_value">Habilidad #5 Valor <small>(optional)</small></label>
+                                    <div class="field">
+                                        <input type="text" class="input-text" name="resume_skill_5_value" id="resume_skill_5_value" placeholder="70%" value="" maxlength="" />
+                                    </div>
+                                </fieldset>
+                                <fieldset class="fieldset-resume_skill_6_title">
+                                    <label for="resume_skill_6_title">Habilidad #6 Descripcion <small>(optional)</small></label>
+                                    <div class="field">
+                                        <input type="text" class="input-text" name="resume_skill_6_title" id="resume_skill_6_title" placeholder="" value="" maxlength="" />
+                                    </div>
+                                </fieldset>
+                                <fieldset class="fieldset-resume_skill_6_value">
+                                    <label for="resume_skill_6_value">Habilidad #6 Valor <small>(optional)</small></label>
+                                    <div class="field">
+                                        <input type="text" class="input-text" name="resume_skill_6_value" id="resume_skill_6_value" placeholder="70%" value="" maxlength="" />
+                                    </div>
+                                </fieldset>
+                                <fieldset class="fieldset-resume_languages">
+                                    <label for="resume_languages">Idiomas <small>(opcional)</small></label>
+                                    <div class="field">
+                                        <input type="text" class="input-text" name="resume_languages" id="resume_languages" placeholder="" value="" maxlength="" />
+                                    </div>
+                                </fieldset>
+                                <fieldset class="fieldset-resume_availability">
+                                    <label for="resume_availability">Availability <small>(optional)</small></label>
+                                    <div class="field">
+                                        <input type="text" class="input-text" name="resume_availability" id="resume_availability" placeholder="" value="" maxlength="" />
+                                    </div>
+                                </fieldset>
+                                <fieldset class="fieldset-resume_awards">
+                                    <label for="resume_awards">Awards <small>(optional)</small></label>
+                                    <div class="field">
+                                        <input type="text" class="input-text" name="resume_awards" id="resume_awards" placeholder="" value="" maxlength="" />
+                                    </div>
+                                </fieldset>
+                                <fieldset class="fieldset-resume_hobbies">
+                                    <label for="resume_hobbies">Hobbies <small>(optional)</small></label>
+                                    <div class="field">
+                                        <input type="text" class="input-text" name="resume_hobbies" id="resume_hobbies" placeholder="" value="" maxlength="" />
+                                    </div>
+                                </fieldset>
+                                <fieldset class="fieldset-resume_skills">
+                                    <label for="resume_skills">Skills <small>(optional)</small></label>
+                                    <div class="field">
+                                        <input type="text" class="input-text" name="resume_skills" id="resume_skills" placeholder="Comma separate a list of relevant skills" value="" maxlength="" />
+                                    </div>
+                                </fieldset>
+                                <fieldset class="fieldset-resume_phone">
+                                    <label for="resume_phone">Phone <small>(optional)</small></label>
+                                    <div class="field">
+                                        <input type="text" class="input-text" name="resume_phone" id="resume_phone" placeholder="" value="" maxlength="" />
+                                    </div>
+                                </fieldset>
+
                                 <br><br>
                         <div style="width:240px; float:right ">
                         <p>
@@ -240,7 +477,7 @@
                             <input type="hidden" name="resume_id" value="0" />
                             <input type="hidden" name="job_id" value="0" />
                             <input type="hidden" name="step" value="1" />
-                            <input style="background-color: darkblue; opacity:0.7; text-align:center; border-radius:8px" type="submit" name="submit_resume" value="Registrar" onclick="location.href = '/UsuarioLoginDTO/Registro'" />
+                            <input style="background-color: darkblue; opacity:0.7; text-align:center; border-radius:8px" type="submit" name="submit_resume" value="Actualizar" onclick="location.href = '/UsuarioLoginDTO/Registro'" />
                          </p>
                         
 </div>

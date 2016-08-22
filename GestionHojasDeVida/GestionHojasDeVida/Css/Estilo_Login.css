@@ -36,8 +36,8 @@
 
 .header{
 	position: absolute;
-	top: calc(30% - 35px);
-	left: calc(50% - 220px);
+	top: calc(20% - 35px);
+	left: calc(50% - 270px);
     width: auto;
 	z-index: 2;
 
@@ -46,14 +46,14 @@
 .header div{
 	float: left;
 	color: #000;
-	font-family: 'Exo', sans-serif;
-	font-size: 50px;
+	font-family: "Advertising Script", sans-serif;
+	font-size: 70px;
 	font-weight: 600;
 
 }
 
 .header div span{
-	color: #5379fa !important;
+	color: darkblue !important;
 }
 .prueba div{
     position: absolute;
@@ -75,6 +75,7 @@
 	width: auto;
 	padding: 10px;
 	z-index: 2;
+    border-radius:8px;
 
 }
 
@@ -89,6 +90,7 @@
 	font-size: 16px;
 	font-weight: 400;
 	padding: 4px;
+    border-radius:8px;
 }
 
 
@@ -104,21 +106,23 @@
 	font-weight: 400;
 	padding: 4px;
 	margin-top: 10px;
+    border-radius:8px;
 }
 .login input[type=button]{
 	width: 260px;
 	height: 35px;
-	background: #5379fa;
+	background: darkblue;
 	border: 1px solid #fff;
 	cursor: pointer;
 	border-radius: 2px;
-	color: #000;
+	color: white;
     font-weight: bolder ;
 	font-family: 'Exo', sans-serif;
 	font-size: 16px;
 		padding: 6px;
 	margin-top: 10px;
     opacity: 0.8;
+    border-radius:8px;
 }
 
 .login input[type=text]:focus{
