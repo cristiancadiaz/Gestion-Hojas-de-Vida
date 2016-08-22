@@ -113,19 +113,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\RegistroUsuarioDTOController.cs" />
     <Compile Include="Controllers\UsuarioLoginDTOController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Conexion.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\LoginDao.cs" />
+    <Compile Include="Models\RegistroUsuarioDao.cs" />
     <Compile Include="Models\UsuarioLoginDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
-    <Content Include="Views\UsuarioLoginDTO\Index.cshtml" />
+    <Content Include="Views\UsuarioLoginDTO\Login.cshtml" />
     <Content Include="DiagramaLogin.cd" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -133,9 +136,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\View.cshtml" />
-    <Content Include="Views\UsuarioLoginDTO\Registro.cshtml" />
     <Content Include="Views\UsuarioLoginDTO\Main.cshtml" />
     <Content Include="Views\UsuarioLoginDTO\Registro_Completo.cshtml" />
+    <Content Include="Views\RegistroUsuarioDTO\Registro.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
