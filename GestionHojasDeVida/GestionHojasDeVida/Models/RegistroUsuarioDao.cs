@@ -7,15 +7,18 @@ using System.Web.Mvc;
 
 namespace GestionHojasDeVida.Models
 {
+    
     public class RegistroUsuarioDao
     {
+        //RegistroUsuarioDto rudto = new RegistroUsuarioDto();
         Conexion cbd = new Conexion();
 
         [ValidateAntiForgeryToken]
-        public void InsertUsuario()
+        public void InsertUsuario(RegistroUsuarioDto rudto)
         {
             cbd.OpenConnection();
-            cbd.InsercionRegistro("INSERT INTO Usuario");
+            cbd.EjecutaQuery("INSERT INTO Usuario(tipoDocumento,numDocumento,nombres,apellidos,correo,contraseña,direccion,telefono) VALUES('"+rudto.Tipo_Documento +"','"+ rudto.Num_Documento+"','"+ rudto.Nombres +"','"+ rudto.Apellidos+"','"+ rudto.Email+"','"+
+                                  rudto.Password+"','"+ rudto.Direccion+"','"+ rudto.Telefono+"')");
         }
     }
 }

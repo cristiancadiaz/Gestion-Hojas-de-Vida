@@ -15,25 +15,19 @@ namespace GestionHojasDeVida.Controllers
 
         // GET: UsuarioDTO
         
-        public ActionResult Index()
+        public ActionResult Login()
         {
                         
             return View();
         }
-        public ActionResult Registro()
-        {
-            return View();
-        }
+        
         public ActionResult Main()
         {
             return View();
         }
-        public ActionResult Registro_Completo()
-        {
-            return View();
-        }
+       
         [HttpPost]
-        public ActionResult Login(FormCollection form)
+        public ActionResult AccedeUsuario(FormCollection form)
         {
             var username = form["TextUser"];
             var password = form["TextPassword"];

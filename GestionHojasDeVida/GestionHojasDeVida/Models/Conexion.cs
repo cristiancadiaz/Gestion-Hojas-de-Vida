@@ -60,7 +60,7 @@ namespace GestionHojasDeVida.Models
             }
         }
 
-        public int InsercionRegistro(string sql)
+        public int EjecutaQuery(string sql)
         {
             int LastID = 0;
             string query = sql + "SELECT @@Identity;";
@@ -75,12 +75,14 @@ namespace GestionHojasDeVida.Models
                 return this.Toint(LastID);
 
             }
-            catch
+            catch (Exception e)
             {
                 return 0;
             }
            
            
         }
+        
+
     }
 }
