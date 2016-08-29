@@ -139,7 +139,8 @@
     <Content Include="Views\View.cshtml" />
     <Content Include="Views\UsuarioLoginDTO\Main.cshtml" />
     <Content Include="Views\UsuarioLoginDTO\Registro_Completo.cshtml" />
-    <Content Include="Views\RegistroUsuarioDTO\Registro.cshtml" />
+    <Content Include="Views\RegistroUsuarioDTO\Index.cshtml" />
+    <Content Include="Views\RegistroUsuarioDTO\pruba.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

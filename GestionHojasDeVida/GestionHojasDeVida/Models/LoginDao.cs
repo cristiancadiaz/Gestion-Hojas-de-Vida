@@ -12,22 +12,15 @@ namespace GestionHojasDeVida.Models
 
         public int Autenticar(string username, string password)
         {
-            
-           int id = con.EjecutaQuery("SELECT * FROM Clase_Usuario WHERE Usuario = " + "'" + username + "'" + " AND " + "Password = " + "'" + password + "'");
-            if(id == 1)
-            {
-                return 1;
-            }
-            else
-            {
-                return 0;
-            }
-            
+
+         //   int id = con.EjecutaQuery("SELECT * FROM Clase_Usuario WHERE Usuario = " + "'" + username + "'" + " AND " + "Password = " + "'" + password + "'");
+           
+            return 0;
         }
 
         public void Crear()
         {
-           
+
         }
     }
 }
