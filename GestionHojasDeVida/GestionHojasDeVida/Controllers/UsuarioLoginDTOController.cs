@@ -20,12 +20,17 @@ namespace GestionHojasDeVida.Controllers
                         
             return View();
         }
-        
+        public ActionResult Registro_Completo()
+        {
+
+            return View();
+        }
+
         public ActionResult Main()
         {
             return View();
         }
-       
+        
         [HttpPost]
         public ActionResult AccedeUsuario(FormCollection form)
         {

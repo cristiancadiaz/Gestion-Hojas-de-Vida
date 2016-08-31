@@ -15,7 +15,7 @@ namespace GestionHojasDeVida.Controllers
         {
             return View();
         }
-
+        
         [HttpPost]
         public ActionResult Registro(RegistroUsuarioDto rudto)
         {
