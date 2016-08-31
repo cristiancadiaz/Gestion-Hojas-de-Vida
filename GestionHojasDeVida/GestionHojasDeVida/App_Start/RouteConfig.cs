@@ -16,7 +16,7 @@ namespace GestionHojasDeVida
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "RegistroUsuarioDTO", action = "Registro", id = UrlParameter.Optional }
+                defaults: new { controller = "RegistroUsuarioDTO", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

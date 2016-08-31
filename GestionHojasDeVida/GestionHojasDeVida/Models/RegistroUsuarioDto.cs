@@ -9,8 +9,9 @@ namespace GestionHojasDeVida.Models
     public class RegistroUsuarioDto
     {
         public int Id { get; set; }
+        public TipoContrato Tipo_Contrato { get; set; }
         [Required]
-        public int Tipo_Documento { get; set; }
+        public TipoDocumento Tipo_Documento { get; set; }
         [Required]
         public int Num_Documento { get; set; }
         [Required]
@@ -19,13 +20,26 @@ namespace GestionHojasDeVida.Models
         public string Apellidos { get; set; }
         [Required]
         public string Email { get; set; }
-        [Required]
         public string Password { get; set; }
         [Required]
-        public string Direccion { get; set; }
-        [Required]
-        public int Telefono { get; set; }
+        public string ConfirmPass { get; set; }
+
+        public string Cargo { get; set; }
+
+        public string Salario { get; set; }
 
 
+    }
+    public enum TipoContrato
+    {
+        Indefinido,
+        PorObraLabor,
+        PrestacionDeServicios
+    }
+    public enum TipoDocumento
+    {
+        CedulaDeCiudadania,
+        CedulaExtranjeria,
+        Pasaporte
     }
 }

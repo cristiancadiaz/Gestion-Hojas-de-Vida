@@ -11,23 +11,25 @@ namespace GestionHojasDeVida.Controllers
     {
         RegistroUsuarioDao rudao = new RegistroUsuarioDao();
         // GET: RegistroUsuarioDao
-        public ActionResult Registro()
+        public ActionResult Index()
         {
-
-
             return View();
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Datos(RegistroUsuarioDto rudto)
+        public ActionResult Registro(RegistroUsuarioDto rudto)
         {
-            if(ModelState.IsValid)
+
+            if (ModelState.IsValid)
             {
-                
-                rudao.InsertUsuario(rudto);
+
+               rudao.InsertUsuario(rudto);
             }
-            return View("Registro");
+            return View("Index");
+        }
+        public ActionResult pruba()
+        {
+            return View();
         }
     }
 }

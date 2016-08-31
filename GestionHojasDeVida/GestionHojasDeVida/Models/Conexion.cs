@@ -4,85 +4,29 @@ using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
 using System.Web.Configuration;
+using System.Configuration;
+using System.Data.Common;
 
 namespace GestionHojasDeVida.Models
 {
     public class Conexion
     {
-        // crear la primera conexion 
-        protected SqlConnection SqlCon;
 
-        public bool OpenConnection(string Connection = "ConexionGestionHv")
+        public static string constr
         {
-            // aca se conecta a la BD
-            SqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings[Connection].ToString());
-
-            try
-            {
-                bool Test = true;
-                if (SqlCon.State.ToString() == "open")
-                {
-                    SqlCon.Open();
-                }
-                return Test;
-            }
-            catch (Exception Ex)
-            {
-
-                return false;
-            }
-
+            get { return ConfigurationManager.ConnectionStrings["ConexionGestionHv"].ConnectionString; }
         }
-        public bool CloseConnection()
+        public static string provider
         {
-            try
+            get { return ConfigurationManager.ConnectionStrings["ConexionGestionHv"].ProviderName; }
+        }
+        public static DbProviderFactory dpf
+        {
+            get
             {
-                SqlCon.Close();
-                return true;
-            }
-            catch (Exception)
-            {
-
-                return false;
+                return DbProviderFactories.GetFactory(provider);
             }
         }
-        // fin de la conexion
-        public int Toint(object s)
-        {
-            try
-            {
-                return Int32.Parse(s.ToString());
-            }
-            catch 
-            {
-
-                return 0;
-            }
-        }
-
-        public int EjecutaQuery(string sql)
-        {
-            int LastID = 0;
-            string query = sql + "SELECT @@Identity;";
-            try
-            {
-                if (SqlCon.State.ToString() == "Open")
-                {
-                    SqlCommand cmd = new SqlCommand(query, SqlCon);
-                    cmd.ExecuteNonQuery();
-                    LastID = this.Toint(cmd.ExecuteScalar());
-                }
-                return this.Toint(LastID);
-
-            }
-            catch (Exception e)
-            {
-                return 0;
-            }
-           
-           
-        }
-        
 
     }
 }

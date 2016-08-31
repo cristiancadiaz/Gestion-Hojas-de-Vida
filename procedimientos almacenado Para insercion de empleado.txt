@@ -1,0 +1,47 @@
+USE [GestionHv]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_INSERTAUSUARIO]    Script Date: 29/08/2016 12:11:06 a.m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		Omar Manjarres Forero
+-- Create date: 28/08/2016
+-- Description:	Inserta los datos del usuario registrado en la empresa
+-- =============================================
+ALTER PROCEDURE [dbo].[SP_INSERTAUSUARIO] 
+	-- Add the parameters for the stored procedure here
+	@Tipo_Contrato varchar(50),
+	@Tipo_Documento varchar(50),
+	@Numero_Documento int,
+	@Nombres varchar(100),
+	@Apellidos varchar(100),
+	@Email varchar(100),
+	@Password varchar(50),
+	@Cargo varchar(50),
+	@Salario varchar(50) 
+	
+AS
+BEGIN
+	INSERT INTO [dbo].[BasicInfoEmpleado]
+           ([Tipo_Contrato]
+           ,[Tipo_Documento]
+           ,[Num_Documento]
+           ,[Nombres]
+           ,[Apellidos]
+           ,[Email]
+           ,[Contraseña]
+           ,[Cargo]
+           ,[Salario])
+     VALUES
+           (@Tipo_Contrato, 
+            @Tipo_Documento,
+            @Numero_Documento, 
+            @Nombres, 
+            @Apellidos, 
+            @Email, 
+            @Password, 
+            @Cargo, 
+            @Salario)
+END
