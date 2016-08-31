@@ -33,11 +33,18 @@ namespace GestionHojasDeVida.Controllers
             var password = form["TextPassword"];
             var logindto = new UsuarioLoginDTO(username,password);
             var logindao = new LoginDao();
-            logindao.Autenticar(logindto.uld_user,logindto.uld_pass);
+            int resultado = logindao.Autenticar(logindto.uld_user,logindto.uld_pass);
 
-         
-
-            return View();
+            if(resultado == 1)
+            {
+               return RedirectToAction("Index", "RegistroUsuarioDTO");
+            }
+            else
+            {
+                ViewBag.mensaje = "NO existe el usuario";
+                return View("Login");
+            }
+            
         }
         [HttpPost]
         public ActionResult create()

@@ -113,12 +113,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HojaVidaDtoController.cs" />
     <Compile Include="Controllers\RegistroUsuarioDTOController.cs" />
     <Compile Include="Controllers\UsuarioLoginDTOController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Conexion.cs" />
+    <Compile Include="Models\HojaVidaDao.cs" />
+    <Compile Include="Models\HojaVidaDto.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\LoginDao.cs" />
     <Compile Include="Models\RegistroUsuarioDao.cs" />
@@ -138,9 +141,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\View.cshtml" />
     <Content Include="Views\UsuarioLoginDTO\Main.cshtml" />
-    <Content Include="Views\UsuarioLoginDTO\Registro_Completo.cshtml" />
     <Content Include="Views\RegistroUsuarioDTO\Index.cshtml" />
     <Content Include="Views\RegistroUsuarioDTO\pruba.cshtml" />
+    <Content Include="Views\HojaVidaDto\Index.cshtml" />
+    <Content Include="Views\HojaVidaDto\ActualizaHV.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

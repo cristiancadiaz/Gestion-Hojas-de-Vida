@@ -23,9 +23,22 @@ namespace GestionHojasDeVida.Controllers
             if (ModelState.IsValid)
             {
 
-               rudao.InsertUsuario(rudto);
+             int resultado = rudao.InsertUsuario(rudto);
+                if(resultado == 0)
+                {
+                    return RedirectToAction("Index", "HojaVidaDto");
+                }
+                else
+                {
+                    ModelState.AddModelError("Error", "No se ha registrado el usuario revisar!!!");
+                    return View("Index");
+                }
             }
-            return View("Index");
+            else
+            {
+                return View("Index");
+            }
+         
         }
         public ActionResult pruba()
         {

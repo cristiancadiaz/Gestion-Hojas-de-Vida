@@ -1,4 +1,5 @@
-﻿
+﻿@model GestionHojasDeVida.Models.HojaVidaDto
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -12,11 +13,7 @@
     <title>Registro HV</title>
     <link rel="alternate" type="application/rss+xml" title="JobsDojo &raquo; Feed" href="http://alexgurghis.com/themes/jobsdojo/feed/" />
     <link rel="alternate" type="application/rss+xml" title="JobsDojo &raquo; Comments Feed" href="http://alexgurghis.com/themes/jobsdojo/comments/feed/" />
-    <script type="text/javascript">
-        window._wpemojiSettings = { "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/72x72\/", "ext": ".png", "source": { "concatemoji": "http:\/\/alexgurghis.com\/themes\/jobsdojo\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.5.3" } };
-        !function (a, b, c) { function d(a) { var c, d, e, f = b.createElement("canvas"), g = f.getContext && f.getContext("2d"), h = String.fromCharCode; if (!g || !g.fillText) return !1; switch (g.textBaseline = "top", g.font = "600 32px Arial", a) { case "flag": return g.fillText(h(55356, 56806, 55356, 56826), 0, 0), f.toDataURL().length > 3e3; case "diversity": return g.fillText(h(55356, 57221), 0, 0), c = g.getImageData(16, 16, 1, 1).data, d = c[0] + "," + c[1] + "," + c[2] + "," + c[3], g.fillText(h(55356, 57221, 55356, 57343), 0, 0), c = g.getImageData(16, 16, 1, 1).data, e = c[0] + "," + c[1] + "," + c[2] + "," + c[3], d !== e; case "simple": return g.fillText(h(55357, 56835), 0, 0), 0 !== g.getImageData(16, 16, 1, 1).data[0]; case "unicode8": return g.fillText(h(55356, 57135), 0, 0), 0 !== g.getImageData(16, 16, 1, 1).data[0] } return !1 } function e(a) { var c = b.createElement("script"); c.src = a, c.type = "text/javascript", b.getElementsByTagName("head")[0].appendChild(c) } var f, g, h, i; for (i = Array("simple", "flag", "unicode8", "diversity"), c.supports = { everything: !0, everythingExceptFlag: !0 }, h = 0; h < i.length; h++) c.supports[i[h]] = d(i[h]), c.supports.everything = c.supports.everything && c.supports[i[h]], "flag" !== i[h] && (c.supports.everythingExceptFlag = c.supports.everythingExceptFlag && c.supports[i[h]]); c.supports.everythingExceptFlag = c.supports.everythingExceptFlag && !c.supports.flag, c.DOMReady = !1, c.readyCallback = function () { c.DOMReady = !0 }, c.supports.everything || (g = function () { c.readyCallback() }, b.addEventListener ? (b.addEventListener("DOMContentLoaded", g, !1), a.addEventListener("load", g, !1)) : (a.attachEvent("onload", g), b.attachEvent("onreadystatechange", function () { "complete" === b.readyState && c.readyCallback() })), f = c.source || {}, f.concatemoji ? e(f.concatemoji) : f.wpemoji && f.twemoji && (e(f.twemoji), e(f.wpemoji))) }(window, document, window._wpemojiSettings);
-    </script>
-
+    
     <link rel='stylesheet' id='woocommerce-layout-css' href='//alexgurghis.com/themes/jobsdojo/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css?ver=2.5.5' type='text/css' media='all' />
     <link rel='stylesheet' id='woocommerce-smallscreen-css' href='//alexgurghis.com/themes/jobsdojo/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?ver=2.5.5' type='text/css' media='only screen and (max-width: 768px)' />
     <link rel='stylesheet' id='woocommerce-general-css' href='//alexgurghis.com/themes/jobsdojo/wp-content/plugins/woocommerce/assets/css/woocommerce.css?ver=2.5.5' type='text/css' media='all' />
@@ -145,35 +142,19 @@
 
                     <article id="post-55" class="post-55 page type-page status-publish hentry">
                         <div class="entry-content">
-                            <form action="/themes/jobsdojo/submit-resume/" method="post" id="submit-resume-form" class="job-manager-form" enctype="multipart/form-data">
-
-
-
-
-
-
+                            <form action="@Url.Action("ActualizaHV", "HojaVidaDto")" method="post" id="submit-resume-form" class="job-manager-form" enctype="multipart/form-data">
                                 <!-- Resume Fields -->
                                 <fieldset class="fieldset-resume_category">
                                     <label for="resume_category">Tipo de Contrato</label>
                                     <div class="field">
-                                        <select name='txtTipoContrato' class='job-manager-category-dropdown ' data-placeholder='Selecciona un tipo de Contrato&hellip;' data-no_results_text='No results match' data-multiple_text='Select Some Options'>
-                                            <option class="level-0" value="01">Indefinido</option>
-                                            <option class="level-0" value="02">Por Obra o Labor</option>
-                                            <option class="level-0" value="03">Prestacion de Servicios</option>
-
-                                        </select>
+                                        @ViewBag.Tipo_Contrato
                                     </div>
                                 </fieldset>
 
                                 <fieldset class="fieldset-resume_category">
                                     <label for="resume_category">Tipo de Documento</label>
                                     <div class="field">
-                                        <select name='txtTipoDocumento' class='job-manager-category-dropdown ' data-placeholder='Choose a category&hellip;' data-no_results_text='No results match' data-multiple_text='Select Some Options' readonly="readonly">
-                                            <option class="level-0" value="01">Cedula de Ciudadania</option>
-                                            <option class="level-0" value="02">Cedula Extranjeria</option>
-                                            <option class="level-0" value="03">Pasaporte</option>
-
-                                        </select>
+                                        @ViewBag.Tipo_Documento
                                     </div>
                                 </fieldset>
 
@@ -181,7 +162,7 @@
                                 <fieldset class="fieldset-candidate_name">
                                     <label for="candidate_name">No Documento</label>
                                     <div class="field">
-                                        <input type="number" class="input-text" name="txtDocumento" placeholder="Numero de Documento" value="" maxlength="" readonly="readonly" required />
+                                        @ViewBag.NumDocumento
                                     </div>
                                 </fieldset>
 
@@ -189,97 +170,80 @@
                                 <fieldset class="fieldset-candidate_name">
                                     <label for="candidate_name">Nombres</label>
                                     <div class="field">
-                                        <input type="text" class="input-text" name="txtnombres" placeholder="Nombre Completo" value="" maxlength="" readonly="readonly" required />
+                                        @ViewBag.Nombres
                                     </div>
                                 </fieldset>
 
                                 <fieldset class="fieldset-candidate_name">
                                     <label for="candidate_name">Apellidos</label>
                                     <div class="field">
-                                        <input type="text" class="input-text" name="txtapellidos" placeholder="Apellido Completo" value="" maxlength="" readonly="readonly" required />
+                                        @ViewBag.Apellidos
                                     </div>
                                 </fieldset>
 
                                 <fieldset class="fieldset-candidate_email">
                                     <label for="candidate_email">Correo Electronico</label>
                                     <div class="field">
-                                        <input type="email" class="input-text" name="txtCorreo" placeholder="usuario@dominio.com" value="" maxlength="" readonly="readonly" required />
+                                        @ViewBag.Email
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="fieldset-candidate_title">
-                                    <label for="candidate_title">Contraseña</label>
-                                    <div class="field">
-                                        <input type="password" class="input-text" name="txtClave" placeholder="********" value="" maxlength="" readonly="readonly" required />
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="fieldset-candidate_title">
-                                    <label for="candidate_title">Confirmar Contraseña</label>
-                                    <div class="field">
-                                        <input type="password" class="input-text" name="txtClave2" placeholder="********" value="" maxlength=""readonly="readonly" required />
-                                    </div>
-                                </fieldset>
                                 <fieldset class="fieldset-candidate_location">
                                     <label for="candidate_location">Cargo</label>
                                     <div class="field">
-                                        <input type="text" class="input-text" name="txtCargo" placeholder="Cargo" value="" maxlength="" readonly="readonly" required />
+                                        @ViewBag.Cargo
                                     </div>
                                 </fieldset>
 
                                 <fieldset class="fieldset-candidate_location">
                                     <label for="candidate_location">Salario</label>
                                     <div class="field">
-                                        <input type="number" class="input-text" name="txtSalario" placeholder="Salario" value="" maxlength="" readonly="readonly" required />
+                                        @ViewBag.Salario
                                     </div>
                                 </fieldset>
 
                                 <fieldset class="fieldset-candidate_location">
                                     <label for="candidate_location">Direccion</label>
                                     <div class="field">
-                                        <input type="text" class="input-text" name="candidate_location" id="txtDireccion" placeholder="Ej Calle.." value="" maxlength="" required />
+                                        @Html.TextBoxFor(m => m.Direccion, new { @class = "input-text", placeholder = "Ej Calle.." })
                                     </div>
                                 </fieldset>
 
                                 <fieldset class="fieldset-candidate_location">
                                     <label for="candidate_location">Telefono</label>
                                     <div class="field">
-                                        <input type="text" class="input-text" name="candidate_location" id="txtTelefono" placeholder="Ej Calle.." value="" maxlength="" required />
+                                        @Html.TextBoxFor(m => m.Telefono, new { @class = "input-text", placeholder = "Telefono" })
                                     </div>
                                 </fieldset>
 
                                 <fieldset class="fieldset-candidate_location">
                                     <label for="candidate_location">Celular</label>
                                     <div class="field">
-                                        <input type="text" class="input-text" name="candidate_location" id="txtCelular" placeholder="Ej Calle.." value="" maxlength="" required />
+                                        @Html.TextBoxFor(m => m.Celular, new { @class = "input-text", placeholder = "Celular" })
                                     </div>
                                 </fieldset>
 
                                 <fieldset class="fieldset-resume_tagline">
                                     <label for="resume_tagline">Perfil Personal<small>(opcional)</small></label>
                                     <div class="field">
-                                        <textarea cols="20" rows="3" class="input-text" name="resume_tagline" id="resume_tagline" placeholder="" maxlength=""></textarea>
+                                        @Html.TextAreaFor(m => m.perfil_Personal,new {@class = "input-text", cols = "20", rows = "3", placeholder = "" })
                                         <small class="field-description">Una breve descripcion de personalidad</small>
                                     </div>
                                 </fieldset>
                                 <fieldset class="fieldset-resume_salary">
                                     <label for="resume_salary">Aspiracion Salarial <small>(opcional)</small></label>
                                     <div class="field">
-                                        <input type="text" class="input-text" name="resume_salary" id="resume_salary" placeholder="" value="" maxlength="" />
+                                        @Html.TextBoxFor(m => m.AspiracionSalarial, new { @class = "input-text" })
                                     </div>
                                 </fieldset>
                                 <fieldset class="fieldset-resume_category">
                                     <label for="resume_category">Equivalente al cargo</label>
                                     <div class="field">
-                                        <select name='resume_category[]' id='resume_category' class='job-manager-category-dropdown ' multiple='multiple' data-placeholder='Choose a category&hellip;' data-no_results_text='No results match' data-multiple_text='Select Some Options'>
-                                            <option class="level-0" value="84">Asistente Administrativo</option>
-                                            <option class="level-0" value="23">Agricultura</option>
-                                            <option class="level-0" value="58">Recursos Humanos</option>
-                                            <option class="level-0" value="80">Tecnologias de la Informacion</option>
-                                            <option class="level-0" value="64">Analista de Mercado</option>
-                                            <option class="level-0" value="54">Fotografia</option>
-
-                                        </select>
+                                       @Html.EnumDropDownListFor(
+                                              x => x.Equivalente_cargo,
+                                         "Selecciona la categoria",
+                                        new { @class = "job-manager-category-dropdown",
+                                            placeholder = "Choose a category&hellip" })
                                     </div>
                                 </fieldset>
                                 <fieldset class="fieldset-resume_content">
@@ -288,7 +252,7 @@
                                         <div id="wp-resume_content-wrap" class="wp-core-ui wp-editor-wrap tmce-active">
                                             <link rel='stylesheet' id='dashicons-css' href='http://alexgurghis.com/themes/jobsdojo/wp-includes/css/dashicons.min.css?ver=4.5.3' type='text/css' media='all' />
                                             <link rel='stylesheet' id='editor-buttons-css' href='http://alexgurghis.com/themes/jobsdojo/wp-includes/css/editor.min.css?ver=4.5.3' type='text/css' media='all' />
-                                            <div id="wp-resume_content-editor-container" class="wp-editor-container"><textarea class="wp-editor-area" rows="8" autocomplete="off" cols="40" name="resume_content" id="resume_content"></textarea></div>
+                                            <div id="wp-resume_content-editor-container" class="wp-editor-container">@Html.TextAreaFor(m => m.perfil_Profesional,new { @class="wp-editor-area", rows = "8", autocomplete = "off", cols = "40" })</div>
                                         </div>
 
                                     </div>
@@ -361,130 +325,29 @@
                                         ">+ Adicionar Experiencia</a>
                                     </div>
                                 </fieldset>
-                                <fieldset class="fieldset-resume_skill_1_title">
-                                    <label for="resume_skill_1_title">Habilidad #1 Descripcion <small>(optional)</small></label>
-                                    <div class="field">
-                                        <input type="text" class="input-text" name="resume_skill_1_title" id="resume_skill_1_title" placeholder="" value="" maxlength="" />
-                                    </div>
-                                </fieldset>
-                                <fieldset class="fieldset-resume_skill_1_value">
-                                    <label for="resume_skill_1_value">Habilidad #1 Valor <small>(optional)</small></label>
-                                    <div class="field">
-                                        <input type="text" class="input-text" name="resume_skill_1_value" id="resume_skill_1_value" placeholder="70%" value="" maxlength="" />
-                                    </div>
-                                </fieldset>
-                                <fieldset class="fieldset-resume_skill_2_title">
-                                    <label for="resume_skill_2_title">Habilidad #2 Descripcion <small>(optional)</small></label>
-                                    <div class="field">
-                                        <input type="text" class="input-text" name="resume_skill_2_title" id="resume_skill_2_title" placeholder="" value="" maxlength="" />
-                                    </div>
-                                </fieldset>
-                                <fieldset class="fieldset-resume_skill_2_value">
-                                    <label for="resume_skill_2_value">Habilidad #2 Valor <small>(optional)</small></label>
-                                    <div class="field">
-                                        <input type="text" class="input-text" name="resume_skill_2_value" id="resume_skill_2_value" placeholder="70%" value="" maxlength="" />
-                                    </div>
-                                </fieldset>
-                                <fieldset class="fieldset-resume_skill_3_title">
-                                    <label for="resume_skill_3_title">Habilidad #3 Descripcion <small>(optional)</small></label>
-                                    <div class="field">
-                                        <input type="text" class="input-text" name="resume_skill_3_title" id="resume_skill_3_title" placeholder="" value="" maxlength="" />
-                                    </div>
-                                </fieldset>
-                                <fieldset class="fieldset-resume_skill_3_value">
-                                    <label for="resume_skill_3_value">Habilidad #3 Valor <small>(optional)</small></label>
-                                    <div class="field">
-                                        <input type="text" class="input-text" name="resume_skill_3_value" id="resume_skill_3_value" placeholder="70%" value="" maxlength="" />
-                                    </div>
-                                </fieldset>
-                                <fieldset class="fieldset-resume_skill_4_title">
-                                    <label for="resume_skill_4_title">Habilidad #4 Descripcion <small>(optional)</small></label>
-                                    <div class="field">
-                                        <input type="text" class="input-text" name="resume_skill_4_title" id="resume_skill_4_title" placeholder="" value="" maxlength="" />
-                                    </div>
-                                </fieldset>
-                                <fieldset class="fieldset-resume_skill_4_value">
-                                    <label for="resume_skill_4_value">Habilidad #4 Valor <small>(optional)</small></label>
-                                    <div class="field">
-                                        <input type="text" class="input-text" name="resume_skill_4_value" id="resume_skill_4_value" placeholder="70%" value="" maxlength="" />
-                                    </div>
-                                </fieldset>
-                                <fieldset class="fieldset-resume_skill_5_title">
-                                    <label for="resume_skill_5_title">Habilidad #5 Descripcion<small>(optional)</small></label>
-                                    <div class="field">
-                                        <input type="text" class="input-text" name="resume_skill_5_title" id="resume_skill_5_title" placeholder="" value="" maxlength="" />
-                                    </div>
-                                </fieldset>
-                                <fieldset class="fieldset-resume_skill_5_value">
-                                    <label for="resume_skill_5_value">Habilidad #5 Valor <small>(optional)</small></label>
-                                    <div class="field">
-                                        <input type="text" class="input-text" name="resume_skill_5_value" id="resume_skill_5_value" placeholder="70%" value="" maxlength="" />
-                                    </div>
-                                </fieldset>
-                                <fieldset class="fieldset-resume_skill_6_title">
-                                    <label for="resume_skill_6_title">Habilidad #6 Descripcion <small>(optional)</small></label>
-                                    <div class="field">
-                                        <input type="text" class="input-text" name="resume_skill_6_title" id="resume_skill_6_title" placeholder="" value="" maxlength="" />
-                                    </div>
-                                </fieldset>
-                                <fieldset class="fieldset-resume_skill_6_value">
-                                    <label for="resume_skill_6_value">Habilidad #6 Valor <small>(optional)</small></label>
-                                    <div class="field">
-                                        <input type="text" class="input-text" name="resume_skill_6_value" id="resume_skill_6_value" placeholder="70%" value="" maxlength="" />
-                                    </div>
-                                </fieldset>
-                                <fieldset class="fieldset-resume_languages">
-                                    <label for="resume_languages">Idiomas <small>(opcional)</small></label>
-                                    <div class="field">
-                                        <input type="text" class="input-text" name="resume_languages" id="resume_languages" placeholder="" value="" maxlength="" />
-                                    </div>
-                                </fieldset>
-                                <fieldset class="fieldset-resume_availability">
-                                    <label for="resume_availability">Availability <small>(optional)</small></label>
-                                    <div class="field">
-                                        <input type="text" class="input-text" name="resume_availability" id="resume_availability" placeholder="" value="" maxlength="" />
-                                    </div>
-                                </fieldset>
-                                <fieldset class="fieldset-resume_awards">
-                                    <label for="resume_awards">Awards <small>(optional)</small></label>
-                                    <div class="field">
-                                        <input type="text" class="input-text" name="resume_awards" id="resume_awards" placeholder="" value="" maxlength="" />
-                                    </div>
-                                </fieldset>
+                             
                                 <fieldset class="fieldset-resume_hobbies">
                                     <label for="resume_hobbies">Hobbies <small>(optional)</small></label>
                                     <div class="field">
-                                        <input type="text" class="input-text" name="resume_hobbies" id="resume_hobbies" placeholder="" value="" maxlength="" />
-                                    </div>
-                                </fieldset>
-                                <fieldset class="fieldset-resume_skills">
-                                    <label for="resume_skills">Skills <small>(optional)</small></label>
-                                    <div class="field">
-                                        <input type="text" class="input-text" name="resume_skills" id="resume_skills" placeholder="Comma separate a list of relevant skills" value="" maxlength="" />
-                                    </div>
-                                </fieldset>
-                                <fieldset class="fieldset-resume_phone">
-                                    <label for="resume_phone">Phone <small>(optional)</small></label>
-                                    <div class="field">
-                                        <input type="text" class="input-text" name="resume_phone" id="resume_phone" placeholder="" value="" maxlength="" />
+                                        @Html.TextBoxFor(m => m.Hobbies,new { @class= "input-text" })
                                     </div>
                                 </fieldset>
 
                                 <br><br>
-                        <div style="width:240px; float:right ">
-                        <p>
-                            <input type="hidden" id="_wpnonce" name="_wpnonce" value="234ae6f3fb" /><input type="hidden" name="_wp_http_referer" value="/themes/jobsdojo/submit-resume/" />			<input type="hidden" name="resume_manager_form" value="submit-resume" />
-                            <input type="hidden" name="resume_id" value="0" />
-                            <input type="hidden" name="job_id" value="0" />
-                            <input type="hidden" name="step" value="1" />
-                            <input style="background-color: darkblue; opacity:0.7; text-align:center; border-radius:8px" type="submit" name="submit_resume" value="Actualizar" onclick="location.href = '/UsuarioLoginDTO/Registro'" />
-                         </p>
-                        
-</div>
+                                <div style="width:240px; float:right ">
+                                    <p>
+                                        <input type="hidden" id="_wpnonce" name="_wpnonce" value="234ae6f3fb" /><input type="hidden" name="_wp_http_referer" value="/themes/jobsdojo/submit-resume/" /><input type="hidden" name="resume_manager_form" value="submit-resume" />
+                                        <input type="hidden" name="resume_id" value="0" />
+                                        <input type="hidden" name="job_id" value="0" />
+                                        <input type="hidden" name="step" value="1" />
+                                        <input style="background-color: darkblue; opacity:0.7; text-align:center; border-radius:8px" type="submit" name="submit_resume" value="Actualizar"/>
+                                    </p>
+
+                                </div>
                                 <br><br>
 
-                        </form>
-</div><!-- .entry-content -->
+                            </form>
+                        </div><!-- .entry-content -->
                     </article><!-- #post -->
 
                 </div>
