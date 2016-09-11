@@ -79,6 +79,11 @@
 
 }
 
+.mensaje {
+font-family: 'Exo', sans-serif;
+color: #000;
+}
+
 .login input[type=text]{
 	width: 250px;
 	height: 30px;
@@ -108,7 +113,7 @@
 	margin-top: 10px;
     border-radius:8px;
 }
-.login input[type=button]{
+.login input[type=submit]{
 	width: 260px;
 	height: 35px;
 	background: darkblue;

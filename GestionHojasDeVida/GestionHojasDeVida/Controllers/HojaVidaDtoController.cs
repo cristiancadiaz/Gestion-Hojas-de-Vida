@@ -46,5 +46,15 @@ namespace GestionHojasDeVida.Controllers
             return View("Index");
         }
 
+        public ActionResult Experiencia()
+        {
+            return View();
+        }
+
+        public ActionResult Estudio()
+        {
+            return View();
+        }
+
     }
 }
