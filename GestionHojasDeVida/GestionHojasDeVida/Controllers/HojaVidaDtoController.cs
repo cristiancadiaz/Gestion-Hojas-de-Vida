@@ -40,7 +40,10 @@ namespace GestionHojasDeVida.Controllers
             return View();
         }
 
-       
+        public ActionResult Estudio()
+        {
+            return View();
+        }
 
     }
 }
