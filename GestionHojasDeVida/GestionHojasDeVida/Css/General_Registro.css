@@ -108,14 +108,14 @@ img.emoji {
 
     .header div {
         float: left;
-        color: lightgray;
+        color: #dae2ff;
         font-family: "Advertising Script";
         font-size: 30px;
         font-weight: 600;
     }
 
         .header div span {
-            color: lightgray !important;
+            color: #dae2ff !important;
         }
        
         .encabezado div{
