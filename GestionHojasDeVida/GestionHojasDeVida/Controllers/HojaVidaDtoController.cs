@@ -11,10 +11,10 @@ namespace GestionHojasDeVida.Controllers
     {
         HojaVidaDao daohv = new HojaVidaDao();
         // GET: HojaVida
-        public ActionResult Index()
+        public ActionResult Index(int id)
         {
             var informacionEmpleado = new HojaVidaDto();
-            int numIdentificacion = 80858465;
+            int numIdentificacion = id;
             informacionEmpleado = daohv.ConsultaEmpleado(numIdentificacion);
 
             ViewBag.Tipo_Contrato = informacionEmpleado.Tipo_Contrato;
@@ -31,8 +31,19 @@ namespace GestionHojasDeVida.Controllers
         [HttpPost]
         public ActionResult ActualizaHV(HojaVidaDto hv)
         {
+            daohv.ActualizaHv(hv);
+            return View();
+        }
+        public ActionResult ListadoEmpleados()
+        {
 
             return View();
+        }
+        
+        public ActionResult ConsultaEmpleado(int Identificacion)
+        {
+            
+            return View("Index");
         }
 
     }

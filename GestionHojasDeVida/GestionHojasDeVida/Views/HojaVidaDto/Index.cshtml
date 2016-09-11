@@ -142,7 +142,7 @@
 
                     <article id="post-55" class="post-55 page type-page status-publish hentry">
                         <div class="entry-content">
-                            <form action="@Url.Action("ActualizaHV", "HojaVidaDto")" method="post" id="submit-resume-form" class="job-manager-form" enctype="multipart/form-data">
+                            
                                 <!-- Resume Fields -->
                                 <fieldset class="fieldset-resume_category">
                                     <label for="resume_category">Tipo de Contrato</label>
@@ -201,8 +201,9 @@
                                         @ViewBag.Salario
                                     </div>
                                 </fieldset>
-
-                                <fieldset class="fieldset-candidate_location">
+                            <form action="@Url.Action("ActualizaHV", "HojaVidaDto")" method="post" id="submit-resume-form" class="job-manager-form" enctype="multipart/form-data">
+                               
+                                 <fieldset class="fieldset-candidate_location">
                                     <label for="candidate_location">Direccion</label>
                                     <div class="field">
                                         @Html.TextBoxFor(m => m.Direccion, new { @class = "input-text", placeholder = "Ej Calle.." })
@@ -226,7 +227,7 @@
                                 <fieldset class="fieldset-resume_tagline">
                                     <label for="resume_tagline">Perfil Personal<small>(opcional)</small></label>
                                     <div class="field">
-                                        @Html.TextAreaFor(m => m.perfil_Personal,new {@class = "input-text", cols = "20", rows = "3", placeholder = "" })
+                                        @Html.TextAreaFor(m => m.perfil_Personal, new { @class = "input-text", cols = "20", rows = "3", placeholder = "" })
                                         <small class="field-description">Una breve descripcion de personalidad</small>
                                     </div>
                                 </fieldset>
@@ -239,11 +240,14 @@
                                 <fieldset class="fieldset-resume_category">
                                     <label for="resume_category">Equivalente al cargo</label>
                                     <div class="field">
-                                       @Html.EnumDropDownListFor(
+                                        @Html.EnumDropDownListFor(
                                               x => x.Equivalente_cargo,
                                          "Selecciona la categoria",
-                                        new { @class = "job-manager-category-dropdown",
-                                            placeholder = "Choose a category&hellip" })
+                                        new
+                                        {
+                                            @class = "job-manager-category-dropdown",
+                                            placeholder = "Choose a category&hellip"
+                                        })
                                     </div>
                                 </fieldset>
                                 <fieldset class="fieldset-resume_content">
@@ -252,84 +256,17 @@
                                         <div id="wp-resume_content-wrap" class="wp-core-ui wp-editor-wrap tmce-active">
                                             <link rel='stylesheet' id='dashicons-css' href='http://alexgurghis.com/themes/jobsdojo/wp-includes/css/dashicons.min.css?ver=4.5.3' type='text/css' media='all' />
                                             <link rel='stylesheet' id='editor-buttons-css' href='http://alexgurghis.com/themes/jobsdojo/wp-includes/css/editor.min.css?ver=4.5.3' type='text/css' media='all' />
-                                            <div id="wp-resume_content-editor-container" class="wp-editor-container">@Html.TextAreaFor(m => m.perfil_Profesional,new { @class="wp-editor-area", rows = "8", autocomplete = "off", cols = "40" })</div>
+                                            <div id="wp-resume_content-editor-container" class="wp-editor-container">@Html.TextAreaFor(m => m.perfil_Profesional, new { @class = "wp-editor-area", rows = "8", autocomplete = "off", cols = "40" })</div>
                                         </div>
 
                                     </div>
                                 </fieldset>
-                                <fieldset class="fieldset-candidate_education">
-                                    <label for="candidate_education">Educacion <small>(opcional)</small></label>
-                                    <div class="field">
+                                <
 
-                                        <a href="#" class="resume-manager-add-row" data-row=" &lt;div class=&quot;resume-manager-data-row&quot;&gt;
-                                           &lt;a href=&quot;#&quot; class=&quot;resume-manager-remove-row&quot;&gt;Remove&lt;/a&gt;
-                                           &lt;fieldset class=&quot;fieldset-location&quot;&gt;
-                                           &lt;label for=&quot;location&quot;&gt;Colegio&lt;/label&gt;
-                                           &lt;div class=&quot;field&quot;&gt;
-                                           &lt;input type=&quot;text&quot; class=&quot;input-text&quot; name=&quot;candidate_education_location[]&quot; id=&quot;location&quot; placeholder=&quot;&quot; value=&quot;&quot; maxlength=&quot;&quot; required /&gt;
-                                        &lt;/div&gt;
-                                        &lt;/fieldset&gt;
-                                        &lt;fieldset class=&quot;fieldset-qualification&quot;&gt;
-                                        &lt;label for=&quot;qualification&quot;&gt;Qualification(s)&lt;/label&gt;
-                                        &lt;div class=&quot;field&quot;&gt;
-                                        &lt;input type=&quot;text&quot; class=&quot;input-text&quot; name=&quot;candidate_education_qualification[]&quot; id=&quot;qualification&quot; placeholder=&quot;&quot; value=&quot;&quot; maxlength=&quot;&quot; required /&gt;
-                                        &lt;/div&gt;
-                                        &lt;/fieldset&gt;
-                                        &lt;fieldset class=&quot;fieldset-date&quot;&gt;
-                                        &lt;label for=&quot;date&quot;&gt;Start/end date&lt;/label&gt;
-                                        &lt;div class=&quot;field&quot;&gt;
-                                        &lt;input type=&quot;text&quot; class=&quot;input-text&quot; name=&quot;candidate_education_date[]&quot; id=&quot;date&quot; placeholder=&quot;&quot; value=&quot;&quot; maxlength=&quot;&quot; required /&gt;
-                                        &lt;/div&gt;
-                                        &lt;/fieldset&gt;
-                                        &lt;fieldset class=&quot;fieldset-notes&quot;&gt;
-                                        &lt;label for=&quot;notes&quot;&gt;Notes &lt;small&gt;(optional)&lt;/small&gt;&lt;/label&gt;
-                                        &lt;div class=&quot;field&quot;&gt;
-                                        &lt;textarea cols=&quot;20&quot; rows=&quot;3&quot; class=&quot;input-text&quot; name=&quot;candidate_education_notes[]&quot; id=&quot;notes&quot; placeholder=&quot;&quot; maxlength=&quot;&quot; &gt;&lt;/textarea&gt;
-                                        &lt;/div&gt;
-                                        &lt;/fieldset&gt;
-                                        &lt;/div&gt;
-                                        ">+ Adicionar Educacion</a>
-                                    </div>
-                                </fieldset>
-                                <fieldset class="fieldset-candidate_experience">
-                                    <label for="candidate_experience">Experiencia <small>(opcional)</small></label>
-                                    <div class="field">
-
-                                        <a href="#" class="resume-manager-add-row" data-row=" &lt;div class=&quot;resume-manager-data-row&quot;&gt;
-                                           &lt;a href=&quot;#&quot; class=&quot;resume-manager-remove-row&quot;&gt;Remove&lt;/a&gt;
-                                           &lt;fieldset class=&quot;fieldset-employer&quot;&gt;
-                                           &lt;label for=&quot;employer&quot;&gt;Employer&lt;/label&gt;
-                                           &lt;div class=&quot;field&quot;&gt;
-                                           &lt;input type=&quot;text&quot; class=&quot;input-text&quot; name=&quot;candidate_experience_employer[]&quot; id=&quot;employer&quot; placeholder=&quot;&quot; value=&quot;&quot; maxlength=&quot;&quot; required /&gt;
-                                        &lt;/div&gt;
-                                        &lt;/fieldset&gt;
-                                        &lt;fieldset class=&quot;fieldset-job_title&quot;&gt;
-                                        &lt;label for=&quot;job_title&quot;&gt;Job Title&lt;/label&gt;
-                                        &lt;div class=&quot;field&quot;&gt;
-                                        &lt;input type=&quot;text&quot; class=&quot;input-text&quot; name=&quot;candidate_experience_job_title[]&quot; id=&quot;job_title&quot; placeholder=&quot;&quot; value=&quot;&quot; maxlength=&quot;&quot; required /&gt;
-                                        &lt;/div&gt;
-                                        &lt;/fieldset&gt;
-                                        &lt;fieldset class=&quot;fieldset-date&quot;&gt;
-                                        &lt;label for=&quot;date&quot;&gt;Start/end date&lt;/label&gt;
-                                        &lt;div class=&quot;field&quot;&gt;
-                                        &lt;input type=&quot;text&quot; class=&quot;input-text&quot; name=&quot;candidate_experience_date[]&quot; id=&quot;date&quot; placeholder=&quot;&quot; value=&quot;&quot; maxlength=&quot;&quot; required /&gt;
-                                        &lt;/div&gt;
-                                        &lt;/fieldset&gt;
-                                        &lt;fieldset class=&quot;fieldset-notes&quot;&gt;
-                                        &lt;label for=&quot;notes&quot;&gt;Notes &lt;small&gt;(optional)&lt;/small&gt;&lt;/label&gt;
-                                        &lt;div class=&quot;field&quot;&gt;
-                                        &lt;textarea cols=&quot;20&quot; rows=&quot;3&quot; class=&quot;input-text&quot; name=&quot;candidate_experience_notes[]&quot; id=&quot;notes&quot; placeholder=&quot;&quot; maxlength=&quot;&quot; &gt;&lt;/textarea&gt;
-                                        &lt;/div&gt;
-                                        &lt;/fieldset&gt;
-                                        &lt;/div&gt;
-                                        ">+ Adicionar Experiencia</a>
-                                    </div>
-                                </fieldset>
-                             
                                 <fieldset class="fieldset-resume_hobbies">
                                     <label for="resume_hobbies">Hobbies <small>(optional)</small></label>
                                     <div class="field">
-                                        @Html.TextBoxFor(m => m.Hobbies,new { @class= "input-text" })
+                                        @Html.TextBoxFor(m => m.Hobbies, new { @class = "input-text" })
                                     </div>
                                 </fieldset>
 
@@ -340,7 +277,7 @@
                                         <input type="hidden" name="resume_id" value="0" />
                                         <input type="hidden" name="job_id" value="0" />
                                         <input type="hidden" name="step" value="1" />
-                                        <input style="background-color: darkblue; opacity:0.7; text-align:center; border-radius:8px" type="submit" name="submit_resume" value="Actualizar"/>
+                                        <input style="background-color: darkblue; opacity:0.7; text-align:center; border-radius:8px" type="submit" name="submit_resume" value="Actualizar" />
                                     </p>
 
                                 </div>

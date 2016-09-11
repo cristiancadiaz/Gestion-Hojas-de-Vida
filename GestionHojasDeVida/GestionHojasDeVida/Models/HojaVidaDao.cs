@@ -10,7 +10,7 @@ namespace GestionHojasDeVida.Models
 {
     public class HojaVidaDao
     {
-        
+
         public HojaVidaDto ConsultaEmpleado(int numIdentificacion)
         {
 
@@ -61,6 +61,77 @@ namespace GestionHojasDeVida.Models
 
 
             return objHV;
+        }
+
+        internal int ActualizaHv(HojaVidaDto hv)
+        {
+            string cadenaConexion = Conexion.constr;
+            SqlConnection conexion = new SqlConnection();
+            conexion.ConnectionString = cadenaConexion;
+            SqlCommand comando = new SqlCommand("SP_ActualizaHV", conexion);
+            comando.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter Identifiacion = new SqlParameter();
+            Identifiacion.ParameterName = "@Identificacion";
+            Identifiacion.SqlDbType = SqlDbType.VarChar;
+            Identifiacion.Value = hv.Identificacion;
+
+            SqlParameter Direccion = new SqlParameter();
+            Direccion.ParameterName = "@direccion";
+            Direccion.SqlDbType = SqlDbType.VarChar;
+            Direccion.Value = hv.Direccion;
+
+            SqlParameter Telefono = new SqlParameter();
+            Telefono.ParameterName = "@telefono";
+            Telefono.SqlDbType = SqlDbType.Int;
+            Telefono.Value = hv.Telefono;
+
+            SqlParameter Celular = new SqlParameter();
+            Celular.ParameterName = "@celular";
+            Celular.SqlDbType = SqlDbType.VarChar;
+            Celular.Value = hv.Celular;
+
+            SqlParameter Perfil_personal = new SqlParameter();
+            Perfil_personal.ParameterName = "@perfil_personals";
+            Perfil_personal.SqlDbType = SqlDbType.VarChar;
+            Perfil_personal.Value = hv.perfil_Personal;
+
+            SqlParameter Aspi_sala = new SqlParameter();
+            Aspi_sala.ParameterName = "@aspiracion_salarial";
+            Aspi_sala.SqlDbType = SqlDbType.VarChar;
+            Aspi_sala.Value = hv.AspiracionSalarial;
+
+            SqlParameter equi_cargo = new SqlParameter();
+            equi_cargo.ParameterName = "@equiva_cargo";
+            equi_cargo.SqlDbType = SqlDbType.VarChar;
+            equi_cargo.Value = hv.Equivalente_cargo;
+
+            SqlParameter per_profe = new SqlParameter();
+            per_profe.ParameterName = "@perfil_profe";
+            per_profe.SqlDbType = SqlDbType.VarChar;
+            per_profe.Value = hv.perfil_Profesional;
+
+            SqlParameter Hobbies = new SqlParameter();
+            Hobbies.ParameterName = "@Hobbies";
+            Hobbies.SqlDbType = SqlDbType.VarChar;
+            Hobbies.Value = hv.Hobbies;
+
+            comando.Parameters.Add(Identifiacion);
+            comando.Parameters.Add(Direccion);
+            comando.Parameters.Add(Telefono);
+            comando.Parameters.Add(Celular);
+            comando.Parameters.Add(Perfil_personal);
+            comando.Parameters.Add(Aspi_sala);
+            comando.Parameters.Add(equi_cargo);
+            comando.Parameters.Add(per_profe);
+            comando.Parameters.Add(Hobbies);
+
+            SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+
+            conexion.Open();
+            // comando.ExecuteScalar();
+
+            return Convert.ToInt32(comando.ExecuteScalar());
         }
     }
 }

@@ -40,6 +40,7 @@ namespace GestionHojasDeVida.Controllers
             }
          
         }
+       
         public ActionResult pruba()
         {
             return View();

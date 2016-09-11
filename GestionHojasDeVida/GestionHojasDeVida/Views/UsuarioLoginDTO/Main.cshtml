@@ -110,8 +110,8 @@
             <div class="collapse navbar-collapse pull-right" id="top-menu">
                 <ul class="nav navbar-nav text-uppercase text-center">
                     <li id="menu-item-210" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-submenu menu-item-210">
-                        <a href="">Inicio</a>
-                    </li>
+                        @Html.ActionLink("Inicio","Main","UsuarioLoginDTO")
+                                        </li>
                     <li id="menu-item-24" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24"><a href="Registro">Procesos</a></li>
                     <li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-submenu menu-item-27">
                         <a href="Registro">Opciones</a>
@@ -120,7 +120,7 @@
                             <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205"><a href="Registro">Soporte</a></li>
                         </ul>
                     </li>
-                    <li id="menu-item-93" class="action-button menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-55 current_page_item menu-item-93"><a href="Registro">Registrar Empleado Nuevo</a></li>
+                    <li id="menu-item-93" class="action-button menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-55 current_page_item menu-item-93">@Html.ActionLink("Registrar Nuevo Empleado","Index", "RegistroUsuarioDTO")</li>
                 </ul>
             </div><!-- /.navbar-collapse -->
 

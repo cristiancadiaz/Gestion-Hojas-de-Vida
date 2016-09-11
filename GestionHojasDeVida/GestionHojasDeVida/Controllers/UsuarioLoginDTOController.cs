@@ -14,37 +14,37 @@ namespace GestionHojasDeVida.Controllers
         private Conexion DB = new Conexion();
 
         // GET: UsuarioDTO
-        
+
         public ActionResult Login()
         {
-                        
+
             return View();
         }
-        
+
         public ActionResult Main()
         {
             return View();
         }
-       
+
         [HttpPost]
         public ActionResult AccedeUsuario(FormCollection form)
         {
             var username = form["TextUser"];
             var password = form["TextPassword"];
-            var logindto = new UsuarioLoginDTO(username,password);
+            var logindto = new UsuarioLoginDTO(username, password);
             var logindao = new LoginDao();
-            int resultado = logindao.Autenticar(logindto.uld_user,logindto.uld_pass);
+            int resultado = logindao.Autenticar(logindto.uld_user, logindto.uld_pass);
 
-            if(resultado == 1)
+            switch (resultado)
             {
-               return RedirectToAction("Index", "RegistroUsuarioDTO");
+                case 1:
+                    return RedirectToAction("Main", "UsuarioLoginDTO");
+                case 2:
+                    return RedirectToAction("Index", "RegistroUsuarioDTO");
+                default:
+                    ViewBag.mensaje = "No se ha creado el empleado Aun por favor intente mas tarde";
+                    return View("Login");
             }
-            else
-            {
-                ViewBag.mensaje = "NO existe el usuario";
-                return View("Login");
-            }
-            
         }
         [HttpPost]
         public ActionResult create()
