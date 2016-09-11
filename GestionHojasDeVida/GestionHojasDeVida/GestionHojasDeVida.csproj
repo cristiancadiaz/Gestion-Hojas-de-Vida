@@ -93,6 +93,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Css\Estilo_Login.css" />
+    <Content Include="Css\Form.css" />
     <Content Include="Css\General_Registro.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -142,10 +143,10 @@
     <Content Include="Views\View.cshtml" />
     <Content Include="Views\UsuarioLoginDTO\Main.cshtml" />
     <Content Include="Views\RegistroUsuarioDTO\Index.cshtml" />
-    <Content Include="Views\RegistroUsuarioDTO\pruba.cshtml" />
     <Content Include="Views\HojaVidaDto\Index.cshtml" />
     <Content Include="Views\HojaVidaDto\ActualizaHV.cshtml" />
     <Content Include="Views\HojaVidaDto\Experiencia.cshtml" />
+    <Content Include="Views\HojaVidaDto\Estudio.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
