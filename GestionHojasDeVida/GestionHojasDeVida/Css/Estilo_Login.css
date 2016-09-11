@@ -79,6 +79,11 @@
 
 }
 
+.mensaje {
+font-family: 'Exo', sans-serif;
+color: #000;
+}
+
 .login input[type=text]{
 	width: 250px;
 	height: 30px;
