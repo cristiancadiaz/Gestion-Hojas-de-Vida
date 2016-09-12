@@ -26,7 +26,7 @@ namespace GestionHojasDeVida.Controllers
              int resultado = rudao.InsertUsuario(rudto);
                 if(resultado == 0)
                 {
-                    return RedirectToAction("Index", "HojaVidaDto");
+                    return RedirectToAction("ViewsuccesUsuario", "HojaVidaDto");
                 }
                 else
                 {

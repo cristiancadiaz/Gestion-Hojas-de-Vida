@@ -145,6 +145,7 @@
     <Content Include="Views\RegistroUsuarioDTO\pruba.cshtml" />
     <Content Include="Views\HojaVidaDto\Index.cshtml" />
     <Content Include="Views\HojaVidaDto\ConsultaEmpleados.cshtml" />
+    <Content Include="Views\HojaVidaDto\ViewsuccesUsuario.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

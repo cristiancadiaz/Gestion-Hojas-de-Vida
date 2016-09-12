@@ -55,6 +55,9 @@ namespace GestionHojasDeVida.Controllers
         {
             return View();
         }
-
+        public ActionResult ViewsuccesUsuario()
+        {
+            return View();
+        }
     }
 }
