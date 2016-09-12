@@ -63,7 +63,7 @@ namespace GestionHojasDeVida.Models
             return objHV;
         }
 
-        internal int ActualizaHv(HojaVidaDto hv)
+        internal int ActualizaHv(HojaVidaDto hv,int Identificacion)
         {
             string cadenaConexion = Conexion.constr;
             SqlConnection conexion = new SqlConnection();
@@ -74,7 +74,7 @@ namespace GestionHojasDeVida.Models
             SqlParameter Identifiacion = new SqlParameter();
             Identifiacion.ParameterName = "@Identificacion";
             Identifiacion.SqlDbType = SqlDbType.VarChar;
-            Identifiacion.Value = hv.Identificacion;
+            Identifiacion.Value = Identificacion;
 
             SqlParameter Direccion = new SqlParameter();
             Direccion.ParameterName = "@direccion";
@@ -92,7 +92,7 @@ namespace GestionHojasDeVida.Models
             Celular.Value = hv.Celular;
 
             SqlParameter Perfil_personal = new SqlParameter();
-            Perfil_personal.ParameterName = "@perfil_personals";
+            Perfil_personal.ParameterName = "@perfil_personal";
             Perfil_personal.SqlDbType = SqlDbType.VarChar;
             Perfil_personal.Value = hv.perfil_Personal;
 

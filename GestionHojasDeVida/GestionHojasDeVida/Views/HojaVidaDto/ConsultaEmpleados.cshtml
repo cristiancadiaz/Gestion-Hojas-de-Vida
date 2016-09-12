@@ -5,7 +5,7 @@
     <hr />
     <dl class="dl-horizontal">
         
-        <dt>
+        <dt>            
             @Html.DisplayNameFor(model => model.Identificacion)
         </dt>
 
@@ -31,13 +31,14 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Actualizar", "Index", "HojaVidaDto", new { id = Model.Identificacion }) |
+ 
     @Html.ActionLink("Back to List", "Index")
 </p>
 
-<form action="@Url.Action("ConsultaEmpleado", "HojaVidaDto")" method="get"  enctype="multipart/form-data">
+<form action="@Url.Action("Index", "HojaVidaDto")" method="get"  enctype="multipart/form-data">
     <div>
         Ingrese el numero de cedula del empleado a buscar:
-        <input type="number" name="Identificacion" />
+        <input type="number" name="id" />
     </div>
+    <input type="submit" name="enviar"/>
 </form>
