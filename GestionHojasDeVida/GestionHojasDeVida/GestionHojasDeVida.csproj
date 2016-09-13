@@ -114,6 +114,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\EstudiosController.cs" />
+    <Compile Include="Controllers\ExperienciaController.cs" />
     <Compile Include="Controllers\HojaVidaDtoController.cs" />
     <Compile Include="Controllers\RegistroUsuarioDTOController.cs" />
     <Compile Include="Controllers\UsuarioLoginDTOController.cs" />
@@ -122,6 +123,7 @@
     </Compile>
     <Compile Include="Models\Conexion.cs" />
     <Compile Include="Models\EstudiosDto.cs" />
+    <Compile Include="Models\ExperienciaDto.cs" />
     <Compile Include="Models\HojaVidaDao.cs" />
     <Compile Include="Models\HojaVidaDto.cs" />
     <Compile Include="Models\Login.cs" />
@@ -148,8 +150,8 @@
     <Content Include="Views\HojaVidaDto\Index.cshtml" />
     <Content Include="Views\HojaVidaDto\ConsultaEmpleados.cshtml" />
     <Content Include="Views\HojaVidaDto\ViewsuccesUsuario.cshtml" />
-    <Content Include="Views\HojaVidaDto\Estudio.cshtml" />
-    <Content Include="Views\HojaVidaDto\Experiencia.cshtml" />
+    <Content Include="Views\Estudios\Estudio.cshtml" />
+    <Content Include="Views\Experiencia\Experiencia.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -159,7 +161,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Estudios\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
