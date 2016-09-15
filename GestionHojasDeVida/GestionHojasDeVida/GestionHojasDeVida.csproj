@@ -151,7 +151,11 @@
     <Content Include="Views\HojaVidaDto\ConsultaEmpleados.cshtml" />
     <Content Include="Views\HojaVidaDto\ViewsuccesUsuario.cshtml" />
     <Content Include="Views\Estudios\Estudio.cshtml" />
-    <Content Include="Views\Experiencia\Experiencia.cshtml" />
+    <Content Include="Views\Experiencia\Experiencia.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\HojaVidaDto\Inactivar.cshtml" />
+    <Content Include="Views\HojaVidaDto\Consulta.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

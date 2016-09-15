@@ -40,7 +40,7 @@ namespace GestionHojasDeVida.Controllers
                 case 1:
                     return RedirectToAction("Main", "UsuarioLoginDTO");
                 case 2:
-                    return RedirectToAction("Index", "RegistroUsuarioDTO");
+                    return RedirectToAction("Index", "HojaVidaDto", new { id = username });
                 default:
                     ViewBag.mensaje = "No se ha creado el empleado Aun por favor intente mas tarde";
                     return View("Login");

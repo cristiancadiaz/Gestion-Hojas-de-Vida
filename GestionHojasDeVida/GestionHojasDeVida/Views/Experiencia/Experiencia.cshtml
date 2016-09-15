@@ -1,4 +1,5 @@
-﻿
+﻿@model GestionHojasDeVida.Models.ExperienciaDto
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -9,7 +10,7 @@
     <link rel="profile" href="http://gmpg.org/xfn/11" />
     <link rel="pingback" href="http://alexgurghis.com/themes/jobsdojo/xmlrpc.php" />
 
-    <title>Consultas</title>
+    <title>Experiencia Laboral</title>
     <link rel="alternate" type="application/rss+xml" title="JobsDojo &raquo; Feed" href="http://alexgurghis.com/themes/jobsdojo/feed/" />
     <link rel="alternate" type="application/rss+xml" title="JobsDojo &raquo; Comments Feed" href="http://alexgurghis.com/themes/jobsdojo/comments/feed/" />
     <link rel='stylesheet' id='bootstrap-css' href='http://alexgurghis.com/themes/jobsdojo/wp-content/themes/jobsdojo/css/bootstrap.min.css?ver=1.0.0' type='text/css' media='all' />
@@ -93,8 +94,8 @@
                         <a href="Registro">Hoja de Vida</a>
                         <ul class="sub-menu">
                             <li id="menu-item-35" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-35"><a href="~/Views/HojaVidaDto/Index.cshtml">Datos Personales</a></li>
-                            <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205"><a href="Experiencia">Experiencia</a></li>
-                            <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205"><a href="Registro">Formacion</a></li>
+                            <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205">@Html.ActionLink("Experiencia", "Experiencia", "Experiencia")</li>
+                            <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205">@Html.ActionLink("Formación", "Estudio", "Estudios")</li>
                             <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205"><a href="Registro">Habilidades</a></li>
                         </ul>
                     </li>
@@ -113,7 +114,7 @@
 
                 <div class="container">
                     <div class="row text-center">
-                        <h2>Consulta Empleado</h2>
+                        <h2>Experiencia Laboral</h2>
                         <p>Recuerda diligenciar todos los campos</p>
                     </div>
                 </div>
@@ -122,37 +123,67 @@
 
                     <article id="post-55" class="post-55 page type-page status-publish hentry">
                         <div class="entry-content">
-                            <form action="@Url.Action("Index", "HojaVidaDto")" method="get" id="submit-resume-form" class="job-manager-form" enctype="multipart/form-data">
-                                <!-- Resume Fields -->
-                                <fieldset class="fieldset-resume_category">
-                                    <label for="resume_category">Consultar por cedula</label>
-                                    <div class="field">
 
+                            @using (Html.BeginForm("Create", "Experiencia", FormMethod.Post, new { @class = "job-manager-form" }))
+                            {                             <!-- Resume Fields -->
+                                <fieldset class="fieldset-resume_category">
+                                    <label for="resume_category">Empresa</label>
+                                    <div class="field">
+                                        @Html.EditorFor(model => model.Empresa, new { htmlAttributes = new { @class = "field" } })
+                                        @Html.ValidationMessageFor(model => model.Empresa, "", new { @class = "text-danger" })
                                     </div>
                                 </fieldset>
 
                                 <fieldset class="fieldset-resume_category">
-                                    <label for="resume_category">Parametro:</label>
+                                    <label for="resume_category">Cargo</label>
                                     <div class="field">
-                                        <input type="number" name="id"/>
+                                        @Html.EditorFor(model => model.Cargo, new { htmlAttributes = new { @class = "field" } })
+                                        @Html.ValidationMessageFor(model => model.Cargo, "", new { @class = "text-danger" })
                                     </div>
                                 </fieldset>
 
 
-                                                              <br>
-                                <div style="width:240px; float:right ">
-                                    <p>
-                                        <input type="hidden" id="_wpnonce" name="_wpnonce" value="234ae6f3fb" /><input type="hidden" name="_wp_http_referer" value="/themes/jobsdojo/submit-resume/" /><input type="hidden" name="resume_manager_form" value="submit-resume" />
-                                        <input type="hidden" name="resume_id" value="0" />
-                                        <input type="hidden" name="job_id" value="0" />
-                                        <input type="hidden" name="step" value="1" />
-                                        <input style="background-color: darkblue; color: #dae2ff; text-align:center; border-radius:8px" type="submit" name="submit_resume" value="Consultar" />
-                                    </p>
+                                    <fieldset class="fieldset-candidate_name">
+                                        <label for="candidate_name">Fecha Inicio</label>
+                                        <div class="field">
+                                            @Html.EditorFor(model => model.fechaInicio, new { htmlAttributes = new { @class = "field" } })
+                                            @Html.ValidationMessageFor(model => model.fechaInicio, "", new { @class = "text-danger" })
+                                        </div>
+                                    </fieldset>
 
-                                </div>
-                                <br><br>
 
-                            </form>
+                                    <fieldset class="fieldset-candidate_name">
+                                        <label for="candidate_name">Fecha Fin</label>
+                                        <div class="field">
+                                            @Html.EditorFor(model => model.FechaFin, new { htmlAttributes = new { @class = "field" } })
+                                            @Html.ValidationMessageFor(model => model.FechaFin, "", new { @class = "text-danger" })
+                                        </div>
+                                    </fieldset>
+
+
+                                    <fieldset class="fieldset-resume_content">
+                                        <label for="resume_content">Funciones y Logros</label>
+                                        <div class="field">
+                                            @Html.TextAreaFor(model => model.fun_logros, new { htmlAttributes = new { @class = "field" } })
+                                            @Html.ValidationMessageFor(model => model.fun_logros, "", new { @class = "text-danger" })
+
+                                        </div>
+                                    </fieldset>
+
+
+                                    <br><br><br><br><br><br><br><br><br><br>
+                                    <div style="width:240px; float:right ">
+                                        <p>
+                                            <input type="hidden" id="_wpnonce" name="_wpnonce" value="234ae6f3fb" /><input type="hidden" name="_wp_http_referer" value="/themes/jobsdojo/submit-resume/" /><input type="hidden" name="resume_manager_form" value="submit-resume" />
+                                            <input type="hidden" name="resume_id" value="0" />
+                                            <input type="hidden" name="job_id" value="0" />
+                                            <input type="hidden" name="step" value="1" />
+                                            <input style="background-color: darkblue; color: #dae2ff; text-align:center; border-radius:8px" type="submit" name="submit_resume" value="Adicionar" />
+                                        </p>
+
+                                    </div>
+                                    <br><br>
+                            }
                         </div><!-- .entry-content -->
                     </article><!-- #post -->
 

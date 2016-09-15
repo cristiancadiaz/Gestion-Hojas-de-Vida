@@ -61,5 +61,13 @@ namespace GestionHojasDeVida.Controllers
         {
             return View();
         }
+        public ActionResult Inactivar()
+        {
+            return View();
+        }
+        public ActionResult Consulta()
+        {
+            return View();
+        }
     }
 }
