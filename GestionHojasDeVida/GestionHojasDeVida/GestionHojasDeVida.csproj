@@ -116,6 +116,7 @@
     <Compile Include="Controllers\EstudiosController.cs" />
     <Compile Include="Controllers\ExperienciaController.cs" />
     <Compile Include="Controllers\HojaVidaDtoController.cs" />
+    <Compile Include="Controllers\InactivarController.cs" />
     <Compile Include="Controllers\RegistroUsuarioDTOController.cs" />
     <Compile Include="Controllers\UsuarioLoginDTOController.cs" />
     <Compile Include="Global.asax.cs">
@@ -126,6 +127,8 @@
     <Compile Include="Models\ExperienciaDto.cs" />
     <Compile Include="Models\HojaVidaDao.cs" />
     <Compile Include="Models\HojaVidaDto.cs" />
+    <Compile Include="Models\InactivarDao.cs" />
+    <Compile Include="Models\InactivarDto.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\LoginDao.cs" />
     <Compile Include="Models\RegistroUsuarioDao.cs" />
@@ -154,7 +157,7 @@
     <Content Include="Views\Experiencia\Experiencia.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\HojaVidaDto\Inactivar.cshtml" />
+    <Content Include="Views\Inactivar\Inactivar.cshtml" />
     <Content Include="Views\HojaVidaDto\Consulta.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

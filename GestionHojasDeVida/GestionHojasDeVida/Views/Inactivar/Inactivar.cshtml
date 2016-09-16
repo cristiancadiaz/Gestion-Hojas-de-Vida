@@ -1,4 +1,4 @@
-﻿
+﻿@model GestionHojasDeVida.Models.InactivarDto
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -88,17 +88,21 @@
                     <li id="menu-item-210" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-submenu menu-item-210">
                         <a href="Main">Inicio</a>
                     </li>
-                    <li id="menu-item-24" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24"><a href="Registro">Procesos</a></li>
-                    <li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-submenu menu-item-27">
-                        <a href="Registro">Hoja de Vida</a>
-                        <ul class="sub-menu">
-                            <li id="menu-item-35" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-35"><a href="~/Views/HojaVidaDto/Index.cshtml">Datos Personales</a></li>
-                            <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205"><a href="Experiencia">Experiencia</a></li>
-                            <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205"><a href="Registro">Formacion</a></li>
-                            <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205"><a href="Registro">Habilidades</a></li>
-                        </ul>
-                    </li>
                 </ul>
+                    <ul class="sub-menu">
+                        <li id="menu-item-35" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-35"><a href="~/Views/HojaVidaDto/Index.cshtml">Empleados</a></li>
+                        <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205">@Html.ActionLink("Inactivar Empleado", "Inactivar", "Inactivar")</li>
+                   </ul>
+                        
+                            <a href="Registro">Hoja de Vida</a>
+                            <ul class="sub-menu">
+                                <li id="menu-item-35" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-35"><a href="~/Views/HojaVidaDto/Index.cshtml">Datos Personales</a></li>
+                                <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205"><a href="Experiencia">Experiencia</a></li>
+                                <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205"><a href="Registro">Formacion</a></li>
+                                <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205"><a href="Registro">Habilidades</a></li>
+                            </ul>
+                        </li>
+                    </ul>
             </div><!-- /.navbar-collapse -->
 
         </div><!-- /.container-fluid -->
@@ -122,21 +126,27 @@
 
                     <article id="post-55" class="post-55 page type-page status-publish hentry">
                         <div class="entry-content">
-                            <form action="" method="post" id="submit-resume-form" class="job-manager-form" enctype="multipart/form-data">
-                                <!-- Resume Fields -->
-                                <fieldset class="fieldset-resume_category">
-                                    <label for="resume_category">Identificacion Empleado:</label>
-                                    <div class="field">
-
-                                    </div>
-                                </fieldset>
+                           @using (@Html.BeginForm("create", "Inactivar", FormMethod.Post))
+                           {
+                            <fieldset class="fieldset-resume_category">
+                                <label for="resume_category">Identificacion Empleado:</label>
+                                <div class="field">
+                                    @Html.TextBoxFor(model => model.Identificacion)
+                                </div>
+                            </fieldset>
 
                                 <fieldset class="fieldset-resume_category">
                                     <label for="resume_category">Motivo:</label>
                                     <div class="field">
-
+                                        @Html.TextAreaFor(model => model.Motivo)
                                     </div>
                                 </fieldset>
+                                <button type="submit" value="0" name="Inactivar">
+
+                                </button>
+                           }
+                                <!-- Resume Fields -->
+                             
 
 
                                                               <br>
@@ -152,7 +162,7 @@
                                 </div>
                                 <br><br>
 
-                            </form>
+                           
                         </div><!-- .entry-content -->
                     </article><!-- #post -->
 
