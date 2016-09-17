@@ -18,28 +18,28 @@ namespace GestionHojasDeVida.Models
             comando.CommandType = CommandType.StoredProcedure;
 
             SqlParameter Institucion = new SqlParameter();
-            Institucion.ParameterName = "@Institucion";
-            Institucion.SqlDbType = SqlDbType.Int;
+            Institucion.ParameterName = "@Institudion_educativa";
+            Institucion.SqlDbType = SqlDbType.VarChar;
             Institucion.Value = rutd.institucionEducativa;
 
             SqlParameter Titulo = new SqlParameter();
-            Titulo.ParameterName = "@Titulo";
-            Titulo.SqlDbType = SqlDbType.Int;
+            Titulo.ParameterName = "@Titulo_Obtenido";
+            Titulo.SqlDbType = SqlDbType.VarChar;
             Titulo.Value = rutd.Titulo_obtenido;
 
             SqlParameter NivelEstudio = new SqlParameter();
-            Titulo.ParameterName = "@NivelEstudio";
-            Titulo.SqlDbType = SqlDbType.Int;
-            Titulo.Value = rutd.nvlDeestudio;
+            NivelEstudio.ParameterName = "@Nvl_d_estudio";
+            NivelEstudio.SqlDbType = SqlDbType.VarChar;
+            NivelEstudio.Value = rutd.nvlDeestudio;
 
             SqlParameter FechaFinalizacion = new SqlParameter();
-            FechaFinalizacion.ParameterName = "@FechaFinalizacion";
-            FechaFinalizacion.SqlDbType = SqlDbType.Int;
+            FechaFinalizacion.ParameterName = "@FechaFin";
+            FechaFinalizacion.SqlDbType = SqlDbType.VarChar;
             FechaFinalizacion.Value = rutd.fechafinalizacion;
 
             SqlParameter Estado = new SqlParameter();
             Estado.ParameterName = "@Estado";
-            Estado.SqlDbType = SqlDbType.Int;
+            Estado.SqlDbType = SqlDbType.VarChar;
             Estado.Value = rutd.Estado;
 
             comando.Parameters.Add(Institucion);

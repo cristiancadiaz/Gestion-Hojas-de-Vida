@@ -37,12 +37,12 @@ namespace GestionHojasDeVida.Controllers
             {
                 inacdao.InactivarEmpleado(inac);
                 ViewBag.mensajeexito = "Usuario inactivado correctamente";
-                return RedirectToAction("Index");
+                return RedirectToAction("Inactivar");
             }
             catch
             {
                 ViewBag.mensajeexito = "No se puedo inactivar el usuario revisar!!";
-                return RedirectToAction("Index");
+                return RedirectToAction("Inactivar");
             }
         }
 

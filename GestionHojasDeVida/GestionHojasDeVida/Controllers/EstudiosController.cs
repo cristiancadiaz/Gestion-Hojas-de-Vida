@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GestionHojasDeVida.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,7 @@ namespace GestionHojasDeVida.Controllers
 {
     public class EstudiosController : Controller
     {
+        EstudiosDao estud = new EstudiosDao();
         // GET: Estudios
         public ActionResult Estudio()
         {
@@ -28,17 +30,19 @@ namespace GestionHojasDeVida.Controllers
 
         // POST: Estudios/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(EstudiosDto estdu)
         {
+
             try
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                estud.RegistrarEstudio(estdu);
+                ViewBag.mensajeestudios = "Estudios insertados satisfactoriamente";
+                return RedirectToAction("Estudio");
             }
-            catch
+            catch(Exception ex)
             {
-                return View();
+                ViewBag.mensajeestudios = "No se pudieron regisdtrar los estudios verificar!!!";
+                return RedirectToAction("Estudio");
             }
         }
 
