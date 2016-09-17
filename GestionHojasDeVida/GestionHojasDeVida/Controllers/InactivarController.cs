@@ -9,7 +9,9 @@ namespace GestionHojasDeVida.Controllers
 {
     public class InactivarController : Controller
     {
+        InactivarDao inacdao = new InactivarDao();
         // GET: Inactivar
+        
         public ActionResult Inactivar()
         {
             return View();
@@ -33,13 +35,14 @@ namespace GestionHojasDeVida.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                inacdao.InactivarEmpleado(inac);
+                ViewBag.mensajeexito = "Usuario inactivado correctamente";
+                return RedirectToAction("Inactivar");
             }
             catch
             {
-                return View();
+                ViewBag.mensajeexito = "No se puedo inactivar el usuario revisar!!";
+                return RedirectToAction("Inactivar");
             }
         }
 
