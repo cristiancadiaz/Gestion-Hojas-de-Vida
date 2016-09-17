@@ -125,6 +125,7 @@
     <Compile Include="Models\Conexion.cs" />
     <Compile Include="Models\EstudiosDao.cs" />
     <Compile Include="Models\EstudiosDto.cs" />
+    <Compile Include="Models\ExperienciaDao.cs" />
     <Compile Include="Models\ExperienciaDto.cs" />
     <Compile Include="Models\HojaVidaDao.cs" />
     <Compile Include="Models\HojaVidaDto.cs" />
@@ -169,7 +170,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\EstudioDao\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

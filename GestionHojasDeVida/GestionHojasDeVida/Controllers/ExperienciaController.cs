@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GestionHojasDeVida.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,7 @@ namespace GestionHojasDeVida.Controllers
 {
     public class ExperienciaController : Controller
     {
+        ExperienciaDao expdao = new ExperienciaDao();
         // GET: Experiencia
         public ActionResult Experiencia()
         {
@@ -28,19 +30,20 @@ namespace GestionHojasDeVida.Controllers
 
         // POST: Experiencia/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(ExperienciaDto expdto)
         {
 
             // aca se llama un objeto de tipo Experiencia Dao que es el que genera las consultas e inserta la experiencia
             try
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                expdao.RegistrarExperiencia(expdto);
+                ViewBag.MensajeExistoso = "Experiencia agregada satisfactoriamente";
+                return View("Experiencia");
             }
             catch
             {
-                return View();
+                ViewBag.MensajeExistoso = "La experiencia no pudo ser registrada verifique!!!";
+                return View("Experiencia");
             }
         }
 

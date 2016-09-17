@@ -31,18 +31,18 @@ namespace GestionHojasDeVida.Controllers
 
         // POST: Inactivar/Create
         [HttpPost]
-        public ActionResult Create(InactivarDto inac)
+        public ActionResult Create(InactivarDto inac,int Inactivar)
         {
             try
             {
-                inacdao.InactivarEmpleado(inac);
+                inacdao.InactivarEmpleado(inac,Inactivar);
                 ViewBag.mensajeexito = "Usuario inactivado correctamente";
-                return RedirectToAction("Inactivar");
+                return View("Inactivar");
             }
             catch
             {
                 ViewBag.mensajeexito = "No se puedo inactivar el usuario revisar!!";
-                return RedirectToAction("Inactivar");
+                return View("Inactivar");
             }
         }
 

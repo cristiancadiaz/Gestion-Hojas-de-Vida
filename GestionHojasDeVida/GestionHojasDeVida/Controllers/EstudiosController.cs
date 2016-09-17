@@ -37,12 +37,12 @@ namespace GestionHojasDeVida.Controllers
             {
                 estud.RegistrarEstudio(estdu);
                 ViewBag.mensajeestudios = "Estudios insertados satisfactoriamente";
-                return RedirectToAction("Estudio");
+                return View("Estudio");
             }
             catch(Exception ex)
             {
                 ViewBag.mensajeestudios = "No se pudieron regisdtrar los estudios verificar!!!";
-                return RedirectToAction("Estudio");
+                return View("Estudio");
             }
         }
 
