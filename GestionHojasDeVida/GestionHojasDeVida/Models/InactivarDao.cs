@@ -39,6 +39,7 @@ namespace GestionHojasDeVida.Models
 
             SqlDataAdapter adaptador = new SqlDataAdapter(comando);
 
+
             conexion.Open();
             // comando.ExecuteScalar();
 
