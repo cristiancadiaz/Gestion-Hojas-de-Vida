@@ -10,7 +10,6 @@ namespace GestionHojasDeVida.Models
         public int Identificacion { get; set; }
         public int Estado { get; set; }
         public string Motivo { get; set; }
-
     }
 
 
