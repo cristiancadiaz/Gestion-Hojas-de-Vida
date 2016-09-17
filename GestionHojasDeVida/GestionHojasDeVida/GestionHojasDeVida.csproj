@@ -96,6 +96,7 @@
     <Content Include="Css\General_Registro.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Imagenes\btn.PNG" />
     <Content Include="Imagenes\cumpleanios.JPG" />
     <Content Include="Imagenes\fondo1.jpg" />
     <Content Include="Scripts\bootstrap.js" />
@@ -123,7 +124,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Conexion.cs" />
-    <Compile Include="Models\EstudioDao.cs" />
+    <Compile Include="Models\EstudiosDao.cs" />
     <Compile Include="Models\EstudiosDto.cs" />
     <Compile Include="Models\ExperienciaDto.cs" />
     <Compile Include="Models\HojaVidaDao.cs" />
@@ -152,7 +153,6 @@
     <Content Include="Views\RegistroUsuarioDTO\Index.cshtml" />
     <Content Include="Views\RegistroUsuarioDTO\pruba.cshtml" />
     <Content Include="Views\HojaVidaDto\Index.cshtml" />
-    <Content Include="Views\HojaVidaDto\ConsultaEmpleados.cshtml" />
     <Content Include="Views\HojaVidaDto\ViewsuccesUsuario.cshtml" />
     <Content Include="Views\Estudios\Estudio.cshtml" />
     <Content Include="Views\Experiencia\Experiencia.cshtml">
@@ -160,6 +160,7 @@
     </Content>
     <Content Include="Views\Inactivar\Inactivar.cshtml" />
     <Content Include="Views\HojaVidaDto\Consulta.cshtml" />
+    <Content Include="Views\HojaVidaDto\ResultadoConsulta.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -169,7 +170,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\EstudioDao\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

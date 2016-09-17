@@ -16,6 +16,7 @@
 	width: auto;
 	height: auto;
 	background-image: url("/Imagenes/fondo1.jpg");
+    
 	background-size: cover;
 	-webkit-filter: blur(4px);
 	z-index: 0;

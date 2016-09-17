@@ -6174,6 +6174,12 @@ td.product-name ul li div {
     display: inline-block;
 }
 
+.input btnInactivar{
+background-image: url('/Imagenes/btn.PN'); 
+color: #dae2ff; 
+text-align:center; 
+border-radius:8px
+}
 #page-content div.job_listings .load_more_jobs,
 #page-content div.resumes .load_more_resumes {
     margin: 0 auto;
