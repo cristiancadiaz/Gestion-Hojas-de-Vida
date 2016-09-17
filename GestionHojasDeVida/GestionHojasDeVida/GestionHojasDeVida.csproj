@@ -123,7 +123,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Conexion.cs" />
-    <Compile Include="Models\EstudioDao.cs" />
+    <Compile Include="Models\EstudiosDao.cs" />
     <Compile Include="Models\EstudiosDto.cs" />
     <Compile Include="Models\ExperienciaDto.cs" />
     <Compile Include="Models\HojaVidaDao.cs" />

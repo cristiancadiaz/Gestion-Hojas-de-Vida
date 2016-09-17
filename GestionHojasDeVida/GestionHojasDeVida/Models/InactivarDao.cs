@@ -9,7 +9,7 @@ namespace GestionHojasDeVida.Models
 {
     public class InactivarDao
     {
-        public int Autenticar(InactivarDto rudto)
+        public int InactivarEmpleado(InactivarDto inac)
         {
 
             string cadenaConexion = Conexion.constr;
@@ -21,17 +21,17 @@ namespace GestionHojasDeVida.Models
             SqlParameter Identificacion = new SqlParameter();
             Identificacion.ParameterName = "@Identificacion";
             Identificacion.SqlDbType = SqlDbType.Int;
-            Identificacion.Value = rudto.Identificacion;
+            Identificacion.Value = inac.Identificacion;
 
             SqlParameter Estado = new SqlParameter();
             Estado.ParameterName = "@Estado";
             Estado.SqlDbType = SqlDbType.VarChar;
-            Estado.Value = rudto.Estado;
+            Estado.Value = inac.Estado;
 
             SqlParameter Motivo = new SqlParameter();
             Motivo.ParameterName = "@Motivo";
             Motivo.SqlDbType = SqlDbType.VarChar;
-            Motivo.Value = rudto.Motivo;
+            Motivo.Value = inac.Motivo;
 
             comando.Parameters.Add(Identificacion);
             comando.Parameters.Add(Estado);
@@ -41,11 +41,9 @@ namespace GestionHojasDeVida.Models
 
             conexion.Open();
             // comando.ExecuteScalar();
-
             return Convert.ToInt32(comando.ExecuteScalar());
         }
-        public void Inactivar()
-        { }
+
     }
-    
+
 }
