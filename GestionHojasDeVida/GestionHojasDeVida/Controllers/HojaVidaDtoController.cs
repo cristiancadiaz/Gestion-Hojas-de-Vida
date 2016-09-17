@@ -69,5 +69,9 @@ namespace GestionHojasDeVida.Controllers
         {
             return View();
         }
+        public ActionResult ResultadoConsulta()
+        {
+            return View();
+        }
     }
 }
