@@ -11,7 +11,7 @@ namespace GestionHojasDeVida.Controllers
     {
         HojaVidaDao daohv = new HojaVidaDao();
         // GET: HojaVida
-        public ActionResult Index(int id)
+        public ActionResult ResultadoConsulta(int id)
         {
             var informacionEmpleado = new HojaVidaDto();
             int numIdentificacion = id;
@@ -69,8 +69,23 @@ namespace GestionHojasDeVida.Controllers
         {
             return View();
         }
-        public ActionResult ResultadoConsulta()
+       
+        public ActionResult Index(int id)
         {
+            var informacionEmpleado = new HojaVidaDto();
+            int numIdentificacion = id;
+            TempData["Identificacion"] = id;
+            informacionEmpleado = daohv.ConsultaEmpleado(numIdentificacion);
+
+            ViewBag.Tipo_Contrato = informacionEmpleado.Tipo_Contrato;
+            ViewBag.Tipo_Documento = informacionEmpleado.Tipo_Documento;
+            ViewBag.NumDocumento = informacionEmpleado.Identificacion;
+            ViewBag.Nombres = informacionEmpleado.Nombres;
+            ViewBag.Apellidos = informacionEmpleado.Apellidos;
+            ViewBag.Email = informacionEmpleado.Email;
+            ViewBag.Cargo = informacionEmpleado.Cargo;
+            ViewBag.Salario = informacionEmpleado.Salario;
+
             return View();
         }
     }

@@ -91,24 +91,24 @@
                         @Html.ActionLink("Inicio", "Main", "UsuarioLoginDTO")
                     </li>
                     <li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-submenu menu-item-27">
-                        <a href="Registro">Empleado</a>
+                        <a href=#>Empleado</a>
                         <ul class="sub-menu">
                             <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205">@Html.ActionLink("Registrar", "Index", "RegistroUsuarioDTO")</li>
-                            <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205">@Html.ActionLink("Consultar", "ConsultaEmpleados", "HojaVidaDto") </li>
+                            <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205">@Html.ActionLink("Consultar", "Consulta", "HojaVidaDto") </li>
                             <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205">@Html.ActionLink("Inactivar", "Inactivar", "Inactivar")</li>
                         </ul>
                     <li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-submenu menu-item-27">
                         <a href=#>Hoja de Vida</a>
                         <ul class="sub-menu">
-                            <li id="menu-item-35" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-35"><a href="~/Views/HojaVidaDto/Index.cshtml">Datos Personales</a></li>
+                            <li id="menu-item-35" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-35">@Html.ActionLink("Datos Personales", "Index", "HojaVidaDto")</li>
                             <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205">@Html.ActionLink("Experiencia", "Experiencia", "Experiencia")</li>
                             <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205">@Html.ActionLink("Formación", "Estudio", "Estudios")</li>
-                            <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205"><a href="Registro">Habilidades</a></li>
+                            <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205"><a href=#>Habilidades</a></li>
                         </ul>
                     <li id="menu-item-210" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-submenu menu-item-210">
                         @Html.ActionLink("Logout", "Login", "UsuarioLoginDTO")
                     </li>
-                  
+
                 </ul>
             
             </div><!-- /.navbar-collapse -->

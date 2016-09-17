@@ -84,24 +84,25 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse pull-right" id="top-menu">
+
                 <ul class="nav navbar-nav text-uppercase text-center">
                     <li id="menu-item-210" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-submenu menu-item-210">
                         @Html.ActionLink("Inicio", "Main", "UsuarioLoginDTO")
                     </li>
                     <li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-submenu menu-item-27">
-                        <a href="Registro">Empleado</a>
+                        <a href=#>Empleado</a>
                         <ul class="sub-menu">
                             <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205">@Html.ActionLink("Registrar", "Index", "RegistroUsuarioDTO")</li>
-                            <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205">@Html.ActionLink("Consultar", "ConsultaEmpleados", "HojaVidaDto") </li>
+                            <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205">@Html.ActionLink("Consultar", "Consulta", "HojaVidaDto") </li>
                             <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205">@Html.ActionLink("Inactivar", "Inactivar", "Inactivar")</li>
                         </ul>
                     <li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-submenu menu-item-27">
                         <a href=#>Hoja de Vida</a>
                         <ul class="sub-menu">
-                            <li id="menu-item-35" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-35"><a href="~/Views/HojaVidaDto/Index.cshtml">Datos Personales</a></li>
+                            <li id="menu-item-35" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-35">@Html.ActionLink("Datos Personales", "Index", "HojaVidaDto")</li>
                             <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205">@Html.ActionLink("Experiencia", "Experiencia", "Experiencia")</li>
                             <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205">@Html.ActionLink("Formación", "Estudio", "Estudios")</li>
-                            <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205"><a href="Registro">Habilidades</a></li>
+                            <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205"><a href=#>Habilidades</a></li>
                         </ul>
                     <li id="menu-item-210" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-submenu menu-item-210">
                         @Html.ActionLink("Logout", "Login", "UsuarioLoginDTO")
@@ -132,7 +133,7 @@
 
                     <article id="post-55" class="post-55 page type-page status-publish hentry">
                         <div class="entry-content">
-                            <form action="@Url.Action("Index", "HojaVidaDto")" method="get" id="submit-resume-form" class="job-manager-form" enctype="multipart/form-data">
+                            <form action="@Url.Action("ResultadoConsulta", "HojaVidaDto")" method="get" id="submit-resume-form" class="job-manager-form" enctype="multipart/form-data">
                                 <!-- Resume Fields -->
                                 <fieldset class="fieldset-resume_category">
                                     <label for="resume_category">Consultar por cedula</label>
@@ -161,30 +162,7 @@
 
                                 </div>
                                 <br><br>
-                                <fieldset class="fieldset-candidate_name">
-                                    <label for="candidate_name">No Documento</label>
-                                    <div class="field">
-                                       
-                                       @ViewBag.NumDocumento
-                                    </div>
-                                </fieldset>
-
-
-                                <fieldset class="fieldset-candidate_name">
-                                    <label for="candidate_name">Nombres</label>
-                                    <div class="field">
-                                        
-
-                                    </div>
-                                </fieldset>
-
-                                <fieldset class="fieldset-candidate_name">
-                                    <label for="candidate_name">Apellidos</label>
-                                    <div class="field">
-                                      
-
-                                    </div>
-                                </fieldset>
+                              
                             </form>
                         </div><!-- .entry-content -->
                     </article><!-- #post -->

@@ -87,7 +87,16 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse pull-right" id="top-menu">
                 <ul class="nav navbar-nav text-uppercase text-center">
+                    <li id="menu-item-210" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-submenu menu-item-210">
+                        @Html.ActionLink("Inicio", "Main", "UsuarioLoginDTO")
+                    </li>
                     <li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-submenu menu-item-27">
+                        <a href="Registro">Empleado</a>
+                        <ul class="sub-menu">
+                            <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205">@Html.ActionLink("Registrar", "Index", "RegistroUsuarioDTO")</li>
+                            <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205">@Html.ActionLink("Consultar", "Consulta", "HojaVidaDto") </li>
+                            <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205">@Html.ActionLink("Inactivar", "Inactivar", "Inactivar")</li>
+                        </ul>
                     <li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-submenu menu-item-27">
                         <a href=#>Hoja de Vida</a>
                         <ul class="sub-menu">
@@ -115,8 +124,8 @@
             <section>
                 <div class="container">
                     <div class="row text-center">
-                        <h2>Actualizacion Hoja de Vida</h2>
-                        <p>Recuerda diligenciar todos los campos</p>
+                        <h2>Consulta de Empleado</h2>
+                        
                     </div>
                 </div>
                 <div class="container">
@@ -124,65 +133,55 @@
 
                     <article id="post-55" class="post-55 page type-page status-publish hentry">
                         <div class="entry-content">
-                            
+                            <br><br>
                                 <!-- Resume Fields -->
                                 <fieldset class="fieldset-resume_category">
-                                    <label for="resume_category">Tipo de Contrato</label>
-                                    <div class="field">
-                                        @ViewBag.Tipo_Contrato
-                                    </div>
+                                    <label for="resume_category">Tipo de Contrato:</label>  @ViewBag.Tipo_Contrato
+                                    
+                                   
                                 </fieldset>
+                            <br>
 
                                 <fieldset class="fieldset-resume_category">
-                                    <label for="resume_category">Tipo de Documento</label>
-                                    <div class="field">
-                                        @ViewBag.Tipo_Documento
-                                    </div>
+                                    <label for="resume_category">Tipo de Documento:</label>  @ViewBag.Tipo_Documento
+                                  
                                 </fieldset>
-
+                            <br>
 
                                 <fieldset class="fieldset-candidate_name">
-                                    <label for="candidate_name">No Documento</label>
-                                    <div class="field">
-                                        @ViewBag.NumDocumento
-                                    </div>
+                                    <label for="candidate_name">No Documento:</label>  @ViewBag.NumDocumento
+                                   
                                 </fieldset>
-
+                            <br>
 
                                 <fieldset class="fieldset-candidate_name">
-                                    <label for="candidate_name">Nombres</label>
-                                    <div class="field">
-                                        @ViewBag.Nombres
-                                    </div>
+                                    <label for="candidate_name">Nombres:</label>  @ViewBag.Nombres
+                                    
                                 </fieldset>
+                            <br>
 
                                 <fieldset class="fieldset-candidate_name">
-                                    <label for="candidate_name">Apellidos</label>
-                                    <div class="field">
-                                        @ViewBag.Apellidos
-                                    </div>
+                                    <label for="candidate_name">Apellidos:</label>  @ViewBag.Apellidos
+                                    
                                 </fieldset>
-
+                            <br>
                                 <fieldset class="fieldset-candidate_email">
-                                    <label for="candidate_email">Correo Electronico</label>
-                                    <div class="field">
-                                        @ViewBag.Email
-                                    </div>
+                                    <label for="candidate_email">Correo Electronico:</label>  @ViewBag.Email
+                                   
                                 </fieldset>
+                            <br>
 
                                 <fieldset class="fieldset-candidate_location">
-                                    <label for="candidate_location">Cargo</label>
-                                    <div class="field">
-                                        @ViewBag.Cargo
-                                    </div>
+                                    <label for="candidate_location">Cargo:</label>  @ViewBag.Cargo
+                                    
                                 </fieldset>
+                            <br>
 
                                 <fieldset class="fieldset-candidate_location">
-                                    <label for="candidate_location">Salario</label>
-                                    <div class="field">
-                                        @ViewBag.Salario
-                                    </div>
+                                    <label for="candidate_location">Salario:</label>  @ViewBag.Salario
+                                    
                                 </fieldset>
+                            <br>
                           
                         </div><!-- .entry-content -->
                     </article><!-- #post -->
