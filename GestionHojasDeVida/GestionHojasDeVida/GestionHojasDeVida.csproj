@@ -123,6 +123,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Areas.cs" />
+    <Compile Include="Models\ComboTiposContratos.cs" />
     <Compile Include="Models\Conexion.cs" />
     <Compile Include="Models\EstudiosDao.cs" />
     <Compile Include="Models\EstudiosDto.cs" />

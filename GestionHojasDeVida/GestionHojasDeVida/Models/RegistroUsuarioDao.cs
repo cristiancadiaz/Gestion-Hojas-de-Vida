@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -20,7 +21,7 @@ namespace GestionHojasDeVida.Models
             string cadenaConexion = Conexion.constr;
             SqlConnection conexion = new SqlConnection();
             conexion.ConnectionString = cadenaConexion;
-            SqlCommand comando = new SqlCommand("SP_INSERTAUSUARIO", conexion);
+            SqlCommand comando = new SqlCommand("SP_INSERTAEMPLEADO", conexion);
             comando.CommandType = CommandType.StoredProcedure;
 
             SqlParameter TipoContrato = new SqlParameter();
@@ -85,6 +86,66 @@ namespace GestionHojasDeVida.Models
 
             return Convert.ToInt32(comando.ExecuteScalar());
 
+        }
+        public List<ComboTiposContratos> CargaComboContratos()
+        {
+            var lista = new List<ComboTiposContratos>();
+            var combo = new ComboTiposContratos();
+            string cadenaConexion = Conexion.constr;
+            SqlConnection conexion = new SqlConnection();
+            conexion.ConnectionString = cadenaConexion;
+            string query = "SELECT * FROM TIPO_CONTRATO";
+            SqlCommand cmd = new SqlCommand(query, conexion);
+            cmd.CommandType = CommandType.Text;
+            conexion.Open();
+
+            using (DbDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+
+                    lista.Add(new ComboTiposContratos()
+                    {
+                        Id = Convert.ToInt32(dr["ID_TIPO_CONTRATO"]),
+                        Descripcion = Convert.ToString(dr["DESCPR_CONTRATO"]),
+                        
+                    });
+
+
+                }
+            }
+
+            return lista;
+        }
+        public List<Areas> CargaComboAreas()
+        {
+            var lista = new List<Areas>();
+            var combo = new Areas();
+            string cadenaConexion = Conexion.constr;
+            SqlConnection conexion = new SqlConnection();
+            conexion.ConnectionString = cadenaConexion;
+            string query = "SELECT * FROM AREA";
+            SqlCommand cmd = new SqlCommand(query, conexion);
+            cmd.CommandType = CommandType.Text;
+            conexion.Open();
+
+            using (DbDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+
+                    lista.Add(new Areas()
+                    {
+                        Id = Convert.ToInt32(dr["ID_AREA"]),
+                        descripcion = Convert.ToString(dr["DESCRIP_AREA"]),
+
+                    });
+
+
+                }
+            }
+
+            return lista;
         }
     }
 }

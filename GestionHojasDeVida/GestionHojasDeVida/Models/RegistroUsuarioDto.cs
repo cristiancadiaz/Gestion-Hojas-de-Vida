@@ -42,4 +42,5 @@ namespace GestionHojasDeVida.Models
         CedulaExtranjeria,
         Pasaporte
     }
+   
 }
