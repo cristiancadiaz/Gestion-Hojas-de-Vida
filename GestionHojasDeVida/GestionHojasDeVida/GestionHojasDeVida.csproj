@@ -138,6 +138,7 @@
     <Compile Include="Models\LoginDao.cs" />
     <Compile Include="Models\RegistroUsuarioDao.cs" />
     <Compile Include="Models\RegistroUsuarioDto.cs" />
+    <Compile Include="Models\Tipos_documento.cs" />
     <Compile Include="Models\UsuarioLoginDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

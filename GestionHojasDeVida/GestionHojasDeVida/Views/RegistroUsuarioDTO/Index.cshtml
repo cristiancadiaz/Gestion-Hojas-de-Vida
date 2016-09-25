@@ -43,6 +43,21 @@
     <link rel="alternate" type="application/json+oembed" href="http://alexgurghis.com/themes/jobsdojo/wp-json/oembed/1.0/embed?url=http%3A%2F%2Falexgurghis.com%2Fthemes%2Fjobsdojo%2Fsubmit-resume%2F" />
     <link rel="alternate" type="text/xml+oembed" href="http://alexgurghis.com/themes/jobsdojo/wp-json/oembed/1.0/embed?url=http%3A%2F%2Falexgurghis.com%2Fthemes%2Fjobsdojo%2Fsubmit-resume%2F&#038;format=xml" />
 
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#datepicker").datepicker();
+        });
+    </script>
+    <script>
+        $(function () {
+            $("#datepicker1").datepicker();
+        });
+    </script>
+
 </head>
 
 <body class="page page-id-55 page-template-default custom-font-enabled single-author page-add-listing jobsdojo">
@@ -132,29 +147,22 @@
 
                     <article id="post-55" class="post-55 page type-page status-publish hentry">
                         <div class="entry-content">
+                            @using (Html.BeginForm("Registro", "RegistroUsuarioDTO", FormMethod.Post, new { @class = "job-manager-form" , @id = "submit-resume-form" }))
+                            {
+                                @Html.ValidationSummary(true)
+                                            <!-- Resume Fields -->
 
-                            <form action=@Url.Action("Registro","RegistroUsuarioDTO") method="post" id="submit-resume-form" class="job-manager-form" enctype="multipart/form-data">
-                                @Html.ValidationSummary()
-                                <!-- Resume Fields -->
                                 <fieldset class="fieldset-resume_category">
                                     <label for="resume_category">Tipo de Contrato</label>
                                     <div class="field">
-                                        @Html.EnumDropDownListFor(
-                                              x => x.Tipo_Contrato,
-                                         "Select El Tipo de Contrato",
-                                        new { @class = "form-control" })
-
+                                        @Html.DropDownList("combocontratos", ViewData["combocontratos"] as SelectList)
                                     </div>
                                 </fieldset>
 
                                 <fieldset class="fieldset-resume_category">
                                     <label for="resume_category">Tipo de Documento</label>
                                     <div class="field">
-                                        @Html.EnumDropDownListFor(
-                                              x => x.Tipo_Documento,
-                                         "Select El tipo De Documento",
-                                        new { @class = "form-control" })
-                                     
+                                        @Html.DropDownList("combodocu", ViewData["combodocu"] as SelectList)
                                     </div>
                                 </fieldset>
 
@@ -163,7 +171,7 @@
                                     <label for="candidate_name">No Documento</label>
                                     <div class="field">
                                         @Html.TextBoxFor(model => model.Num_Documento, new { placeholder = "Numero de Documento" })
-
+                                        @Html.ValidationMessageFor(x => x.Num_Documento, null, new { @class = "label label-danger" })
                                     </div>
                                 </fieldset>
 
@@ -172,6 +180,7 @@
                                     <label for="candidate_name">Nombres</label>
                                     <div class="field">
                                         @Html.TextBoxFor(model => model.Nombres, new { placeholder = "Nombre Completo" })
+                                        @Html.ValidationMessageFor(model => model.Nombres)
 
                                     </div>
                                 </fieldset>
@@ -180,7 +189,7 @@
                                     <label for="candidate_name">Apellidos</label>
                                     <div class="field">
                                         @Html.TextBoxFor(model => model.Apellidos, new { placeholder = "Apellido Completo" })
-
+                                        @Html.ValidationMessageFor(model => model.Apellidos)
                                     </div>
                                 </fieldset>
 
@@ -188,30 +197,30 @@
                                     <label for="candidate_email">Correo Electronico</label>
                                     <div class="field">
                                         @Html.TextBoxFor(model => model.Email, new { placeholder = "usuario@dominio.com" })
-
+                                        @Html.ValidationMessageFor(model => model.Email)
                                     </div>
                                 </fieldset>
 
                                 <fieldset class="fieldset-candidate_title">
                                     <label for="candidate_title">Contraseña</label>
                                     <div class="field">
-                                        @Html.TextBoxFor(model => model.Password, new { placeholder = "********" })
-
+                                        @Html.EditorFor(model => model.Password, new { placeholder = "********" })
+                                        @Html.ValidationMessageFor(model => model.Password)
                                     </div>
                                 </fieldset>
 
                                 <fieldset class="fieldset-candidate_title">
                                     <label for="candidate_title">Confirmar Contraseña</label>
                                     <div class="field">
-                                        @Html.TextBoxFor(model => model.ConfirmPass, new { placeholder = "********" })
-
+                                        @Html.EditorFor(model => model.ConfirmPass, new { placeholder = "********" })
+                                        @Html.ValidationMessageFor(model => model.ConfirmPass)
                                     </div>
                                 </fieldset>
                                 <fieldset class="fieldset-candidate_location">
                                     <label for="candidate_location">Cargo</label>
                                     <div class="field">
                                         @Html.TextBoxFor(model => model.Cargo, new { placeholder = "Cargo" })
-
+                                        @Html.ValidationMessageFor(model => model.Cargo)
                                     </div>
                                 </fieldset>
 
@@ -219,20 +228,26 @@
                                     <label for="candidate_location">Salario</label>
                                     <div class="field">
                                         @Html.TextBoxFor(model => model.Salario, new { placeholder = "Salario" })
-
+                                        @Html.ValidationMessageFor(model => model.Salario)
                                     </div>
                                 </fieldset>
 
                                 <fieldset class="fieldset-candidate_location">
                                     <label for="candidate_location">Fecha Ingreso</label>
                                     <div class="field">
-                                        <input type="date" name="FechaIngreso" required/>
+                                        <input type="text" id="datepicker" name="FechaIngreso" required placeholder="clic para generar fecha!!!" />
                                     </div>
                                 </fieldset>
                                 <fieldset class="fieldset-candidate_location">
                                     <label for="candidate_location">Fecha Fin</label>
                                     <div class="field">
-                                        <input type="date" name="FechaFin" required />
+                                        <input type="text" id="datepicker1" name="FechaFin" required placeholder="clic para generar fecha!!!" />
+                                    </div>
+                                </fieldset>
+                                <fieldset class="fieldset-resume_category">
+                                    <label for="resume_category">Area Funcional</label>
+                                    <div class="field">
+                                        @Html.DropDownList("comboareas", ViewData["comboareas"] as SelectList)
                                     </div>
                                 </fieldset>
 
@@ -248,8 +263,8 @@
 
                                 </div>
                                 <br><br>
-
-                            </form>
+                            }
+                            <form action=@Url.Action("Registro", "RegistroUsuarioDTO") method="post" id="submit-resume-form" class="job-manager-form" enctype="multipart/form-data"></form>
                         </div><!-- .entry-content -->
                     </article><!-- #post -->
 
@@ -393,4 +408,3 @@
 
 </body>
 </html>
-

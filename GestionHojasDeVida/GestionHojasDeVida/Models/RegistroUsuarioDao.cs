@@ -16,7 +16,7 @@ namespace GestionHojasDeVida.Models
         //RegistroUsuarioDto rudto = new RegistroUsuarioDto();
        
         
-        public int InsertUsuario(RegistroUsuarioDto rudto)
+        public int InsertUsuario(RegistroUsuarioDto rudto, int Tipo_Contrato, int area, string fechaingreso, string fechafin, int Tipo_Documento)
         {
             string cadenaConexion = Conexion.constr;
             SqlConnection conexion = new SqlConnection();
@@ -27,12 +27,12 @@ namespace GestionHojasDeVida.Models
             SqlParameter TipoContrato = new SqlParameter();
             TipoContrato.ParameterName = "@Tipo_Contrato";
             TipoContrato.SqlDbType = SqlDbType.VarChar;
-            TipoContrato.Value = rudto.Tipo_Contrato;
+            TipoContrato.Value = Tipo_Contrato;
 
             SqlParameter TipoDocumento = new SqlParameter();
             TipoDocumento.ParameterName = "@Tipo_Documento";
-            TipoDocumento.SqlDbType = SqlDbType.VarChar;
-            TipoDocumento.Value = rudto.Tipo_Documento;
+            TipoDocumento.SqlDbType = SqlDbType.Int;
+            TipoDocumento.Value = Tipo_Documento;
 
             SqlParameter NumDocumento = new SqlParameter();
             NumDocumento.ParameterName = "@Numero_Documento";
@@ -69,6 +69,21 @@ namespace GestionHojasDeVida.Models
             Salario.SqlDbType = SqlDbType.VarChar;
             Salario.Value = rudto.Salario;
 
+            SqlParameter inArea = new SqlParameter();
+            inArea.ParameterName = "@area";
+            inArea.SqlDbType = SqlDbType.Int;
+            inArea.Value = area;
+
+            SqlParameter infechaIngreso = new SqlParameter();
+            infechaIngreso.ParameterName = "@fecha_ingreso";
+            infechaIngreso.SqlDbType = SqlDbType.Date;
+            infechaIngreso.Value = fechaingreso;
+
+            SqlParameter infechaFin = new SqlParameter();
+            infechaFin.ParameterName = "@fecha_salida";
+            infechaFin.SqlDbType = SqlDbType.Date;
+            infechaFin.Value = fechafin;
+
             comando.Parameters.Add(TipoContrato);
             comando.Parameters.Add(TipoDocumento);
             comando.Parameters.Add(NumDocumento);
@@ -78,6 +93,9 @@ namespace GestionHojasDeVida.Models
             comando.Parameters.Add(Password);
             comando.Parameters.Add(Cargo);
             comando.Parameters.Add(Salario);
+            comando.Parameters.Add(inArea);
+            comando.Parameters.Add(infechaIngreso);
+            comando.Parameters.Add(infechaFin);
 
             SqlDataAdapter adaptador = new SqlDataAdapter(comando);
 
@@ -138,6 +156,36 @@ namespace GestionHojasDeVida.Models
                     {
                         Id = Convert.ToInt32(dr["ID_AREA"]),
                         descripcion = Convert.ToString(dr["DESCRIP_AREA"]),
+
+                    });
+
+
+                }
+            }
+
+            return lista;
+        }
+        public List<Tipos_documento> CargaComboDocumentos()
+        {
+            var lista = new List<Tipos_documento>();
+            var combo = new Tipos_documento();
+            string cadenaConexion = Conexion.constr;
+            SqlConnection conexion = new SqlConnection();
+            conexion.ConnectionString = cadenaConexion;
+            string query = "SELECT * FROM TIPOS_DOCUMENTO";
+            SqlCommand cmd = new SqlCommand(query, conexion);
+            cmd.CommandType = CommandType.Text;
+            conexion.Open();
+
+            using (DbDataReader dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+
+                    lista.Add(new Tipos_documento()
+                    {
+                        Id = Convert.ToInt32(dr["TIPO_DOCUMENTO"]),
+                        Descripcion = Convert.ToString(dr["DESCRP_DOCUMENTO"]),
 
                     });
 
