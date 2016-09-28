@@ -14,6 +14,41 @@ namespace GestionHojasDeVida.Controllers
         // GET: RegistroUsuarioDao
         public ActionResult Index()
         {
+
+            PrecargaCombos();
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Registro(RegistroUsuarioDto rudto, string FechaIngreso, string FechaFin, int combocontratos = 0, int comboareas = 0, int combodocu = 0)
+        {
+
+            if (ModelState.IsValid)
+            {
+
+                int resultado = rudao.InsertUsuario(rudto, combocontratos, comboareas, FechaIngreso, FechaFin, combodocu);
+                if (resultado == 0)
+                {
+                    return RedirectToAction("ViewsuccesUsuario", "HojaVidaDto");
+                }
+                else
+                {
+                    ModelState.AddModelError("Error", "No se ha registrado el usuario revisar!!!");
+                    PrecargaCombos();
+                    return View("Index");
+                }
+            }
+            else
+            {
+
+                PrecargaCombos();
+                return View("Index");
+            }
+
+        }
+
+        private void PrecargaCombos()
+        {
             var comboContratos = new List<ComboTiposContratos>();
             var comboAreas = new List<Areas>();
             var comboDocumentos = new List<Tipos_documento>();
@@ -26,37 +61,6 @@ namespace GestionHojasDeVida.Controllers
             ViewData["combocontratos"] = liscontratos;
             ViewData["comboareas"] = lisareas;
             ViewData["combodocu"] = lisdocu;
-            return View();
-        }
-        
-        [HttpPost]
-        public ActionResult Registro(RegistroUsuarioDto rudto,  string FechaIngreso, string FechaFin, int combocontratos = 0, int comboareas = 0, int combodocu = 0)
-        {
-
-            if (ModelState.IsValid)
-            {
-
-             int resultado = rudao.InsertUsuario(rudto, combocontratos, comboareas, FechaIngreso, FechaFin,combodocu);
-                if(resultado == 0)
-                {
-                    return RedirectToAction("ViewsuccesUsuario", "HojaVidaDto");
-                }
-                else
-                {
-                    ModelState.AddModelError("Error", "No se ha registrado el usuario revisar!!!");
-                    return View("Index");
-                }
-            }
-            else
-            {
-                return RedirectToAction("Index", "RegistroUsuarioDTO");
-            }
-         
-        }
-       
-        public ActionResult pruba()
-        {
-            return View();
         }
     }
 }
