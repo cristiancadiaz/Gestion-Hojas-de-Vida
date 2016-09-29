@@ -1,4 +1,5 @@
-﻿@model GestionHojasDeVida.Models.InactivarDto
+﻿ <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="GestionHojasDeVida.Views.WebForm1" %>
+@inherits System.Web.Mvc.WebViewPage
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -9,7 +10,7 @@
     <link rel="profile" href="http://gmpg.org/xfn/11" />
     <link rel="pingback" href="http://alexgurghis.com/themes/jobsdojo/xmlrpc.php" />
 
-    <title>Inactivar Empleado</title>
+    <title>Registro HV</title>
     <link rel="alternate" type="application/rss+xml" title="JobsDojo &raquo; Feed" href="http://alexgurghis.com/themes/jobsdojo/feed/" />
     <link rel="alternate" type="application/rss+xml" title="JobsDojo &raquo; Comments Feed" href="http://alexgurghis.com/themes/jobsdojo/comments/feed/" />
     <link rel='stylesheet' id='bootstrap-css' href='http://alexgurghis.com/themes/jobsdojo/wp-content/themes/jobsdojo/css/bootstrap.min.css?ver=1.0.0' type='text/css' media='all' />
@@ -41,6 +42,7 @@
     <link rel='shortlink' href='http://alexgurghis.com/themes/jobsdojo/?p=55' />
     <link rel="alternate" type="application/json+oembed" href="http://alexgurghis.com/themes/jobsdojo/wp-json/oembed/1.0/embed?url=http%3A%2F%2Falexgurghis.com%2Fthemes%2Fjobsdojo%2Fsubmit-resume%2F" />
     <link rel="alternate" type="text/xml+oembed" href="http://alexgurghis.com/themes/jobsdojo/wp-json/oembed/1.0/embed?url=http%3A%2F%2Falexgurghis.com%2Fthemes%2Fjobsdojo%2Fsubmit-resume%2F&#038;format=xml" />
+
 
 
 </head>
@@ -117,13 +119,13 @@
     <div id="page-content">
 
         <header style="background-color: darkblue ; height:100px"></header>
+
         <div id="main">
             <section>
-
                 <div class="container">
                     <div class="row text-center">
-                        <h2>Inactivar Empleado</h2>
-                        <p>Recuerda diligenciar todos los campos</p>
+                        <h2>Consulta de Empleado</h2>
+                        
                     </div>
                 </div>
                 <div class="container">
@@ -131,49 +133,60 @@
 
                     <article id="post-55" class="post-55 page type-page status-publish hentry">
                         <div class="entry-content">
-                           @using (@Html.BeginForm("create", "Inactivar", FormMethod.Post))
-                           {
-                            <fieldset class="fieldset-resume_category">
-                                <label for="resume_category">Identificacion Empleado:</label>
-                                <div class="field">
-                                    @Html.TextBoxFor(model => model.Identificacion)
-                                </div>
-                            </fieldset>
+                            <br><br>
+                                <!-- Resume Fields -->
+                                <fieldset class="fieldset-resume_category">
+                                    <label for="resume_category">Tipo de Contrato:</label>  @ViewBag.Tipo_Contrato
+                                    
+                                   
+                                </fieldset>
+                            <br>
 
                                 <fieldset class="fieldset-resume_category">
-                                    <label for="resume_category">Motivo:</label>
-                                    <div class="field">
-                                        @Html.TextAreaFor(model => model.Motivo)
-                                    </div>
+                                    <label for="resume_category">Tipo de Documento:</label>  @ViewBag.Tipo_Documento
+                                  
                                 </fieldset>
-                               
+                            <br>
 
-                                <p>
-                                    <input type="hidden" id="_wpnonce" name="_wpnonce" value="234ae6f3fb" /><input type="hidden" name="_wp_http_referer" value="/themes/jobsdojo/submit-resume/" /><input type="hidden" name="resume_manager_form" value="submit-resume" />
-                                    <input type="hidden" name="resume_id" value="0" />
-                                    <input type="hidden" name="job_id" value="0" />
-                                    <input type="hidden" name="step" value="1" />
-                                    <button style="background-color: darkblue; color: #dae2ff; text-align:center; border-radius:8px" type="submit" name="Inactivar" value="1"> Inactivar </button>
-                                </p>
-                           }
-                                <!-- Resume Fields -->
-                            @ViewBag.mensajeexito
-
-
-                                                              <br>
-                                <div style="width:240px; float:right ">
+                                <fieldset class="fieldset-candidate_name">
+                                    <label for="candidate_name">No Documento:</label>  @ViewBag.NumDocumento
                                    
+                                </fieldset>
+                            <br>
 
-                                </div>
-                                <br><br>
+                                <fieldset class="fieldset-candidate_name">
+                                    <label for="candidate_name">Nombres:</label>  @ViewBag.Nombres
+                                    
+                                </fieldset>
+                            <br>
 
-                           
+                                <fieldset class="fieldset-candidate_name">
+                                    <label for="candidate_name">Apellidos:</label>  @ViewBag.Apellidos
+                                    
+                                </fieldset>
+                            <br>
+                                <fieldset class="fieldset-candidate_email">
+                                    <label for="candidate_email">Correo Electronico:</label>  @ViewBag.Email
+                                   
+                                </fieldset>
+                            <br>
+
+                                <fieldset class="fieldset-candidate_location">
+                                    <label for="candidate_location">Cargo:</label>  @ViewBag.Cargo
+                                    
+                                </fieldset>
+                            <br>
+
+                                <fieldset class="fieldset-candidate_location">
+                                    <label for="candidate_location">Salario:</label>  @ViewBag.Salario
+                                    
+                                </fieldset>
+                            <br>
+                          
                         </div><!-- .entry-content -->
                     </article><!-- #post -->
 
                 </div>
-
-
             </section>
         </div>
 
@@ -310,3 +323,4 @@
 
 </body>
 </html>
+

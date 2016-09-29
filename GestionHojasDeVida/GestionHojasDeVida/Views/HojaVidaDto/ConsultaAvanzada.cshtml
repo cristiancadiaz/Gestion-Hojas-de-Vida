@@ -1,5 +1,4 @@
-﻿@model GestionHojasDeVida.Models.InactivarDto
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -9,7 +8,7 @@
     <link rel="profile" href="http://gmpg.org/xfn/11" />
     <link rel="pingback" href="http://alexgurghis.com/themes/jobsdojo/xmlrpc.php" />
 
-    <title>Inactivar Empleado</title>
+    <title>Consultas</title>
     <link rel="alternate" type="application/rss+xml" title="JobsDojo &raquo; Feed" href="http://alexgurghis.com/themes/jobsdojo/feed/" />
     <link rel="alternate" type="application/rss+xml" title="JobsDojo &raquo; Comments Feed" href="http://alexgurghis.com/themes/jobsdojo/comments/feed/" />
     <link rel='stylesheet' id='bootstrap-css' href='http://alexgurghis.com/themes/jobsdojo/wp-content/themes/jobsdojo/css/bootstrap.min.css?ver=1.0.0' type='text/css' media='all' />
@@ -84,12 +83,13 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse pull-right" id="top-menu">
+
                 <ul class="nav navbar-nav text-uppercase text-center">
                     <li id="menu-item-210" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-submenu menu-item-210">
                         @Html.ActionLink("Inicio", "Main", "UsuarioLoginDTO")
                     </li>
                     <li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-submenu menu-item-27">
-                        <a href="Registro">Empleado</a>
+                        <a href=#>Empleado</a>
                         <ul class="sub-menu">
                             <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205">@Html.ActionLink("Registrar", "Index", "RegistroUsuarioDTO")</li>
                             <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205">@Html.ActionLink("Consultar", "Consulta", "HojaVidaDto") </li>
@@ -98,16 +98,17 @@
                     <li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-submenu menu-item-27">
                         <a href=#>Hoja de Vida</a>
                         <ul class="sub-menu">
-                            <li id="menu-item-35" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-35"><a href="~/Views/HojaVidaDto/Index.cshtml">Datos Personales</a></li>
+                            <li id="menu-item-35" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-35">@Html.ActionLink("Datos Personales", "Index", "HojaVidaDto")</li>
                             <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205">@Html.ActionLink("Experiencia", "Experiencia", "Experiencia")</li>
                             <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205">@Html.ActionLink("Formación", "Estudio", "Estudios")</li>
-                            <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205"><a href="Registro">Habilidades</a></li>
+                            <li id="menu-item-205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-205"><a href=#>Habilidades</a></li>
                         </ul>
                     <li id="menu-item-210" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-submenu menu-item-210">
                         @Html.ActionLink("Logout", "Login", "UsuarioLoginDTO")
                     </li>
 
                 </ul>
+
             </div><!-- /.navbar-collapse -->
 
         </div><!-- /.container-fluid -->
@@ -122,7 +123,7 @@
 
                 <div class="container">
                     <div class="row text-center">
-                        <h2>Inactivar Empleado</h2>
+                        <h2>Consulta Empleado</h2>
                         <p>Recuerda diligenciar todos los campos</p>
                     </div>
                 </div>
@@ -131,43 +132,129 @@
 
                     <article id="post-55" class="post-55 page type-page status-publish hentry">
                         <div class="entry-content">
-                           @using (@Html.BeginForm("create", "Inactivar", FormMethod.Post))
-                           {
-                            <fieldset class="fieldset-resume_category">
-                                <label for="resume_category">Identificacion Empleado:</label>
-                                <div class="field">
-                                    @Html.TextBoxFor(model => model.Identificacion)
-                                </div>
-                            </fieldset>
-
-                                <fieldset class="fieldset-resume_category">
-                                    <label for="resume_category">Motivo:</label>
-                                    <div class="field">
-                                        @Html.TextAreaFor(model => model.Motivo)
-                                    </div>
-                                </fieldset>
-                               
-
-                                <p>
-                                    <input type="hidden" id="_wpnonce" name="_wpnonce" value="234ae6f3fb" /><input type="hidden" name="_wp_http_referer" value="/themes/jobsdojo/submit-resume/" /><input type="hidden" name="resume_manager_form" value="submit-resume" />
-                                    <input type="hidden" name="resume_id" value="0" />
-                                    <input type="hidden" name="job_id" value="0" />
-                                    <input type="hidden" name="step" value="1" />
-                                    <button style="background-color: darkblue; color: #dae2ff; text-align:center; border-radius:8px" type="submit" name="Inactivar" value="1"> Inactivar </button>
-                                </p>
-                           }
+                            <form action="@Url.Action("ResultadoConsulta", "HojaVidaDto")" method="get" id="submit-resume-form" class="job-manager-form" enctype="multipart/form-data">
                                 <!-- Resume Fields -->
-                            @ViewBag.mensajeexito
-
-
-                                                              <br>
-                                <div style="width:240px; float:right ">
+                                <fieldset class="fieldset-resume_category">
                                    
+                                    <div style="border: 2px solid black ; margin: auto; width: 90%; border-radius: 8px">
+                                        <table >
+                                            <tr>
+                                                  <td class="auto-style71" colspan="5">
+
+                                                        <table style="border-radius:8px; background-color: black; margin:auto; width:100%" >
+                                                            <tr>
+                                                                <td style="text-align: center; width:100%" >
+                                                                    <span id="Label1" style="color:White;font-family:Aharoni;font-size:12pt;">Busqueda de Cliente:</span>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                              
+</td> </div>
+                                            </tr>
+                                            <tr>
+                                                <td class="auto-style71" colspan="5" style="border-top-style: solid; border-top-width: 2px; border-top-color: #1A4752"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="auto-style65" style="text-align: right"></td>
+                                                <td class="auto-style70" style="text-align: left">
+                                                    <span id="lblId24" style="color:Black;font-family:Aharoni;font-size:12pt;font-weight:bold;">Consultar Por:</span>
+                                                </td>
+                                                <td class="auto-style66" style="text-align: left">
+                                                    <select name="cmbBuscar" id="cmbBuscar" style="font-family:Tw Cen MT;font-size:10pt; height:18px; width:133px;">
+                                                        <option value="N/A">N/A</option>
+                                                        <option value="NIT">NIT</option>
+                                                        <option selected="selected" value="RAZON SOCIAL">RAZON SOCIAL</option>
+                                                        <option value="CIUDAD">CIUDAD</option>
+
+                                                    </select>
+                                                </td>
+                                                <td class="auto-style67" style="text-align: left"></td>
+                                                <td class="auto-style68"> </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="auto-style65" style="text-align: right"></td>
+                                                <td class="auto-style70" style="text-align: left">
+                                                    <span id="lblId25" style="color:Black;font-family:Aharoni;font-size:12pt;font-weight:bold;">Base de Datos:</span>
+                                                </td>
+                                                <td class="auto-style66" style="text-align: left">
+                                                    <select name="cmbBase" id="cmbBase" style="font-family:Tw Cen MT;font-size:10pt;height:18px;width:133px;">
+                                                        <option value="N/A">N/A</option>
+                                                        <option value="JANUS">JANUS</option>
+                                                        <option selected="selected" value="SIIGO">SIIGO</option>
+
+                                                    </select>
+                                                </td>
+                                                <td class="auto-style67" style="text-align: left"></td>
+                                                <td class="auto-style68"> </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="auto-style65" style="text-align: center"></td>
+                                                <td class="auto-style66" style="text-align: left">
+                                                    <span id="lblId4" style="color:Black;font-family:Aharoni;font-size:12pt;font-weight:bold;">Parametro: </span>
+                                                    &nbsp;&nbsp;&nbsp;
+                                                </td>
+                                                <td class="auto-style66" style="text-align: left" colspan="3">
+                                                    <input name="txtParametro" type="text" value="YEIMMY ANDREA" id="txtParametro" tabindex="1" autocomplete="off" style="font-family:Tw Cen MT;font-size:10pt;font-weight:bold;height:17px;width:216px;margin-bottom: 0px" />
+                                                    <input type="image" name="Imgsearch" id="Imgsearch" tabindex="2" src="~/Imagenes/images (1).jpg" align="absbottom" style="height:20px;width:22px;border-width:0px;" />
+                                                    <input type="image" name="Imgnew" id="Imgnew" tabindex="100" src="~/Imagenes/limpiar2.png" align="absbottom" style="height:25px;width:29px;border-width:0px;" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="auto-style73" colspan="5">
+
+                                                    <br />
+                                                    <div>
+                                                        <table cellspacing="0" cellpadding="2" align="Center" rules="cols" border="1" id="gridBuscar" style="background-color:White;border-color:#999999;border-width:1px;border-style:None;font-family:Trebuchet MS;font-size:8pt;width:96%;border-collapse:collapse;">
+                                                            <tr style="color:White;background-color:DarkBlue;font-family:Trebuchet MS;font-size:10pt;font-weight:bold;">
+                                                                <th scope="col">&nbsp;</th>
+                                                                <th scope="col">Nit_Cliente</th>
+                                                                <th scope="col">Razon_Social</th>
+                                                                <th scope="col">Persona_Contacto</th>
+                                                                <th scope="col">Telefono1</th>
+                                                                <th scope="col">Ciudad</th>
+                                                            </tr>
+                                                            <tr style="color:Black;background-color:#EEEEEE;">
+                                                                <td><a href="javascript:__doPostBack(&#39;gridBuscar&#39;,&#39;Select$0&#39;)" style="color:Black;">Seleccionar</a></td>
+                                                                <td>1073236642</td>
+                                                                <td>MOYA MURCIA YEIMMY ANDREA</td>
+                                                                <td>MOYA MURCIA YEIMMY ANDREA</td>
+                                                                <td>00003029144    </td>
+                                                                <td>BOGOTA</td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="auto-style71"></td>
+                                                <td class="auto-style75" colspan="4"></td>
+                                            </tr>
+                                        </table>
+
+                                    </div>
+                                        <div class="field">
+
+                                        </div>
+</fieldset>
+                                <div>
+                                    
 
                                 </div>
-                                <br><br>
+                                        <br>
+                                        <div style="width:240px; float:right ">
+                                            <p>
+                                                <input type="hidden" id="_wpnonce" name="_wpnonce" value="234ae6f3fb" /><input type="hidden" name="_wp_http_referer" value="/themes/jobsdojo/submit-resume/" /><input type="hidden" name="resume_manager_form" value="submit-resume" />
+                                                <input type="hidden" name="resume_id" value="0" />
+                                                <input type="hidden" name="job_id" value="0" />
+                                                <input type="hidden" name="step" value="1" />
+                                                <input style="background-color: darkblue; color: #dae2ff; text-align:center; border-radius:8px" type="submit" name="submit_resume" value="Consultar" />
+                                            </p>
 
-                           
+                                        </div>
+                                        <br><br>
+
+</form>
                         </div><!-- .entry-content -->
                     </article><!-- #post -->
 
@@ -310,3 +397,4 @@
 
 </body>
 </html>
+

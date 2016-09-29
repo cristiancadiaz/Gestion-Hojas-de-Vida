@@ -99,6 +99,8 @@
     <Content Include="Imagenes\btn.PNG" />
     <Content Include="Imagenes\cumpleanios.JPG" />
     <Content Include="Imagenes\fondo1.jpg" />
+    <Content Include="Imagenes\images %281%29.jpg" />
+    <Content Include="Imagenes\limpiar2.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -110,6 +112,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Views\HojaVidaDto\WebForm1.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -141,6 +144,13 @@
     <Compile Include="Models\Tipos_documento.cs" />
     <Compile Include="Models\UsuarioLoginDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\HojaVidaDto\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\HojaVidaDto\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -165,6 +175,7 @@
     <Content Include="Views\Inactivar\Inactivar.cshtml" />
     <Content Include="Views\HojaVidaDto\Consulta.cshtml" />
     <Content Include="Views\HojaVidaDto\ResultadoConsulta.cshtml" />
+    <Content Include="Views\HojaVidaDto\ConsultaAvanzada.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

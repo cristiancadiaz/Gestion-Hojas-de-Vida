@@ -69,7 +69,16 @@ namespace GestionHojasDeVida.Controllers
         {
             return View();
         }
-       
+
+        public ActionResult ConsultaAvanzada()
+        {
+            return View();
+        }
+
+        public ActionResult WebForm1()
+        {
+            return View();
+        }
         public ActionResult Index(int id)
         {
             var informacionEmpleado = new HojaVidaDto();
