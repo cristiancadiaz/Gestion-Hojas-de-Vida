@@ -99,7 +99,7 @@
     <Content Include="Imagenes\btn.PNG" />
     <Content Include="Imagenes\cumpleanios.JPG" />
     <Content Include="Imagenes\fondo1.jpg" />
-    <Content Include="Imagenes\images %281%29.jpg" />
+    <Content Include="Imagenes\buscar.jpg" />
     <Content Include="Imagenes\limpiar2.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
