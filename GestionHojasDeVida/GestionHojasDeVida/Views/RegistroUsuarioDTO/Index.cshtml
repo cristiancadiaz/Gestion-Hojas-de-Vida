@@ -154,14 +154,14 @@
                                 <fieldset class="fieldset-resume_category">
                                     <label for="resume_category">Tipo de Contrato</label>
                                     <div class="field">
-                                        @Html.DropDownList("combocontratos", ViewData["combocontratos"] as SelectList)
+                                        @Html.DropDownList("combocontratos", ViewData["combocontratos"] as SelectList,"Tipo de contrato")
                                     </div>
                                 </fieldset>
 
                                 <fieldset class="fieldset-resume_category">
                                     <label for="resume_category">Tipo de Documento</label>
                                     <div class="field">
-                                        @Html.DropDownList("combodocu", ViewData["combodocu"] as SelectList)
+                                        @Html.DropDownList("combodocu", ViewData["combodocu"] as SelectList, "Tipo de documento")
                                     </div>
                                 </fieldset>
 
@@ -179,7 +179,7 @@
                                     <label for="candidate_name">Nombres</label>
                                     <div class="field">
                                         @Html.TextBoxFor(model => model.Nombres, new { placeholder = "Nombre Completo" })
-                                        @Html.ValidationMessageFor(model => model.Nombres)
+                                        @Html.ValidationMessageFor(model => model.Nombres,null, new { @class = "label label-danger"})
 
                                     </div>
                                 </fieldset>
@@ -188,31 +188,31 @@
                                     <label for="candidate_name">Apellidos</label>
                                     <div class="field">
                                         @Html.TextBoxFor(model => model.Apellidos, new { placeholder = "Apellido Completo" })
-                                        @Html.ValidationMessageFor(model => model.Apellidos)
+                                        @Html.ValidationMessageFor(model => model.Apellidos, null, new { @class = "label label-danger" })
                                     </div>
                                 </fieldset>
 
                                 <fieldset class="fieldset-candidate_email">
                                     <label for="candidate_email">Correo Electronico</label>
                                     <div class="field">
-                                        @Html.TextBoxFor(model => model.Email, new { placeholder = "usuario@dominio.com" })
-                                        @Html.ValidationMessageFor(model => model.Email)
+                                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { placeholder = "usuario @dominio.com" } })
+                                        @Html.ValidationMessageFor(model => model.Email, null, new { @class = "label label-danger" })
                                     </div>
                                 </fieldset>
-
+                                
                                 <fieldset class="fieldset-candidate_title">
                                     <label for="candidate_title">Contraseña</label>
                                     <div class="field">
-                                        @Html.EditorFor(model => model.Password, new { placeholder = "********" })
-                                        @Html.ValidationMessageFor(model => model.Password)
+                                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { placeholder = "***********" } })
+                                        @Html.ValidationMessageFor(model => model.Password, null, new { @class = "label label-danger" })
                                     </div>
                                 </fieldset>
 
                                 <fieldset class="fieldset-candidate_title">
                                     <label for="candidate_title">Confirmar Contraseña</label>
                                     <div class="field">
-                                        @Html.EditorFor(model => model.ConfirmPass, new { placeholder = "********" })
-                                        @Html.ValidationMessageFor(model => model.ConfirmPass)
+                                        @Html.EditorFor(model => model.ConfirmPass, new { htmlAttributes = new { placeholder = "***********" } })
+                                        @Html.ValidationMessageFor(model => model.ConfirmPass, null, new { @class = "label label-danger" })
                                     </div>
                                 </fieldset>
                                 <fieldset class="fieldset-candidate_location">
@@ -226,12 +226,11 @@
                                 <fieldset class="fieldset-candidate_location">
                                     <label for="candidate_location">Salario</label>
                                     <div class="field">
-                                        @Html.TextBoxFor(model => model.Salario, new { placeholder = "Salario" })
-                                        @Html.ValidationMessageFor(model => model.Salario)
+                                        @Html.EditorFor(model => model.Salario, new { htmlAttributes = new { placeholder = "Salario" } })
                                     </div>
                                 </fieldset>
 
-                                <fieldset class="fieldset-candidate_location">
+                                <fieldset class="fieldset-c.........andidate_location">
                                     <label for="candidate_location">Fecha Ingreso</label>
                                     <div class="field">
                                         <input type="text" id="datepicker" name="FechaIngreso" required placeholder="clic para generar fecha!!!" />
@@ -246,7 +245,7 @@
                                 <fieldset class="fieldset-resume_category">
                                     <label for="resume_category">Area Funcional</label>
                                     <div class="field">
-                                        @Html.DropDownList("comboareas", ViewData["comboareas"] as SelectList)
+                                        @Html.DropDownList("comboareas", ViewData["comboareas"] as SelectList,"Seleccione Area funcional")
                                     </div>
                                 </fieldset>
 
