@@ -176,6 +176,7 @@
     <Content Include="Views\HojaVidaDto\Consulta.cshtml" />
     <Content Include="Views\HojaVidaDto\ResultadoConsulta.cshtml" />
     <Content Include="Views\HojaVidaDto\ConsultaAvanzada.cshtml" />
+    <Content Include="Views\Estudios\Estudio_No_Formal - Copy.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

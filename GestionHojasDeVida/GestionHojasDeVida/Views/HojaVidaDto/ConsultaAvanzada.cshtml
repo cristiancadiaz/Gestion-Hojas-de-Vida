@@ -41,7 +41,20 @@
     <link rel="alternate" type="application/json+oembed" href="http://alexgurghis.com/themes/jobsdojo/wp-json/oembed/1.0/embed?url=http%3A%2F%2Falexgurghis.com%2Fthemes%2Fjobsdojo%2Fsubmit-resume%2F" />
     <link rel="alternate" type="text/xml+oembed" href="http://alexgurghis.com/themes/jobsdojo/wp-json/oembed/1.0/embed?url=http%3A%2F%2Falexgurghis.com%2Fthemes%2Fjobsdojo%2Fsubmit-resume%2F&#038;format=xml" />
 
+    <script>
+        function activar() {
 
+            var e = document.getElementById("cmbBuscar");
+            var strSalario = e.options[e.selectedIndex].value;
+            if   (strSalario == 'SALARIO')
+            {
+                document.getElementById('cmbFiltro').disabled = false;
+            }
+            
+        }
+
+   
+        </script>
 </head>
 
 <body class="page page-id-55 page-template-default custom-font-enabled single-author page-add-listing jobsdojo">
@@ -160,25 +173,41 @@
                                                     <span id="lblId24" style="color:Black;font-family:Aharoni;font-size:12pt;font-weight:bold;">Consultar Por:</span>
                                                 </td>
                                                 <td class="auto-style66" style="text-align: left">
-                                                    <select name="cmbBuscar" id="cmbBuscar" style="font-family:Tw Cen MT;font-size:10pt; height:18px; width:133px;">
+                                                    <select name="cmbBuscar" id="cmbBuscar" onchange="activar();" style="font-family:Tw Cen MT;font-size:10pt; height:18px; width:133px;">
                                                        
-                                                        <option value="NIT">IDENTIFICACION</option>
-                                                        <option selected="selected" value="RAZON SOCIAL">NOMBRES</option>
-                                                        <option value="CIUDAD">AREA</option>
-                                                        <option value="CIUDAD">APELLIDOS</option>
-                                                        <option value="CIUDAD">SALARIO</option>
+                                                        <option value="IDENTIFICACION">IDENTIFICACION</option>
+                                                        <option selected="selected" value="NOMBRES">NOMBRES</option>
+                                                        <option value="AREA">AREA</option>
+                                                        <option value="APELLIDOS">APELLIDOS</option>
+                                                        <option value="SALARIO">SALARIO</option>
                                                     </select>
                                                 </td>
                                                 <td class="auto-style67" style="text-align: left"></td>
                                                 <td class="auto-style68"> </td>
                                             </tr>
+                                    <tr>
+                                        <td class="auto-style65" style="text-align: right"></td>
+                                        <td class="auto-style70" style="text-align: right">
+                                            <span id="lblId24" style="color:Black;font-family:Aharoni;font-size:12pt;font-weight:bold;">Filtrar por:</span>
+                                        </td>
+                                        <td class="auto-style66" style="text-align: left">
+                                            <select name="cmbFiltro" id="cmbFiltro" disabled style="font-family:Tw Cen MT;font-size:10pt; height:18px;  width:133px;">
+
+                                                <option value="MAYOR">MAYOR QUE</option>
+                                                <option selected="selected" value="IGUAL">IGUAL</option>
+                                                <option value="MENOR">MENOR QUE</option>
+                                                                                           </select>
+                                        </td>
+                                        <td class="auto-style67" style="text-align: left"></td>
+                                        <td class="auto-style68"> </td>
+                                    </tr>
                                             <tr>
                                                 <td class="auto-style65" style="text-align: right"></td>
                                                 <td class="auto-style70" style="text-align: right">
                                                     <span id="lblId25" style="color:Black;font-family:Aharoni;font-size:12pt;font-weight:bold;">Parametro:</span>
                                                 </td>
                                                 <td class="auto-style66" style=" text-align: left">
-                                                    <input name="txtParametro" type="text" value="YEIMMY ANDREA" id="txtParametro" tabindex="1" autocomplete="off" style="font-family:Tw Cen MT;font-size:10pt;font-weight:bold;height:17px;width:216px;margin-bottom: 0px" />
+                                                    <input name="txtParametro" type="text" value="" id="txtParametro" tabindex="1" autocomplete="off" style="font-family:Tw Cen MT;font-size:10pt;font-weight:bold;height:17px;width:216px;margin-bottom: 0px" />
                                                   
                                                  </td>
 
@@ -201,7 +230,7 @@
                                                     <div>
                                                         <table  cellspacing="0" cellpadding="2" align="Center" rules="cols" border="1" id="gridBuscar" style="text-align:center; margin:auto;border-color:#999999;border-width:1px;border-style:None;font-family:Trebuchet MS;font-size:8pt;width:96%;border-collapse:collapse;">
                                                             <tr style="text-align: center; color :pink; background-color:#dae2ff;font-family:Trebuchet MS;font-size:10pt;font-weight:bold;">
-                                                                                                                               <th scope="col" style="text-align:center">Identificacion</th>
+                                                                <th scope="col" style="text-align:center">Identificacion</th>
                                                                 <th scope="col" style="text-align:center">Empleado</th>
                                                                 <th scope="col" style="text-align:center">Area</th>
                                                                 <th scope="col" style="text-align:center">Cargo</th>
