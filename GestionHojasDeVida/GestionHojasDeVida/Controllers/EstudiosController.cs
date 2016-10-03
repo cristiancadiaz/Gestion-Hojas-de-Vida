@@ -16,6 +16,11 @@ namespace GestionHojasDeVida.Controllers
             return View();
         }
 
+        public ActionResult Estudio_No_Formal()
+        {
+            return View();
+        }
+
         // GET: Estudios/Details/5
         public ActionResult Details(int id)
         {

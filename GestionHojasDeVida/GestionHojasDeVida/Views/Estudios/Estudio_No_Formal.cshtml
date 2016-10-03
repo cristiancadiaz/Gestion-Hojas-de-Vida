@@ -44,6 +44,25 @@
     <link rel="alternate" type="application/json+oembed" href="http://alexgurghis.com/themes/jobsdojo/wp-json/oembed/1.0/embed?url=http%3A%2F%2Falexgurghis.com%2Fthemes%2Fjobsdojo%2Fsubmit-resume%2F" />
     <link rel="alternate" type="text/xml+oembed" href="http://alexgurghis.com/themes/jobsdojo/wp-json/oembed/1.0/embed?url=http%3A%2F%2Falexgurghis.com%2Fthemes%2Fjobsdojo%2Fsubmit-resume%2F&#038;format=xml" />
 
+    <script>
+        function activar() {
+
+            var e = document.getElementById("cmbEstado");
+            var strSalario = e.options[e.selectedIndex].value;
+            if   (strSalario == 'FINALIZADO')
+            {
+                document.getElementById('txtfecha').disabled = false;
+            } else
+
+            {
+                document.getElementById('txtfecha').disabled = true;
+            }
+
+        }
+
+
+    </script>
+
 
 </head>
 
@@ -159,25 +178,31 @@
                                 </fieldset>
 
 
-                                <fieldset class="fieldset-candidate_name">
-                                    <label for="candidate_name">Fecha de Finalizacion:</label>
-                                    <div class="field">
-                                        @Html.EditorFor(model => model.fechafinalizacion, new { htmlAttributes = new { @class = "field" } })
-                                        @Html.ValidationMessageFor(model => model.fechafinalizacion, "", new { @class = "text-danger" })
-                                    </div>
-
-                                </fieldset>
-
+                               
 
                                 <fieldset class="fieldset-resume_content">
                                     <label for="candidate_name">Estado del Estudio:</label>
                                     <div class="field">
-                                        @Html.EditorFor(model => model.Estado, new { htmlAttributes = new { @class = "field" } })
-                                       
-                                        @Html.ValidationMessageFor(model => model.Estado, "", new { @class = "text-danger" })
+                                        <select name="cmbEstado" id="cmbEstado" onchange="activar();" style="font-family:Tw Cen MT;font-size:10pt; height:18px; width:133px;">
+
+                                            <option selected="selected" value="ENCURSO">EN CURSO</option>
+                                            <option  value="FINALIZADO">FINALIZADO</option>
+                                            <option value="NOCULMINADO">NO  CULMINADO</option>
+                                                                                    </select>
+
                                     </div>
 
                                 </fieldset>
+
+                                <fieldset class="fieldset-candidate_name">
+                                    <label for="candidate_name">Fecha de Finalizacion:</label>
+                                    <div class="field">
+                                        <input name="txtfecha" type="text" disabled value="" id="txtfecha" tabindex="1" autocomplete="off" style="font-family:Tw Cen MT;font-size:10pt;font-weight:bold;height:17px;width:216px;margin-bottom: 0px" />
+
+                                    </div>
+
+                                </fieldset>
+
 
 
                                 <br>
