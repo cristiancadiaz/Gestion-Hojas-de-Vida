@@ -112,7 +112,8 @@ img.emoji {
         font-family: "Advertising Script";
         font-size: 30px;
         font-weight: 600;
-    }
+    width: 374px;
+}
 
         .header div span {
             color: #dae2ff !important;

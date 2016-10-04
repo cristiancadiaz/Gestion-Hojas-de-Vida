@@ -74,6 +74,18 @@ namespace GestionHojasDeVida.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult ConsultaAvanzada(string txtParametro, string cmbBuscar, string cmbFiltro = "Mayor que")
+        {
+            var ConsultaGrl = new Consulta_General();
+            var listado = new List<HojaVidaDto>();
+
+            listado = ConsultaGrl.ConsultaEmpleado(txtParametro, cmbBuscar, cmbFiltro);
+
+
+            return View(listado);
+        }
+
 
         public ActionResult WebForm1()
         {

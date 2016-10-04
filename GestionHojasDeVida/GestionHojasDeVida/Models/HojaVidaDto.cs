@@ -25,6 +25,7 @@ namespace GestionHojasDeVida.Models
         public string Hobbies { get; set; }
         public string AspiracionSalarial { get; set; }
         public EquivaleteCargo Equivalente_cargo { get; set; }
+        public string descrp_area { get; set; }
 
     }
 

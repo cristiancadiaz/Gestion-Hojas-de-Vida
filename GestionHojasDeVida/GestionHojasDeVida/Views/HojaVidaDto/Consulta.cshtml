@@ -136,9 +136,15 @@
                             <form action="@Url.Action("ResultadoConsulta", "HojaVidaDto")" method="get" id="submit-resume-form" class="job-manager-form" enctype="multipart/form-data">
                                 <!-- Resume Fields -->
                                 <fieldset class="fieldset-resume_category">
-                                    <label for="resume_category">Consultar por cedula</label>
+                                    <label for="resume_category">CConsultar por:</label>
                                     <div class="field">
-
+                                        <select class="form-control" id="Consultar" name="Consultar">
+                                            <option>Select su opcion</option>
+                                            <option>Cedula</option>
+                                            <option>Nombre</option>
+                                            <option>Salario</option>
+                                            <option>Cargo</option>
+                                        </select>
                                     </div>
                                 </fieldset>
 
