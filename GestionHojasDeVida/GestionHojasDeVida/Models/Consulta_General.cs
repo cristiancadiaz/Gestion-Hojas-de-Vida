@@ -70,7 +70,7 @@ namespace GestionHojasDeVida.Models
             }
 
 
-            return objHV;
+            
         }
     }
 }
