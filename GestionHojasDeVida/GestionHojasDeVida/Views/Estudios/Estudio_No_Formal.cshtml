@@ -143,7 +143,7 @@
                 <div class="container">
                     <article id="post-55" class="post-55 page type-page status-publish hentry">
                         <div class="entry-content">
-                            @using (Html.BeginForm("Create", "Estudios", FormMethod.Post, new { @class = "job-manager-form" }))
+                            @using (Html.BeginForm("Estudio_No_Formal", "Estudios", FormMethod.Post, new { @class = "job-manager-form" }))
                             {
                                 @Html.AntiForgeryToken()
 
@@ -151,6 +151,17 @@
 
 
                             <!-- Resume Fields -->
+                                <fieldset class="fieldset-resume_category">
+                                    <label for="candidate_name">Numero de documento:</label>
+                                    <!-- <label for="resume_category">Institucion Educativa</label>-->
+                                    <div class="field">
+                                        @Html.EditorFor(model => model.Id_estudioN, new { htmlAttributes = new { @class = "field" } })
+                                        @Html.ValidationMessageFor(model => model.Id_estudioN, "", new { @class = "text-danger" })
+                                    </div>
+                                </fieldset>
+
+
+
                                 <fieldset class="fieldset-resume_category">
                                     <label for="candidate_name">Institucion Educativa:</label>
                                     <!-- <label for="resume_category">Institucion Educativa</label>-->
@@ -191,10 +202,12 @@
                                 <fieldset class="fieldset-resume_content">
                                     <label for="candidate_name">Estado Estudio:</label>
                                     <div class="field">
-                                        @Html.DropDownListFor(m => m.Estado_estudio,
-                                        new SelectList(Enum.GetValues(typeof(Enum))),
-                                        "Select Estado")
-                                        @Html.ValidationMessageFor(model => model.Estado_estudio, "", new { @class = "text-danger" })
+                                        <select name="cmbEstado" id="cmbEstado" onchange="activar();" style="font-family:Tw Cen MT;font-size:10pt; height:18px; width:133px;">
+
+                                            <option selected="selected" value="ENCURSO">EN CURSO</option>
+                                            <option value="FINALIZADO">FINALIZADO</option>
+                                            <option value="NOCULMINADO">NO  CULMINADO</option>
+                                        </select>
                                     </div>
 
                                 </fieldset>
@@ -203,7 +216,7 @@
                                 <fieldset class="fieldset-candidate_name">
                                     <label for="candidate_name">Fecha de Finalizacion:</label>
                                     <div class="field">
-                                    @Html.EditorFor(model => model.Fecha_fin, new { htmlAttributes = new { @id = "datepicker" } })    
+                                        <input type="text" id="datepicker" name="FechaFin" required placeholder="clic para generar fecha!!!" />    
                                     </div>
 
                                 </fieldset>
@@ -213,7 +226,7 @@
                                 <br>
                                 <div style="width:240px; float:right ">
                                     <p>
-                                        @ViewBag.mensajeestudios
+                                        
                                         <input type="hidden" id="_wpnonce" name="_wpnonce" value="234ae6f3fb" /><input type="hidden" name="_wp_http_referer" value="/themes/jobsdojo/submit-resume/" /><input type="hidden" name="resume_manager_form" value="submit-resume" />
                                         <input type="hidden" name="resume_id" value="0" />
                                         <input type="hidden" name="job_id" value="0" />
@@ -230,7 +243,7 @@
                     </article><!-- #post -->
 
                 </div>
-
+                @ViewBag.mensaje
             </section>
         </div>
     </div>

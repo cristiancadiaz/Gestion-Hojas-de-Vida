@@ -40,8 +40,10 @@ namespace GestionHojasDeVida.Models
 
             return lista;
         }
-        public int InsertEdu_NoFormal(EstudiosNoFormalesDTO estunof)
+        public string InsertEdu_NoFormal(EstudiosNoFormalesDTO estunof, string estado, string fecha, string pais)
         {
+
+            string ruta = "documentos";
             string cadenaConexion = Conexion.constr;
             SqlConnection conexion = new SqlConnection();
             conexion.ConnectionString = cadenaConexion;
@@ -71,22 +73,22 @@ namespace GestionHojasDeVida.Models
             SqlParameter InPais = new SqlParameter();
             InPais.ParameterName = "@id_pais";
             InPais.SqlDbType = SqlDbType.VarChar;
-            InPais.Value = estunof.Pais;
+            InPais.Value = pais;
 
             SqlParameter InEstado = new SqlParameter();
             InEstado.ParameterName = "@estado";
             InEstado.SqlDbType = SqlDbType.VarChar;
-            InEstado.Value = estunof.Estado_estudio;
+            InEstado.Value = estado;
 
             SqlParameter InFecha = new SqlParameter();
             InFecha.ParameterName = "@fecha";
             InFecha.SqlDbType = SqlDbType.VarChar;
-            InFecha.Value = estunof.Fecha_fin;
+            InFecha.Value = fecha;
 
             SqlParameter InRuta = new SqlParameter();
             InRuta.ParameterName = "@ruta";
             InRuta.SqlDbType = SqlDbType.VarChar;
-            InRuta.Value = estunof.Path_anexos;
+            InRuta.Value = ruta;
 
 
             comando.Parameters.Add(inIdestudio);
@@ -103,7 +105,7 @@ namespace GestionHojasDeVida.Models
             conexion.Open();
             // comando.ExecuteScalar();
 
-            return Convert.ToInt32(comando.ExecuteScalar());
+            return Convert.ToString(comando.ExecuteScalar());
         }
     }
 }

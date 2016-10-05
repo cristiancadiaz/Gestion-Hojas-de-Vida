@@ -14,7 +14,7 @@ namespace GestionHojasDeVida.Models
         public int Intensidad_hora { get; set; }
         public Paises Pais { get; set; }
         public estado Estado_estudio { get; set; }
-        public int Fecha_fin { get; set; }
+        public DateTime Fecha_fin { get; set; }
         public string Path_anexos { get; set; }
 
 

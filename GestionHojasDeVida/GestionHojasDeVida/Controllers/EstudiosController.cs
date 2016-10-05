@@ -23,15 +23,16 @@ namespace GestionHojasDeVida.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Estudio_No_Formal(EstudiosNoFormalesDTO estudnof)
+        public ActionResult Estudio_No_Formal(EstudiosNoFormalesDTO estudnof, string cmbEstado, string FechaFin, string combopaises)
         {
             if (ModelState.IsValid)
             {
 
-                int resultado = estunof.InsertEdu_NoFormal(estudnof);
-                if (resultado == 0)
+                string resultado = estunof.InsertEdu_NoFormal(estudnof, cmbEstado, FechaFin, combopaises);
+                if (resultado == "0")
                 {
-                    return RedirectToAction("ViewsuccesUsuario", "HojaVidaDto");
+                    ViewBag.mensaje = "Estudios ingresados correctamente";
+                    return View("Estudio_No_Formal", "Estudios");
                 }
                 else
                 {
