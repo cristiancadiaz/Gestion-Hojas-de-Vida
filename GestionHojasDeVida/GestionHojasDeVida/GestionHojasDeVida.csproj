@@ -132,6 +132,8 @@
     <Compile Include="Models\Consulta_General.cs" />
     <Compile Include="Models\EstudiosDao.cs" />
     <Compile Include="Models\EstudiosDto.cs" />
+    <Compile Include="Models\EstudiosNoFormalesDAO.cs" />
+    <Compile Include="Models\EstudiosNoFormalesDTO.cs" />
     <Compile Include="Models\ExperienciaDao.cs" />
     <Compile Include="Models\ExperienciaDto.cs" />
     <Compile Include="Models\HojaVidaDao.cs" />
@@ -140,6 +142,7 @@
     <Compile Include="Models\InactivarDto.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\LoginDao.cs" />
+    <Compile Include="Models\Paises.cs" />
     <Compile Include="Models\RegistroUsuarioDao.cs" />
     <Compile Include="Models\RegistroUsuarioDto.cs" />
     <Compile Include="Models\Tipos_documento.cs" />

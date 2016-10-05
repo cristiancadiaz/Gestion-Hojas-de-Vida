@@ -10,6 +10,7 @@ namespace GestionHojasDeVida.Controllers
     public class EstudiosController : Controller
     {
         EstudiosDao estud = new EstudiosDao();
+        EstudiosNoFormalesDAO estunof = new EstudiosNoFormalesDAO();
         // GET: Estudios
         public ActionResult Estudio()
         {
@@ -18,8 +19,37 @@ namespace GestionHojasDeVida.Controllers
 
         public ActionResult Estudio_No_Formal()
         {
+            PrecargaCombos();
             return View();
         }
+        [HttpPost]
+        public ActionResult Estudio_No_Formal(EstudiosNoFormalesDTO estudnof, string cmbEstado, string FechaFin, string combopaises)
+        {
+            if (ModelState.IsValid)
+            {
+
+                string resultado = estunof.InsertEdu_NoFormal(estudnof, cmbEstado, FechaFin, combopaises);
+                if (resultado == "0")
+                {
+                    ViewBag.mensaje = "Estudios ingresados correctamente";
+                    return View("Estudio_No_Formal", "Estudios");
+                }
+                else
+                {
+                    ModelState.AddModelError("Error", "No se ha registrado el usuario revisar!!!");
+                    PrecargaCombos();
+                    return View("Index");
+                }
+            }
+            else
+            {
+
+                PrecargaCombos();
+                return View("Estudio_No_Formal");
+            }
+
+        }
+
 
         // GET: Estudios/Details/5
         public ActionResult Details(int id)
@@ -44,7 +74,7 @@ namespace GestionHojasDeVida.Controllers
                 ViewBag.mensajeestudios = "Estudios insertados satisfactoriamente";
                 return View("Estudio");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 ViewBag.mensajeestudios = "No se pudieron regisdtrar los estudios verificar!!!";
                 return View("Estudio");
@@ -93,6 +123,17 @@ namespace GestionHojasDeVida.Controllers
             {
                 return View();
             }
+        }
+        private void PrecargaCombos()
+        {
+            var comboPaises = new List<Paises>();
+
+            comboPaises = estunof.CargaComboPaises();
+
+            var lisPaises = new SelectList(comboPaises, "PaisCodigo", "PaisNombre");
+
+            ViewData["combopaises"] = lisPaises;
+
         }
     }
 }
