@@ -55,7 +55,11 @@ namespace GestionHojasDeVida.Models
                         {
                             objHV.Add(new HojaVidaDto()
                             {
-                               
+                                Identificacion = Convert.ToString(dr["NUM_DOCUMENTO"]),
+                                Nombres = Convert.ToString(dr["NOMBRES"]),
+                                descrp_area = Convert.ToString(dr["DESCRIP_AREA"]),
+                                Cargo = Convert.ToString(dr["CARGO_ACTUAL"]),
+                                Salario = Convert.ToString(dr["SALARIO"])
 
                             });
 
