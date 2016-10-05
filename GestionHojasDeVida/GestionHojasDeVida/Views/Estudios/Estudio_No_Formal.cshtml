@@ -1,4 +1,4 @@
-﻿@model GestionHojasDeVida.Models.EstudiosDto
+﻿@model GestionHojasDeVida.Models.EstudiosNoFormalesDTO
 
 
 <!DOCTYPE html>
@@ -49,12 +49,9 @@
 
             var e = document.getElementById("cmbEstado");
             var strSalario = e.options[e.selectedIndex].value;
-            if   (strSalario == 'FINALIZADO')
-            {
+            if (strSalario == 'FINALIZADO') {
                 document.getElementById('txtfecha').disabled = false;
-            } else
-
-            {
+            } else {
                 document.getElementById('txtfecha').disabled = true;
             }
 
@@ -62,7 +59,11 @@
 
 
     </script>
-
+    <script>
+        $(function () {
+            $("#datepicker").datepicker();
+        });
+    </script>
 
 </head>
 
@@ -106,7 +107,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse pull-right" id="top-menu">
                 <ul class="nav navbar-nav text-uppercase text-center">
-                                       <li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-submenu menu-item-27">
+                    <li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-submenu menu-item-27">
                     <li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-submenu menu-item-27">
                         <a href=#>Hoja de Vida</a>
                         <ul class="sub-menu">
@@ -154,72 +155,55 @@
                                     <label for="candidate_name">Institucion Educativa:</label>
                                     <!-- <label for="resume_category">Institucion Educativa</label>-->
                                     <div class="field">
-                                        @Html.EditorFor(model => model.institucionEducativa, new { htmlAttributes = new { @class = "field" } })
-                                        @Html.ValidationMessageFor(model => model.institucionEducativa, "", new { @class = "text-danger" })
+                                        @Html.EditorFor(model => model.Entidad, new { htmlAttributes = new { @class = "field" } })
+                                        @Html.ValidationMessageFor(model => model.Entidad, "", new { @class = "text-danger" })
                                     </div>
                                 </fieldset>
 
                                 <fieldset class="fieldset-resume_category">
                                     <label for="candidate_name">Titulo Obtenido:</label>
-                                     <div class="field">
-                                        @Html.EditorFor(model => model.Titulo_obtenido, new { htmlAttributes = new { @class = "field" } })
-                                        @Html.ValidationMessageFor(model => model.Titulo_obtenido, "", new { @class = "text-danger" })
-                                    </div>
-                                </fieldset>
-
-
-                                <fieldset class="fieldset-candidate_name">
-                                    <label for="candidate_name">Nivel de Estudio:</label>
                                     <div class="field">
-                                        @Html.EditorFor(model => model.nvlDeestudio, new { htmlAttributes = new { @class = "field" } })
-                                        @Html.ValidationMessageFor(model => model.nvlDeestudio, "", new { @class = "text-danger" })
+                                        @Html.EditorFor(model => model.Nombre_curso, new { htmlAttributes = new { @class = "field" } })
+                                        @Html.ValidationMessageFor(model => model.Nombre_curso, "", new { @class = "text-danger" })
                                     </div>
-
                                 </fieldset>
+
 
                                 <fieldset class="fieldset-candidate_name">
                                     <label for="candidate_name">Intensidad Horaria:</label>
                                     <div class="field">
-                                        <input name="txtfecha" type="text" disabled value="" id="txtfecha" tabindex="1" autocomplete="off" style="font-family:Tw Cen MT;font-size:10pt;font-weight:bold;height:17px;width:216px;margin-bottom: 0px" />
-
-                                    </div>
-
-                                </fieldset>
-
-                                <fieldset class="fieldset-resume_content">
-                                    <label for="candidate_name">Pais:</label>
-                                    <div class="field">
-                                        <select name="cmbPais" id="cmbPais" style="font-family:Tw Cen MT;font-size:10pt; height:18px; width:133px;">
-
-                                            <option selected="selected" value="ENCURSO">COLOMBIA</option>
-                                            <option value="FINALIZADO">PERU</option>
-                                            <option value="NOCULMINADO">BOLIVIA</option>
-                                            <option value="FINALIZADO">ECUADOR</option>
-                                            <option value="NOCULMINADO">PANAMA</option>
-                                        </select>
-
-                                    </div>
-
-                                </fieldset>
-                                <fieldset class="fieldset-resume_content">
-                                    <label for="candidate_name">Estado del Estudio:</label>
-                                    <div class="field">
-                                        <select name="cmbEstado" id="cmbEstado" onchange="activar();" style="font-family:Tw Cen MT;font-size:10pt; height:18px; width:133px;">
-
-                                            <option selected="selected" value="ENCURSO">EN CURSO</option>
-                                            <option  value="FINALIZADO">FINALIZADO</option>
-                                            <option value="NOCULMINADO">NO  CULMINADO</option>
-                                                                                    </select>
-
+                                        @Html.EditorFor(model => model.Intensidad_hora, new { htmlAttributes = new { @class = "field" } })
+                                        @Html.ValidationMessageFor(model => model.Intensidad_hora, "", new { @class = "text-danger" })
                                     </div>
 
                                 </fieldset>
 
                                 <fieldset class="fieldset-candidate_name">
+                                    
+                                    <label for="resume_category">Pais:</label>
+                                    <div class="field">
+                                        @Html.DropDownList("combopaises", ViewData["combopaises"] as SelectList, "Seleccione Pais")
+                                    </div>
+
+                                </fieldset>
+
+
+                                <fieldset class="fieldset-resume_content">
+                                    <label for="candidate_name">Estado Estudio:</label>
+                                    <div class="field">
+                                        @Html.DropDownListFor(m => m.Estado_estudio,
+                                        new SelectList(Enum.GetValues(typeof(Enum))),
+                                        "Select Estado")
+                                        @Html.ValidationMessageFor(model => model.Estado_estudio, "", new { @class = "text-danger" })
+                                    </div>
+
+                                </fieldset>
+                                
+
+                                <fieldset class="fieldset-candidate_name">
                                     <label for="candidate_name">Fecha de Finalizacion:</label>
                                     <div class="field">
-                                        <input name="txtfecha" type="text" disabled value="" id="txtfecha" tabindex="1" autocomplete="off" style="font-family:Tw Cen MT;font-size:10pt;font-weight:bold;height:17px;width:216px;margin-bottom: 0px" />
-
+                                    @Html.EditorFor(model => model.Fecha_fin, new { htmlAttributes = new { @id = "datepicker" } })    
                                     </div>
 
                                 </fieldset>
@@ -241,7 +225,7 @@
                                 <br><br>
 
                             }
-                           
+
                         </div><!-- .entry-content -->
                     </article><!-- #post -->
 
