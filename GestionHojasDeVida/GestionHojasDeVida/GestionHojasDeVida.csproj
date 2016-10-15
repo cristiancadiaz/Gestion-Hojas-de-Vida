@@ -130,6 +130,7 @@
     <Compile Include="Models\ComboTiposContratos.cs" />
     <Compile Include="Models\Conexion.cs" />
     <Compile Include="Models\Consulta_General.cs" />
+    <Compile Include="Models\Correo.cs" />
     <Compile Include="Models\EstudiosDao.cs" />
     <Compile Include="Models\EstudiosDto.cs" />
     <Compile Include="Models\EstudiosNoFormalesDAO.cs" />
