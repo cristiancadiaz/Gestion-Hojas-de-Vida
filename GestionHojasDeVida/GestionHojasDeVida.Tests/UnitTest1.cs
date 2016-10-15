@@ -11,7 +11,7 @@ namespace GestionHojasDeVida.Tests
         public void TestMethod1()
         {
             var pruebacorreo = new Correo();
-            pruebacorreo.Dispose();
+            pruebacorreo.enviaEmail();
             
         }
     }
