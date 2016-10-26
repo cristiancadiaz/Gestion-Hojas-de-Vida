@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using GestionHojasDeVida.Models;
 
 namespace GestionHojasDeVida.Tests
 {
@@ -9,6 +10,9 @@ namespace GestionHojasDeVida.Tests
         [TestMethod]
         public void TestMethod1()
         {
+            var pruebacorreo = new Correo();
+            pruebacorreo.enviaEmail();
+            
         }
     }
 }
