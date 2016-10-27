@@ -3,10 +3,35 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Net.Mail;
+using System.ComponentModel;
+
 namespace GestionHojasDeVida.Models
 {
     public class Correo 
     {
+        static bool mailSent = false;
+        private static void SendCompletedCallback(object sender, AsyncCompletedEventArgs e)
+        {
+            // Get the unique identifier for this asynchronous operation.
+            String token = (string)e.UserState;
+
+            if (e.Cancelled)
+            {
+                Console.WriteLine("[{0}] Send canceled.", token);
+            }
+            if (e.Error != null)
+            {
+                Console.WriteLine("[{0}] {1}", token, e.Error.ToString());
+            }
+            else
+            {
+                Console.WriteLine("Message sent.");
+            }
+            mailSent = true;
+        }
+
+
+
         public void enviaEmail()
         {
             
@@ -37,7 +62,41 @@ namespace GestionHojasDeVida.Models
             //string userState = "test message1";
             //cliente.SendAsync(mensaje, userState);
             mensaje.Dispose();
-           
+
+            //    static bool mailSent = false;
+            //private static void SendCompletedCallback(object sender, AsyncCompletedEventArgs e)
+            //{
+            //    // Get the unique identifier for this asynchronous operation.
+            //    String token = (string)e.UserState;
+
+            //    if (e.Cancelled)
+            //    {
+            //        Console.WriteLine("[{0}] Send canceled.", token);
+            //    }
+            //    if (e.Error != null)
+            //    {
+            //        Console.WriteLine("[{0}] {1}", token, e.Error.ToString());
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Message sent.");
+            //    }
+            //    mailSent = true;
+
+            //string userState = "test message1";
+            //client.SendAsync(message, userState);
+            //Console.WriteLine("Sending message... press c to cancel mail. Press any other key to exit.");
+            //string answer = Console.ReadLine();
+            //// If the user canceled the send, and mail hasn't been sent yet,
+            //// then cancel the pending operation.
+            //if (answer.StartsWith("c") && mailSent == false)
+            //{
+            //    client.SendAsyncCancel();
+            //}
+            //// Clean up.
+            //message.Dispose();
+            //Console.WriteLine("Goodbye.");
+
         }
     }
 }

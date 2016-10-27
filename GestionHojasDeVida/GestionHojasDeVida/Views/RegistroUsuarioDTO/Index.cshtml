@@ -215,14 +215,12 @@
                                         @Html.ValidationMessageFor(model => model.ConfirmPass, null, new { @class = "label label-danger" })
                                     </div>
                                 </fieldset>
-                                <fieldset class="fieldset-candidate_location">
-                                    <label for="candidate_location">Cargo</label>
+                                <fieldset class="fieldset-resume_category">
+                                    <label for="resume_category">Area Funcional</label>
                                     <div class="field">
-                                        @Html.TextBoxFor(model => model.Cargo, new { placeholder = "Cargo" })
-                                        @Html.ValidationMessageFor(model => model.Cargo)
+                                        @Html.DropDownList("combocargo", ViewData["combocargo"] as SelectList, "Seleccione el cargo")
                                     </div>
                                 </fieldset>
-
                                 <fieldset class="fieldset-candidate_location">
                                     <label for="candidate_location">Salario</label>
                                     <div class="field">
@@ -234,12 +232,6 @@
                                     <label for="candidate_location">Fecha Ingreso</label>
                                     <div class="field">
                                         <input type="text" id="datepicker" name="FechaIngreso" required placeholder="clic para generar fecha!!!" />
-                                    </div>
-                                </fieldset>
-                                <fieldset class="fieldset-candidate_location">
-                                    <label for="candidate_location">Fecha Fin</label>
-                                    <div class="field">
-                                        <input type="text" id="datepicker1" name="FechaFin" required placeholder="clic para generar fecha!!!" />
                                     </div>
                                 </fieldset>
                                 <fieldset class="fieldset-resume_category">

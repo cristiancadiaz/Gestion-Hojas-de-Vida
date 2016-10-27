@@ -20,7 +20,7 @@ namespace GestionHojasDeVida.Models
         [Required(ErrorMessage ="Debe ingresar sus apellidos")]
         public string Apellidos { get; set; }
 
-        [Required(ErrorMessage = "Los apellidos no pueden estar vacios!!!")]
+        [Required(ErrorMessage = "Por favor ingrese su correo electronico")]
         [Display(Name ="Correo Personal")]
         [DataType(DataType.EmailAddress)]
         [EmailAddress]
@@ -36,9 +36,7 @@ namespace GestionHojasDeVida.Models
         [DataType(DataType.Password)]
         [Compare("Password",ErrorMessage ="Las contraseñas no coinciden revisar!!")]
         public string ConfirmPass { get; set; }
-
-        public string Cargo { get; set; }
-
+               
         public int Salario { get; set; }
 
     }
