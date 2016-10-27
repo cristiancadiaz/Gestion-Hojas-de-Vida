@@ -212,19 +212,6 @@
                                         @Html.TextBoxFor(m => m.AspiracionSalarial, new { @class = "input-text" })
                                     </div>
                                 </fieldset>
-                                <fieldset class="fieldset-resume_category">
-                                    <label for="resume_category">Equivalente al cargo</label>
-                                    <div class="field">
-                                        @Html.EnumDropDownListFor(
-                                              x => x.Equivalente_cargo,
-                                         "Selecciona la categoria",
-                                        new
-                                        {
-                                            @class = "job-manager-category-dropdown",
-                                            placeholder = "Choose a category&hellip"
-                                        })
-                                    </div>
-                                </fieldset>
                                 <fieldset class="fieldset-resume_content">
                                     <label for="resume_content">Perfil Profesional</label>
                                     <div class="field">

@@ -24,7 +24,6 @@ namespace GestionHojasDeVida.Models
         public string idiomas { get; set; }
         public string Hobbies { get; set; }
         public string AspiracionSalarial { get; set; }
-        public EquivaleteCargo Equivalente_cargo { get; set; }
         public string descrp_area { get; set; }
 
     }
@@ -39,13 +38,5 @@ namespace GestionHojasDeVida.Models
 
     }
 
-    public enum EquivaleteCargo
-    {
-        Asistente_Administrativo,
-        Agricultura,
-        Recursos_Humanos,
-        Tecnologias_de_la_información,
-        Analista_de_mercado,
-        Fotografia
-    }
+   
 }

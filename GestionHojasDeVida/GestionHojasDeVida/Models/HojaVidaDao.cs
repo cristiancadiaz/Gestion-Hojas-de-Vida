@@ -44,14 +44,14 @@ namespace GestionHojasDeVida.Models
                         while (dr.Read())
                         {
 
-                            objHV.Tipo_Contrato = Convert.ToString(dr["Tipo_Contrato"]);
-                            objHV.Tipo_Documento = Convert.ToString(dr["Tipo_Documento"]);
-                            objHV.Identificacion = Convert.ToString(dr["Num_Documento"]);
-                            objHV.Nombres = Convert.ToString(dr["Nombres"]);
-                            objHV.Apellidos = Convert.ToString(dr["Apellidos"]);
-                            objHV.Email = Convert.ToString(dr["Email"]);
-                            objHV.Cargo = Convert.ToString(dr["Cargo"]);
-                            objHV.Salario = Convert.ToString(dr["Salario"]);
+                            objHV.Tipo_Contrato = Convert.ToString(dr["DESCPR_CONTRATO"]);
+                            objHV.Tipo_Documento = Convert.ToString(dr["DESCRP_DOCUMENTO"]);
+                            objHV.Identificacion = Convert.ToString(dr["NUM_DOCUMENTO"]);
+                            objHV.Nombres = Convert.ToString(dr["NOMBRES"]);
+                            objHV.Apellidos = Convert.ToString(dr["APELLIDOS"]);
+                            objHV.Email = Convert.ToString(dr["CORREO_PERSONAL"]);
+                            objHV.Cargo = Convert.ToString(dr["CARGO_ACTUAL"]);
+                            objHV.Salario = Convert.ToString(dr["SALARIO"]);
 
 
                         }
@@ -101,11 +101,6 @@ namespace GestionHojasDeVida.Models
             Aspi_sala.SqlDbType = SqlDbType.VarChar;
             Aspi_sala.Value = hv.AspiracionSalarial;
 
-            SqlParameter equi_cargo = new SqlParameter();
-            equi_cargo.ParameterName = "@equiva_cargo";
-            equi_cargo.SqlDbType = SqlDbType.VarChar;
-            equi_cargo.Value = hv.Equivalente_cargo;
-
             SqlParameter per_profe = new SqlParameter();
             per_profe.ParameterName = "@perfil_profe";
             per_profe.SqlDbType = SqlDbType.VarChar;
@@ -122,7 +117,6 @@ namespace GestionHojasDeVida.Models
             comando.Parameters.Add(Celular);
             comando.Parameters.Add(Perfil_personal);
             comando.Parameters.Add(Aspi_sala);
-            comando.Parameters.Add(equi_cargo);
             comando.Parameters.Add(per_profe);
             comando.Parameters.Add(Hobbies);
 
