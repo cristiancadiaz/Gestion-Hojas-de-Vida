@@ -9,7 +9,7 @@ namespace GestionHojasDeVida.Models
 {
     public class Consulta_General
     {
-        public List<HojaVidaDto> ConsultaEmpleado(string Parametro, string Variable, string Sal)
+        public List<HojaVidaDto> ConsultaEmpleado(string Parametro,string Paramatro1, string Variable, string Variable2, string Sal)
         {
 
             var objHV = new List<HojaVidaDto>();
@@ -34,17 +34,27 @@ namespace GestionHojasDeVida.Models
                     inParametro.ParameterName = "PARAMETRO";
                     inParametro.Value = Parametro;
 
+                    DbParameter inParametro2 = cmd.CreateParameter();
+                    inParametro2.ParameterName = "PARAMETRO2";
+                    inParametro2.Value = Paramatro1;
+
                     DbParameter inVariable = cmd.CreateParameter();
                     inVariable.ParameterName = "VARIABLE";
                     inVariable.Value = Variable;
 
+                    DbParameter inVariable2 = cmd.CreateParameter();
+                    inVariable2.ParameterName = "VARIABLE2";
+                    inVariable2.Value = Variable2;
+                    
                     DbParameter inSal = cmd.CreateParameter();
                     inSal.ParameterName = "SAL";
                     inSal.Value = Sal;
 
 
                     cmd.Parameters.Add(inParametro);
+                    cmd.Parameters.Add(inParametro2);
                     cmd.Parameters.Add(inVariable);
+                    cmd.Parameters.Add(inVariable2);
                     cmd.Parameters.Add(inSal);
 
                     con.Open();
