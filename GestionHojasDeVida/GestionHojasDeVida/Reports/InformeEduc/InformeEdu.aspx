@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InformeEdu.aspx.cs" Inherits="GestionHojasDeVida.Reports.InformeE.InformeE" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InformeEdu.aspx.cs" Inherits="GestionHojasDeVida.Reports.InformeEdu" %>
 
 <%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
 
@@ -75,9 +75,12 @@ li a:hover {
             &nbsp;&nbsp;&nbsp;
              <ul>
                  <asp:Label ID="Label5" runat="server" Font-Names="Advertising Script" Font-Size="XX-Large" ForeColor="White" Text=".     Hojas de Vida"></asp:Label>
-   <li><a href="#about">Salir</a></li>
-                 <li><a href="InformeA.aspx">Por Area</a></li>
-                 <li><a href="a">Por Salario</a></li>
+                   <li><a href="../../Views/UsuarioLoginDTO/Main.cshtml">Salir</a></li>
+                 
+                 <li><a href="../InformeA/InformeA.aspx">Por Area</a></li>
+                 <li><a href="../InformeE/InformeE.aspx">Por Salario</a></li>
+                 
+                  <li><a href="../InformeEduc/InformeEdu.aspx">Por Educacion</a></li>
   
 </ul>
             <br />
@@ -87,7 +90,7 @@ li a:hover {
         <table style="border-left: 2px solid #1A4752; border-right: 2px solid #1A4752; border-top: 2px solid #1A4752; width: 20%; border-radius: 8px; background-color: #31869B; border-bottom-color: #1A4752; border-bottom-width: 2px; margin-left: 318px;">
             <tr>
                 <td ;class="auto-style34" class="auto-style34" style="text-align: left">
-                    <asp:Label ID="Label4" runat="server" Font-Names="Aharoni" Font-Size="14pt" ForeColor="White" Text="Informe Empleados por Educacion"></asp:Label>
+                    <asp:Label ID="Label4" runat="server" Font-Names="Aharoni" Font-Size="14pt" ForeColor="White" Text="Informe Empleados Area y Educacion"></asp:Label>
                 </td>
             </tr>
         </table>
@@ -100,15 +103,21 @@ li a:hover {
             </tr>
             <tr>
                 <td class="auto-style46" style="text-align: right">
-                    &nbsp;</td>
-                <td class="auto-style47" colspan="3" style="text-align: left">
-                    <asp:Label ID="lblId4" runat="server" Font-Bold="True" Font-Names="Aharoni" Font-Size="14pt" ForeColor="Black" Text="Desde:"></asp:Label>
+                    <asp:Label ID="lblId6" runat="server" Font-Bold="True" Font-Names="Aharoni" Font-Size="14pt" ForeColor="Black" Text="Area:"></asp:Label>
                 &nbsp;
-                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-&nbsp;&nbsp;
-                    <asp:Label ID="lblId5" runat="server" Font-Bold="True" Font-Names="Aharoni" Font-Size="14pt" ForeColor="Black" Text="Hasta:"></asp:Label>
-                &nbsp;<asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-&nbsp; <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Imagenes/buscar.jpg" OnClick="ImageButton1_Click" />
+                    <asp:DropDownList ID="cmbTecnicos" runat="server" Font-Names="Tw Cen MT" Font-Size="10pt" Height="19px" Width="184px" DataSourceID="Areas" DataTextField="DESCRIP_AREA" DataValueField="ID_AREA">
+                        <asp:ListItem>a</asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:SqlDataSource ID="Areas" runat="server" ConnectionString="<%$ ConnectionStrings:ConexionGestionHv %>" SelectCommand="SELECT * FROM [AREA]"></asp:SqlDataSource>
+                    </td>
+                <td class="auto-style47" colspan="3" style="text-align: left">
+                    &nbsp;&nbsp;&nbsp;
+                    <asp:Label ID="lblId4" runat="server" Font-Bold="True" Font-Names="Aharoni" Font-Size="14pt" ForeColor="Black" Text="Nivel Educativo:"></asp:Label>
+                &nbsp;<asp:DropDownList ID="cmbTecnicos0" runat="server" Font-Names="Tw Cen MT" Font-Size="10pt" Height="19px" Width="184px">
+                        <asp:ListItem>TECNICO</asp:ListItem>
+                        <asp:ListItem>PROFESIONAL</asp:ListItem>
+                    </asp:DropDownList>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Imagenes/buscar.jpg" OnClick="ImageButton1_Click" />
                 </td>
             </tr>
             <tr>
@@ -121,7 +130,7 @@ li a:hover {
             <tr>
                 <td class="auto-style26" colspan="4">
         <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="100%">
-            <LocalReport ReportPath="Reports\InformeE\InformeSalario.rdlc">
+            <LocalReport ReportPath="Reports\InformeEduc\InformeEduAre.rdlc">
                 <DataSources>
                     <rsweb:ReportDataSource DataSourceId="SqlDataSource1" Name="DataSet1" />
                 </DataSources>
@@ -136,10 +145,10 @@ li a:hover {
     
         <br />
         <br />
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConexionGestionHv %>" SelectCommand="SP_INFORME_SALARIO" SelectCommandType="StoredProcedure">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConexionGestionHv %>" SelectCommand="SP_INFORME_EDU_AREA" SelectCommandType="StoredProcedure">
             <SelectParameters>
-                <asp:ControlParameter ControlID="TextBox1" DefaultValue="1" Name="1" PropertyName="Text" Type="Int32" />
-                <asp:ControlParameter ControlID="TextBox2" DefaultValue="10000000" Name="2" PropertyName="Text" Type="Int32" />
+                <asp:ControlParameter ControlID="cmbTecnicos" DefaultValue="5" Name="AREA" PropertyName="SelectedValue" Type="Int32" />
+                <asp:ControlParameter ControlID="cmbTecnicos0" DefaultValue="TECNICO" Name="ESTUDIO" PropertyName="SelectedValue" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>
         <asp:ScriptManager ID="ScriptManager1" runat="server">

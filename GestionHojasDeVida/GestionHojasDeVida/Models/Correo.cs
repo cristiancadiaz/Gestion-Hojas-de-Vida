@@ -41,7 +41,7 @@ namespace GestionHojasDeVida.Models
             // en el muestra el nombre
             MailAddress from = new MailAddress("hojasdevidakonrad@gmail.com", "Hojas" + "de" + "Vida", System.Text.Encoding.UTF8);
             // pone el destinatario
-            MailAddress to = new MailAddress("omarmanfor@gmail.com");
+            MailAddress to = new MailAddress("ymoya2909@gmail.com");
             //especifica el contenido del mensaje
             MailMessage mensaje = new MailMessage(from, to);
             mensaje.Body = "Señor(a) hemos revisado su hoja de vida y queremos informarle que debe ingresar el dia tal para empezar la capacitación del nuevo cargo.";

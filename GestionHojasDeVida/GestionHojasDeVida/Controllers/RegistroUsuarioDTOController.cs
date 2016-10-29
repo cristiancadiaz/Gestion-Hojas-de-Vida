@@ -29,6 +29,8 @@ namespace GestionHojasDeVida.Controllers
                 int resultado = rudao.InsertUsuario(rudto, combocontratos, comboareas, FechaIngreso, FechaFin, combodocu, combocargo);
                 if (resultado == 0)
                 {
+                    Correo correo = new Models.Correo();
+                    correo.enviaEmail();
                     return RedirectToAction("ViewsuccesUsuario", "HojaVidaDto");
                 }
                 else

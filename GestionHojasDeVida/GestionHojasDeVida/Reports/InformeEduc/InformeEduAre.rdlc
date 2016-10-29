@@ -1063,11 +1063,18 @@
       </ConnectionProperties>
       <rd:DataSourceID>bc87e887-128a-4735-92b5-c8e03415dcfe</rd:DataSourceID>
     </DataSource>
+    <DataSource Name="Estudio_area">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>ffe64069-e29f-4269-8418-cdb09c3739bf</rd:DataSourceID>
+    </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>InformeSalario</DataSourceName>
+        <DataSourceName>Estudio_area</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -1129,12 +1136,12 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>InformeSalario</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Yeimmy\Source\Repos\Gestion-Hojas-de-Vida2\GestionHojasDeVida\GestionHojasDeVida\InformeSalario.xsd</rd:SchemaPath>
-        <rd:TableName>SP_INFORME_SALARIO</rd:TableName>
+        <rd:DataSetName>Estudio_area</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\Yeimmy\Source\Repos\Gestion-Hojas-de-Vida2\GestionHojasDeVida\GestionHojasDeVida\Estudio_area.xsd</rd:SchemaPath>
+        <rd:TableName>SP_INFORME_EDU_AREA</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>SP_INFORME_SALARIOTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>SP_INFORME_EDU_AREATableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

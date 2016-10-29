@@ -76,8 +76,12 @@ li a:hover {
              <ul>
                  <asp:Label ID="Label5" runat="server" Font-Names="Advertising Script" Font-Size="XX-Large" ForeColor="White" Text=".     Hojas de Vida"></asp:Label>
    <li><a href="#about">Salir</a></li>
-                 <li><a href="InformeA.aspx">Por Area</a></li>
-                 <li><a href="a">Por Salario</a></li>
+                  <li><a href="../../Views/UsuarioLoginDTO/Main.cshtml">Salir</a></li>
+                 
+                 <li><a href="../InformeA/InformeA.aspx">Por Area</a></li>
+                 <li><a href="../InformeE/InformeE.aspx">Por Salario</a></li>
+                 
+                  <li><a href="../InformeEduc/InformeEdu.aspx">Por Educacion</a></li>
   
 </ul>
             <br />

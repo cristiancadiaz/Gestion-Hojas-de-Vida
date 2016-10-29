@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GestionHojasDeVida.Reports.InformeE {
+namespace GestionHojasDeVida.Reports {
     
     
-    public partial class InformeE {
+    public partial class InformeEdu {
         
         /// <summary>
         /// form1 control.
@@ -40,6 +40,33 @@ namespace GestionHojasDeVida.Reports.InformeE {
         protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
+        /// lblId6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblId6;
+        
+        /// <summary>
+        /// cmbTecnicos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList cmbTecnicos;
+        
+        /// <summary>
+        /// Areas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource Areas;
+        
+        /// <summary>
         /// lblId4 control.
         /// </summary>
         /// <remarks>
@@ -49,31 +76,13 @@ namespace GestionHojasDeVida.Reports.InformeE {
         protected global::System.Web.UI.WebControls.Label lblId4;
         
         /// <summary>
-        /// TextBox1 control.
+        /// cmbTecnicos0 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
-        
-        /// <summary>
-        /// lblId5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblId5;
-        
-        /// <summary>
-        /// TextBox2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.DropDownList cmbTecnicos0;
         
         /// <summary>
         /// ImageButton1 control.

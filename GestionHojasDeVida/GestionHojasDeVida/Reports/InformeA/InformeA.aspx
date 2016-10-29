@@ -76,9 +76,12 @@ li a:hover {
             &nbsp;&nbsp;&nbsp;
              <ul>
                  <asp:Label ID="Label5" runat="server" Font-Names="Advertising Script" Font-Size="XX-Large" ForeColor="White" Text=".     Hojas de Vida"></asp:Label>
-   <li><a href="#about">Salir</a></li>
-                 <li><a href="InformeA.aspx">Por Area</a></li>
-                 <li><a href="a">Por Salario</a></li>
+   <li><a href="../../Views/UsuarioLoginDTO/Main.cshtml">Salir</a></li>
+                 
+                 <li><a href="../InformeA/InformeA.aspx">Por Area</a></li>
+                 <li><a href="../InformeE/InformeE.aspx">Por Salario</a></li>
+                 
+                  <li><a href="../InformeEduc/InformeEdu.aspx">Por Educacion</a></li>
   
 </ul>
             <br />
@@ -126,7 +129,7 @@ li a:hover {
                     <asp:ScriptManager ID="ScriptManager1" runat="server">
                     </asp:ScriptManager>
                     <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="100%">
-                        <LocalReport ReportPath="Reports\InformeAreas.rdlc">
+                        <LocalReport ReportPath="Reports\InformeA\InformeAreas.rdlc">
                             <DataSources>
                                 <rsweb:ReportDataSource DataSourceId="ReporteArea" Name="InformeAreas" />
                             </DataSources>
@@ -134,7 +137,7 @@ li a:hover {
                     </rsweb:ReportViewer>
                     <asp:SqlDataSource ID="ReporteArea" runat="server" ConnectionString="<%$ ConnectionStrings:ConexionGestionHv %>" SelectCommand="SP_INFORME_AREAS" SelectCommandType="StoredProcedure">
                         <SelectParameters>
-                            <asp:ControlParameter ControlID="cmbTecnicos" Name="AREA" PropertyName="SelectedValue" Type="Int32" />
+                            <asp:ControlParameter ControlID="cmbTecnicos" Name="AREA" PropertyName="SelectedValue" Type="Int32" DefaultValue="1" />
                         </SelectParameters>
                     </asp:SqlDataSource>
                 </td>
