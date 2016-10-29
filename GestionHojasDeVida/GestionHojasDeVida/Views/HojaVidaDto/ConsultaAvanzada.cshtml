@@ -48,8 +48,10 @@
         function activar() {
 
             var e = document.getElementById("cmbBuscar");
+            var e1 = document.getElementById("cmbBuscar1")
             var strSalario = e.options[e.selectedIndex].value;
-            if (strSalario == 'SALARIO') {
+            var strSalario1 = e1.options[e1.selectedIndex].value;
+            if (strSalario == 'SALARIO' || strSalario1 == 'SALARIO') {
                 document.getElementById('cmbFiltro').disabled = false;
             } else {
                 document.getElementById('cmbFiltro').disabled = true;
@@ -179,9 +181,24 @@
                                                     <span id="lblId24" style="color:Black;font-family:Aharoni;font-size:12pt;font-weight:bold;">Consultar Por:</span>
                                                 </td>
                                                 <td class="auto-style66" style="text-align: left">
-                                                    <select name="cmbBuscar" id="cmbBuscar" onchange="activar();" style="font-family:Tw Cen MT;font-size:10pt; height:18px; width:133px;">
+                                                    <select name="cmbBuscar" id="cmbBuscar" onchange="activar();" style="font-family:Tw Cen MT;font-size:10pt; height:18px; width:250px;">
+                                                        <option selected="selected" value="NINGUNA">--SELECCIONE UN ITEM DE BUSQUEDA</option>
                                                         <option value="IDENTIFICACION">IDENTIFICACION</option>
-                                                        <option selected="selected" value="NOMBRES">NOMBRES</option>
+                                                        <option value="NOMBRES">NOMBRES</option>
+                                                        <option value="AREA">AREA</option>
+                                                        <option value="APELLIDOS">APELLIDOS</option>
+                                                        <option value="SALARIO">SALARIO</option>
+                                                    </select>
+                                                </td>
+                                                <td class="auto-style65" style="text-align: right"></td>
+                                                <td class="auto-style70" style="text-align: right">
+                                                    <span id="lblId24" style="color:Black;font-family:Aharoni;font-size:12pt;font-weight:bold;">Consultar y Por:</span>
+                                                </td>
+                                                <td class="auto-style66" style="text-align: left">
+                                                    <select name="cmbBuscar1" id="cmbBuscar1" onchange="activar();" style="font-family:Tw Cen MT;font-size:10pt; height:18px; width:250px; left:1020px">
+                                                        <option selected="selected" value="NINGUNA">--SELECCIONE UN ITEM DE BUSQUEDA</option>
+                                                        <option value="IDENTIFICACION">IDENTIFICACION</option>
+                                                        <option value="NOMBRES">NOMBRES</option>
                                                         <option value="AREA">AREA</option>
                                                         <option value="APELLIDOS">APELLIDOS</option>
                                                         <option value="SALARIO">SALARIO</option>
@@ -197,9 +214,9 @@
                                                 </td>
                                                 <td class="auto-style66" style="text-align: left">
                                                     <select name="cmbFiltro" id="cmbFiltro" disabled style="font-family:Tw Cen MT;font-size:10pt; height:18px;  width:133px;">
-
+                                                        <option selected="selected" value="NINGUNA">SELECCIONE UN FILTRO</option>
                                                         <option value="MAYOR">MAYOR QUE</option>
-                                                        <option selected="selected" value="IGUAL">IGUAL</option>
+                                                        <option value="IGUAL">IGUAL</option>
                                                         <option value="MENOR">MENOR QUE</option>
                                                     </select>
                                                 </td>
@@ -216,7 +233,14 @@
                                                     <div class="auto-style70" style="text-align: center">
                                                     </div>
                                                 </td>
-
+                                                <td class="auto-style70" style="text-align: right">
+                                                    <span id="lblId25" style="color:Black;font-family:Aharoni;font-size:12pt;font-weight:bold;">otro:</span>
+                                                </td>
+                                                <td class="auto-style66" style=" text-align left">
+                                                    <input name="txtParametro1" type="text" value="" id="txtParametro1" tabindex="1" autocomplete="off" style="font-family:Tw Cen MT;font-size:10pt;font-weight:bold;height:17px;width:216px;margin-bottom: 0px" />
+                                                    <div class="auto-style70" style="text-align: center">
+                                                    </div>
+                                                </td>
 
                                             </tr>
                                             <tr>
