@@ -87,7 +87,7 @@ li a:hover {
         </div>
         <br />
         <br />
-        <table style="border-left: 2px solid #1A4752; border-right: 2px solid #1A4752; border-top: 2px solid #1A4752; width: 20%; border-radius: 8px; background-color: #31869B; border-bottom-color: #1A4752; border-bottom-width: 2px; margin-left: 318px;">
+        <table style="border-left: 2px solid #1A4752; border-right: 2px solid #1A4752; border-top: 2px solid #1A4752; width: 28%; border-radius: 8px; background-color: #31869B; border-bottom-color: #1A4752; border-bottom-width: 2px; margin-left: 318px;">
             <tr>
                 <td ;class="auto-style34" class="auto-style34" style="text-align: left">
                     <asp:Label ID="Label4" runat="server" Font-Names="Aharoni" Font-Size="14pt" ForeColor="White" Text="Informe Empleados Area y Educacion"></asp:Label>
