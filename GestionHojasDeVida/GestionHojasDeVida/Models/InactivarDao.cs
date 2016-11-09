@@ -9,27 +9,28 @@ namespace GestionHojasDeVida.Models
 {
     public class InactivarDao
     {
-        public int InactivarEmpleado(InactivarDto inac,int inactivo)
+        private string  OnInfoMessage;
+        public string InactivarEmpleado(InactivarDto inac,string inactivo)
         {
 
             string cadenaConexion = Conexion.constr;
             SqlConnection conexion = new SqlConnection();
             conexion.ConnectionString = cadenaConexion;
-            SqlCommand comando = new SqlCommand("SP_InactivarEmpleado", conexion);
+            SqlCommand comando = new SqlCommand("sp_Inactiva_usuario", conexion);
             comando.CommandType = CommandType.StoredProcedure;
 
             SqlParameter Identificacion = new SqlParameter();
-            Identificacion.ParameterName = "@Identificacion";
+            Identificacion.ParameterName = "@cedula";
             Identificacion.SqlDbType = SqlDbType.Int;
             Identificacion.Value = inac.Identificacion;
 
             SqlParameter Estado = new SqlParameter();
-            Estado.ParameterName = "@Estado";
-            Estado.SqlDbType = SqlDbType.Int;
+            Estado.ParameterName = "@estado";
+            Estado.SqlDbType = SqlDbType.VarChar;
             Estado.Value = inactivo;
 
             SqlParameter Motivo = new SqlParameter();
-            Motivo.ParameterName = "@Motivo";
+            Motivo.ParameterName = "@motivo";
             Motivo.SqlDbType = SqlDbType.VarChar;
             Motivo.Value = inac.Motivo;
 
@@ -38,11 +39,11 @@ namespace GestionHojasDeVida.Models
             comando.Parameters.Add(Motivo);
 
             SqlDataAdapter adaptador = new SqlDataAdapter(comando);
-
+            
 
             conexion.Open();
             // comando.ExecuteScalar();
-            return Convert.ToInt32(comando.ExecuteScalar());
+            return Convert.ToString(comando.ExecuteScalar());
         }
 
     }
