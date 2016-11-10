@@ -121,7 +121,8 @@ li a:hover {
                 <td class="auto-style46" style="text-align: right">
                     &nbsp;</td>
                 <td class="auto-style47" colspan="2" style="text-align: left">
-                    &nbsp;</td>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConexionGestionHv %>" SelectCommand="SP_Consolidado_Areas" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+                </td>
                 <td class="auto-style52" style="text-align: left">&nbsp;</td>
             </tr>
             <tr>
@@ -132,6 +133,7 @@ li a:hover {
                         <LocalReport ReportPath="Reports\InformeA\InformeAreas.rdlc">
                             <DataSources>
                                 <rsweb:ReportDataSource DataSourceId="ReporteArea" Name="InformeAreas" />
+                                <rsweb:ReportDataSource DataSourceId="ReporteArea" Name="DataSet1" />
                             </DataSources>
                         </LocalReport>
                     </rsweb:ReportViewer>

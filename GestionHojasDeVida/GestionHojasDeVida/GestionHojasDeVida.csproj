@@ -116,6 +116,28 @@
     <Content Include="Estudio_area.xsc">
       <DependentUpon>Estudio_area.xsd</DependentUpon>
     </Content>
+    <Content Include="ConsolidadoArea.xsc">
+      <DependentUpon>ConsolidadoArea.xsd</DependentUpon>
+    </Content>
+    <None Include="ConsolidadoArea.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ConsolidadoArea.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="ConsolidadoArea.xss">
+      <DependentUpon>ConsolidadoArea.xsd</DependentUpon>
+    </Content>
+    <Content Include="ConsolidadoAreas.xsc">
+      <DependentUpon>ConsolidadoAreas.xsd</DependentUpon>
+    </Content>
+    <None Include="ConsolidadoAreas.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ConsolidadoAreas.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="ConsolidadoAreas.xss">
+      <DependentUpon>ConsolidadoAreas.xsd</DependentUpon>
+    </Content>
     <None Include="Estudio_area.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>Estudio_area.Designer.cs</LastGenOutput>
@@ -156,6 +178,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="ConsolidadoArea.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConsolidadoArea.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ConsolidadoAreas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConsolidadoAreas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\EstudiosController.cs" />
     <Compile Include="Controllers\ExperienciaController.cs" />
     <Compile Include="Controllers\HojaVidaDtoController.cs" />
