@@ -63,7 +63,7 @@ namespace GestionHojasDeVida.Models
             return objHV;
         }
 
-        internal int ActualizaHv(HojaVidaDto hv,int Identificacion)
+        internal int ActualizaHv(HojaVidaDto hv,int Identificacion, int tipo)
         {
             string cadenaConexion = Conexion.constr;
             SqlConnection conexion = new SqlConnection();
@@ -80,6 +80,11 @@ namespace GestionHojasDeVida.Models
             Direccion.ParameterName = "@direccion";
             Direccion.SqlDbType = SqlDbType.VarChar;
             Direccion.Value = hv.Direccion;
+
+            SqlParameter intTipo = new SqlParameter();
+            intTipo.ParameterName = "@tipo";
+            intTipo.SqlDbType = SqlDbType.Int;
+            intTipo.Value = tipo;
 
             SqlParameter Telefono = new SqlParameter();
             Telefono.ParameterName = "@telefono";
@@ -119,6 +124,7 @@ namespace GestionHojasDeVida.Models
             comando.Parameters.Add(Aspi_sala);
             comando.Parameters.Add(per_profe);
             comando.Parameters.Add(Hobbies);
+            comando.Parameters.Add(intTipo);
 
             SqlDataAdapter adaptador = new SqlDataAdapter(comando);
 

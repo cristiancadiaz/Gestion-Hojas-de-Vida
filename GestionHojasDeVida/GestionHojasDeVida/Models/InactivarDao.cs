@@ -10,7 +10,7 @@ namespace GestionHojasDeVida.Models
     public class InactivarDao
     {
         private string  OnInfoMessage;
-        public string InactivarEmpleado(InactivarDto inac,string inactivo)
+        public string InactivarEmpleado(InactivarDto inac)
         {
 
             string cadenaConexion = Conexion.constr;
@@ -24,10 +24,10 @@ namespace GestionHojasDeVida.Models
             Identificacion.SqlDbType = SqlDbType.Int;
             Identificacion.Value = inac.Identificacion;
 
-            SqlParameter Estado = new SqlParameter();
-            Estado.ParameterName = "@estado";
-            Estado.SqlDbType = SqlDbType.VarChar;
-            Estado.Value = inactivo;
+            //SqlParameter Estado = new SqlParameter();
+            //Estado.ParameterName = "@estado";
+            //Estado.SqlDbType = SqlDbType.VarChar;
+            //Estado.Value = inactivo;
 
             SqlParameter Motivo = new SqlParameter();
             Motivo.ParameterName = "@motivo";
@@ -35,7 +35,7 @@ namespace GestionHojasDeVida.Models
             Motivo.Value = inac.Motivo;
 
             comando.Parameters.Add(Identificacion);
-            comando.Parameters.Add(Estado);
+            //comando.Parameters.Add(Estado);
             comando.Parameters.Add(Motivo);
 
             SqlDataAdapter adaptador = new SqlDataAdapter(comando);

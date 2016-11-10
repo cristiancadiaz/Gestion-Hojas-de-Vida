@@ -33,14 +33,16 @@ namespace GestionHojasDeVida.Controllers
             var password = form["TextPassword"];
             var logindto = new UsuarioLoginDTO(username, password);
             var logindao = new LoginDao();
-            int resultado = logindao.Autenticar(logindto.uld_user, logindto.uld_pass);
+            String resultado = logindao.Autenticar(logindto.uld_user, logindto.uld_pass);
 
             switch (resultado)
             {
-                case 1:
+                case "1":
                     return RedirectToAction("Main", "UsuarioLoginDTO");
-                case 2:
+                case "2":
                     return RedirectToAction("Index", "HojaVidaDto", new { id = username });
+                case "Inactivo":
+                    return RedirectToAction("Login", "UsuarioLoginDTO");
                 default:
                     ViewBag.mensaje = "No se ha creado el empleado Aun por favor intente mas tarde";
                     return View("Login");

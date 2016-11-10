@@ -9,6 +9,8 @@ namespace GestionHojasDeVida.Controllers
 {
     public class HojaVidaDtoController : Controller
     {
+        private int tipo = 0;
+
         HojaVidaDao daohv = new HojaVidaDao();
         // GET: HojaVida
         public ActionResult ResultadoConsulta(int id)
@@ -30,11 +32,13 @@ namespace GestionHojasDeVida.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult ActualizaHV(HojaVidaDto hv)
+        public ActionResult ActualizaHV(HojaVidaDto hv, string identificacion, int tipo)
         {
+            
+
             int identi = int.Parse(TempData["Identificacion"].ToString());
-            daohv.ActualizaHv(hv, identi);
-            return View("Experiencia");
+            daohv.ActualizaHv(hv, identi,tipo);
+            return RedirectToAction("Experiencia", "Experiencia");
         }
         public ActionResult ListadoEmpleados()
         {

@@ -31,11 +31,11 @@ namespace GestionHojasDeVida.Controllers
 
         // POST: Inactivar/Create
         [HttpPost]
-        public ActionResult Create(InactivarDto inac,string Inactivar)
+        public ActionResult Create(InactivarDto inac)
         {
             try
             {
-                inacdao.InactivarEmpleado(inac,Inactivar);
+                inacdao.InactivarEmpleado(inac);
                 ViewBag.mensajeexito = "Usuario inactivado correctamente";
                 return View("Inactivar");
             }

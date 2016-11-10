@@ -220,7 +220,8 @@
                                             <link rel='stylesheet' id='editor-buttons-css' href='http://alexgurghis.com/themes/jobsdojo/wp-includes/css/editor.min.css?ver=4.5.3' type='text/css' media='all' />
                                             <div id="wp-resume_content-editor-container" class="wp-editor-container">@Html.TextAreaFor(m => m.perfil_Profesional, new { @class = "wp-editor-area", rows = "8", autocomplete = "off", cols = "40" })</div>
                                         </div>
-
+                                        <input type="text" name="identificacion" value="@ViewBag.NumDocumento" hidden>
+                                        <input type="text" name="tipo" value="1" hidden>
                                     </div>
                                 </fieldset>
                                 <
@@ -239,7 +240,7 @@
                                         <input type="hidden" name="resume_id" value="0" />
                                         <input type="hidden" name="job_id" value="0" />
                                         <input type="hidden" name="step" value="1" />
-                                        <input style="background-color: darkblue; opacity:0.7; text-align:center; border-radius:8px" type="submit" name="submit_resume" value="Actualizar" />
+                                        <input style="background-color: darkblue; opacity:0.7; text-align:center; border-radius:8px" type="submit" name="submit_resume" />
                                     </p>
 
                                 </div>

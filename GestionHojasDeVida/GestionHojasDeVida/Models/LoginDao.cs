@@ -10,7 +10,7 @@ namespace GestionHojasDeVida.Models
     public class LoginDao : Login
     {
 
-        public int Autenticar(string username, string password)
+        public String Autenticar(string username, string password)
         {
 
             string cadenaConexion = Conexion.constr;
@@ -37,7 +37,7 @@ namespace GestionHojasDeVida.Models
             conexion.Open();
             // comando.ExecuteScalar();
 
-            return Convert.ToInt32(comando.ExecuteScalar());
+            return Convert.ToString(comando.ExecuteScalar());
         }
 
         public void Crear()
