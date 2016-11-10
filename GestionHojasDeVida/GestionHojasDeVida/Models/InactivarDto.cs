@@ -8,7 +8,7 @@ namespace GestionHojasDeVida.Models
     public class InactivarDto
     {
         public int Identificacion { get; set; }
-        public int Estado { get; set; }
+        public string Estado { get; set; }
         public string Motivo { get; set; }
     }
 

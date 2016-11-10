@@ -31,7 +31,7 @@ namespace GestionHojasDeVida.Controllers
 
         // POST: Inactivar/Create
         [HttpPost]
-        public ActionResult Create(InactivarDto inac,int Inactivar)
+        public ActionResult Create(InactivarDto inac,string Inactivar)
         {
             try
             {
